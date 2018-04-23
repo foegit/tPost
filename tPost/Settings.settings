@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="tPost" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="botToken" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">534948563:AAH29x-drkWzWtDSEqXbZrqo2skvCTz12M0</Value>
+    </Setting>
+    <Setting Name="canalIName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">@mysect</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
