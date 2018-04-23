@@ -46,19 +46,25 @@
             this.форматуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.htmlText = new System.Windows.Forms.ToolStripMenuItem();
             this.markdownText = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.boldButton = new System.Windows.Forms.Button();
+            this.italicButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.ботToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formatTextPanel = new System.Windows.Forms.Panel();
+            this.AddMediaPanel = new System.Windows.Forms.Panel();
+            this.preButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.filePanel.SuspendLayout();
             this.menuStrip.SuspendLayout();
+            this.formatTextPanel.SuspendLayout();
+            this.AddMediaPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // msgText
             // 
-            resources.ApplyResources(this.msgText, "msgText");
             this.msgText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.msgText, "msgText");
             this.msgText.Name = "msgText";
             this.msgText.TextChanged += new System.EventHandler(this.msgText_TextChanged);
             // 
@@ -72,8 +78,8 @@
             // 
             // addFile
             // 
-            this.addFile.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.addFile, "addFile");
+            this.addFile.BackColor = System.Drawing.Color.Transparent;
             this.addFile.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.addFile.FlatAppearance.BorderSize = 0;
             this.addFile.Name = "addFile";
@@ -101,6 +107,7 @@
             // 
             // filePanel
             // 
+            resources.ApplyResources(this.filePanel, "filePanel");
             this.filePanel.BackColor = System.Drawing.SystemColors.Info;
             this.filePanel.Controls.Add(this.label1);
             this.filePanel.Controls.Add(this.deleteFileButton);
@@ -108,7 +115,6 @@
             this.filePanel.Controls.Add(this.fileName);
             this.filePanel.Controls.Add(this.fileSizeField);
             this.filePanel.Controls.Add(this.fileInfoField);
-            resources.ApplyResources(this.filePanel, "filePanel");
             this.filePanel.Name = "filePanel";
             // 
             // fileInfoField
@@ -134,13 +140,14 @@
             // deleteFileButton
             // 
             resources.ApplyResources(this.deleteFileButton, "deleteFileButton");
+            this.deleteFileButton.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.deleteFileButton.Name = "deleteFileButton";
             this.deleteFileButton.UseVisualStyleBackColor = true;
             this.deleteFileButton.Click += new System.EventHandler(this.deleteFileButton_Click);
             // 
             // menuStrip
             // 
-            this.menuStrip.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.menuStrip.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.налаштуванняToolStripMenuItem,
@@ -150,6 +157,8 @@
             // 
             // налаштуванняToolStripMenuItem
             // 
+            this.налаштуванняToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ботToolStripMenuItem});
             this.налаштуванняToolStripMenuItem.Name = "налаштуванняToolStripMenuItem";
             resources.ApplyResources(this.налаштуванняToolStripMenuItem, "налаштуванняToolStripMenuItem");
             // 
@@ -175,28 +184,30 @@
             resources.ApplyResources(this.markdownText, "markdownText");
             this.markdownText.Click += new System.EventHandler(this.markdownText_Click);
             // 
-            // button1
+            // boldButton
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.boldButton.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.boldButton, "boldButton");
+            this.boldButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.boldButton.FlatAppearance.BorderSize = 0;
+            this.boldButton.Name = "boldButton";
+            this.boldButton.UseVisualStyleBackColor = true;
+            this.boldButton.Click += new System.EventHandler(this.boldButton_Click);
             // 
-            // button2
+            // italicButton
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.italicButton.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.italicButton, "italicButton");
+            this.italicButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.italicButton.FlatAppearance.BorderSize = 0;
+            this.italicButton.Name = "italicButton";
+            this.italicButton.UseVisualStyleBackColor = true;
+            this.italicButton.Click += new System.EventHandler(this.italicButton_Click);
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.button3, "button3");
+            this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.Name = "button3";
@@ -207,16 +218,46 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
+            // ботToolStripMenuItem
+            // 
+            this.ботToolStripMenuItem.Name = "ботToolStripMenuItem";
+            resources.ApplyResources(this.ботToolStripMenuItem, "ботToolStripMenuItem");
+            // 
+            // formatTextPanel
+            // 
+            resources.ApplyResources(this.formatTextPanel, "formatTextPanel");
+            this.formatTextPanel.BackColor = System.Drawing.Color.White;
+            this.formatTextPanel.Controls.Add(this.preButton);
+            this.formatTextPanel.Controls.Add(this.boldButton);
+            this.formatTextPanel.Controls.Add(this.italicButton);
+            this.formatTextPanel.Name = "formatTextPanel";
+            // 
+            // AddMediaPanel
+            // 
+            this.AddMediaPanel.Controls.Add(this.button3);
+            this.AddMediaPanel.Controls.Add(this.addFile);
+            resources.ApplyResources(this.AddMediaPanel, "AddMediaPanel");
+            this.AddMediaPanel.Name = "AddMediaPanel";
+            // 
+            // preButton
+            // 
+            this.preButton.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.preButton, "preButton");
+            this.preButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.preButton.FlatAppearance.BorderSize = 0;
+            this.preButton.ForeColor = System.Drawing.Color.SkyBlue;
+            this.preButton.Name = "preButton";
+            this.preButton.UseVisualStyleBackColor = true;
+            this.preButton.Click += new System.EventHandler(this.preButton_Click);
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.AddMediaPanel);
+            this.Controls.Add(this.formatTextPanel);
             this.Controls.Add(this.filePanel);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.addFile);
             this.Controls.Add(this.publicMsg);
             this.Controls.Add(this.msgText);
             this.Controls.Add(this.menuStrip);
@@ -227,6 +268,8 @@
             this.filePanel.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.formatTextPanel.ResumeLayout(false);
+            this.AddMediaPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,10 +294,14 @@
         private System.Windows.Forms.ToolStripMenuItem форматуванняToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem htmlText;
         private System.Windows.Forms.ToolStripMenuItem markdownText;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button boldButton;
+        private System.Windows.Forms.Button italicButton;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem ботToolStripMenuItem;
+        private System.Windows.Forms.Panel formatTextPanel;
+        private System.Windows.Forms.Panel AddMediaPanel;
+        private System.Windows.Forms.Button preButton;
     }
 }
 
