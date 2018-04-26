@@ -231,7 +231,7 @@
     <value>NoControl</value>
   </data>
   <data name="addFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>65, 2</value>
+    <value>3, 2</value>
   </data>
   <data name="addFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 33</value>
@@ -249,7 +249,7 @@
     <value>AddMediaPanel</value>
   </data>
   <data name="&gt;&gt;addFile.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="symbolCount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -286,6 +286,42 @@
   </data>
   <data name="&gt;&gt;symbolCount.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;currentFormat.Name" xml:space="preserve">
+    <value>currentFormat</value>
+  </data>
+  <data name="&gt;&gt;currentFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;currentFormat.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;currentFormat.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 517</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>382, 36</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="currentFormat.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -337,32 +373,104 @@
   <data name="&gt;&gt;currentFormat.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 517</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 36</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="filePanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>filePanel</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;deleteFileButton.Name" xml:space="preserve">
+    <value>deleteFileButton</value>
+  </data>
+  <data name="&gt;&gt;deleteFileButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteFileButton.Parent" xml:space="preserve">
+    <value>filePanel</value>
+  </data>
+  <data name="&gt;&gt;deleteFileButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;fileSize.Name" xml:space="preserve">
+    <value>fileSize</value>
+  </data>
+  <data name="&gt;&gt;fileSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fileSize.Parent" xml:space="preserve">
+    <value>filePanel</value>
+  </data>
+  <data name="&gt;&gt;fileSize.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;fileName.Name" xml:space="preserve">
+    <value>fileName</value>
+  </data>
+  <data name="&gt;&gt;fileName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fileName.Parent" xml:space="preserve">
+    <value>filePanel</value>
+  </data>
+  <data name="&gt;&gt;fileName.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;fileSizeField.Name" xml:space="preserve">
+    <value>fileSizeField</value>
+  </data>
+  <data name="&gt;&gt;fileSizeField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fileSizeField.Parent" xml:space="preserve">
+    <value>filePanel</value>
+  </data>
+  <data name="&gt;&gt;fileSizeField.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;fileInfoField.Name" xml:space="preserve">
+    <value>fileInfoField</value>
+  </data>
+  <data name="&gt;&gt;fileInfoField.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fileInfoField.Parent" xml:space="preserve">
+    <value>filePanel</value>
+  </data>
+  <data name="&gt;&gt;fileInfoField.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="filePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 275</value>
+  </data>
+  <data name="filePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>382, 40</value>
+  </data>
+  <data name="filePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="filePanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;filePanel.Name" xml:space="preserve">
+    <value>filePanel</value>
+  </data>
+  <data name="&gt;&gt;filePanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filePanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;filePanel.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="label1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -555,63 +663,9 @@
   <data name="&gt;&gt;fileInfoField.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="filePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 275</value>
-  </data>
-  <data name="filePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 40</value>
-  </data>
-  <data name="filePanel.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="filePanel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;filePanel.Name" xml:space="preserve">
-    <value>filePanel</value>
-  </data>
-  <data name="&gt;&gt;filePanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;filePanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;filePanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>176, 17</value>
   </metadata>
-  <data name="ботToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 26</value>
-  </data>
-  <data name="ботToolStripMenuItem.Text" xml:space="preserve">
-    <value>Бот</value>
-  </data>
-  <data name="налаштуванняToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 24</value>
-  </data>
-  <data name="налаштуванняToolStripMenuItem.Text" xml:space="preserve">
-    <value>Налаштування</value>
-  </data>
-  <data name="htmlText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 26</value>
-  </data>
-  <data name="htmlText.Text" xml:space="preserve">
-    <value>HTML</value>
-  </data>
-  <data name="markdownText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 26</value>
-  </data>
-  <data name="markdownText.Text" xml:space="preserve">
-    <value>Markdown</value>
-  </data>
-  <data name="форматуванняToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 24</value>
-  </data>
-  <data name="форматуванняToolStripMenuItem.Text" xml:space="preserve">
-    <value>Форматування</value>
-  </data>
   <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -635,6 +689,36 @@
   </data>
   <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="налаштуванняToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 24</value>
+  </data>
+  <data name="налаштуванняToolStripMenuItem.Text" xml:space="preserve">
+    <value>Налаштування</value>
+  </data>
+  <data name="ботToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 26</value>
+  </data>
+  <data name="ботToolStripMenuItem.Text" xml:space="preserve">
+    <value>Бот</value>
+  </data>
+  <data name="форматуванняToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 24</value>
+  </data>
+  <data name="форматуванняToolStripMenuItem.Text" xml:space="preserve">
+    <value>Форматування</value>
+  </data>
+  <data name="htmlText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 26</value>
+  </data>
+  <data name="htmlText.Text" xml:space="preserve">
+    <value>HTML</value>
+  </data>
+  <data name="markdownText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 26</value>
+  </data>
+  <data name="markdownText.Text" xml:space="preserve">
+    <value>Markdown</value>
   </data>
   <data name="boldButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
@@ -676,7 +760,7 @@
     <value>formatTextPanel</value>
   </data>
   <data name="&gt;&gt;boldButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="italicButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
@@ -718,52 +802,52 @@
     <value>formatTextPanel</value>
   </data>
   <data name="&gt;&gt;italicButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="button3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="button3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="button3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="button3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>aMavickFont, 10pt</value>
-  </data>
-  <data name="button3.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="button3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 33</value>
-  </data>
-  <data name="button3.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="button3.Text" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="&gt;&gt;button3.Name" xml:space="preserve">
-    <value>button3</value>
-  </data>
-  <data name="&gt;&gt;button3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
-    <value>AddMediaPanel</value>
-  </data>
-  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="formatTextPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="urlButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="urlButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="urlButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>aMavickFont, 11.999999pt</value>
+  </data>
+  <data name="urlButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="urlButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="urlButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 4</value>
+  </data>
+  <data name="urlButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="urlButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 32</value>
+  </data>
+  <data name="urlButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="urlButton.Text" xml:space="preserve">
+    <value>url</value>
+  </data>
+  <data name="&gt;&gt;urlButton.Name" xml:space="preserve">
+    <value>urlButton</value>
+  </data>
+  <data name="&gt;&gt;urlButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;urlButton.Parent" xml:space="preserve">
+    <value>formatTextPanel</value>
+  </data>
+  <data name="&gt;&gt;urlButton.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="preButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
@@ -781,7 +865,7 @@
     <value>NoControl</value>
   </data>
   <data name="preButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 4</value>
+    <value>65, 3</value>
   </data>
   <data name="preButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -793,7 +877,7 @@
     <value>10</value>
   </data>
   <data name="preButton.Text" xml:space="preserve">
-    <value>C</value>
+    <value>T</value>
   </data>
   <data name="&gt;&gt;preButton.Name" xml:space="preserve">
     <value>preButton</value>
@@ -805,7 +889,7 @@
     <value>formatTextPanel</value>
   </data>
   <data name="&gt;&gt;preButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="formatTextPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 275</value>
@@ -832,7 +916,7 @@
     <value>1</value>
   </data>
   <data name="AddMediaPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 326</value>
+    <value>0, 321</value>
   </data>
   <data name="AddMediaPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 38</value>
@@ -4188,6 +4272,12 @@
   <data name="&gt;&gt;налаштуванняToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ботToolStripMenuItem.Name" xml:space="preserve">
+    <value>ботToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ботToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;форматуванняToolStripMenuItem.Name" xml:space="preserve">
     <value>форматуванняToolStripMenuItem</value>
   </data>
@@ -4204,12 +4294,6 @@
     <value>markdownText</value>
   </data>
   <data name="&gt;&gt;markdownText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ботToolStripMenuItem.Name" xml:space="preserve">
-    <value>ботToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;ботToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -54,7 +54,7 @@ namespace tPost
             }
 
             FormatChanged += Form;
-            
+
 
         }
 
@@ -99,7 +99,7 @@ namespace tPost
                     FormatingDisabled();
                     currentFormat.Image = Image.FromFile(@"E:\prog\vs2017\c#\tPost\tPost\img\cloud.png");
                     currentFormat.Text = @"File";
-                    msgText.Height-= 40;
+                    msgText.Height -= 40;
 
 
                 }
@@ -163,7 +163,7 @@ namespace tPost
         private void deleteFileButton_Click(object sender, EventArgs e)
         {
             _isFile = false;
-            
+
             FormatingEnabled();
             currentFormat.Image = Image.FromFile(@"E:\prog\vs2017\c#\tPost\tPost\img\normal.png");
             currentFormat.Text = @"Simple";
@@ -173,12 +173,23 @@ namespace tPost
             msgText.Height += 40;
         }
 
-        private void TagAroundSelection(string tagName)
+        private void TagAroundSelection(string tagName, params string[] attributs)
         {
             int selectStart = msgText.SelectionStart;
             int selectEnd = msgText.SelectionLength + selectStart;
-            msgText.Text = msgText.Text.Insert(selectStart, $"<{tagName}>");
-            msgText.Text = msgText.Text.Insert(selectEnd + tagName.Length + 2, $"</{tagName}>");
+
+            var startTag =  new StringBuilder(tagName);
+            
+            if (attributs != null)
+            {
+                foreach (var attr in attributs)
+                {
+                    startTag.Append($" {attr}");
+                }
+            }
+
+            msgText.Text = msgText.Text.Insert(selectStart, $"<{startTag}>");
+            msgText.Text = msgText.Text.Insert(selectEnd + startTag.Length + 2, $"</{tagName}>");
         }
         private void MarkAroundSelection(string mark)
         {
@@ -188,7 +199,15 @@ namespace tPost
             msgText.Text = msgText.Text.Insert(selectEnd + mark.Length, $"{mark}");
         }
 
-        private void boldButton_Click(object sender, EventArgs e) 
+        private void UrlMarkAroundSelecction()
+        {
+            int selectStart = msgText.SelectionStart;
+            int selectEnd = msgText.SelectionLength + selectStart;
+
+
+        }
+
+        private void boldButton_Click(object sender, EventArgs e)
         {
             if (htmlText.Checked)
             {
@@ -224,9 +243,16 @@ namespace tPost
             }
         }
 
-        private void boldTip_Popup(object sender, PopupEventArgs e)
+        private void urlButton_Click(object sender, EventArgs e)
         {
-
+            if (htmlText.Checked)
+            {
+                TagAroundSelection("a","href=\"\"");
+            }
+            else if (markdownText.Checked)
+            {
+                MarkAroundSelection("`");
+            }
         }
     }
 }
