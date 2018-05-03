@@ -22,12 +22,14 @@ namespace tPost
     {
         static TelegramBotClient bot = new TelegramBotClient(Settings.Default.botToken);
         private bool _isFile;
+        private bool _isSilent;
         private FileToSend _fileToSend;
+
 
         public MainWindow()
         {
             InitializeComponent();
-
+            _isSilent = false;
             _isFile = false;
 
             void Form(object sender, EventArgs args)
@@ -63,7 +65,7 @@ namespace tPost
 
             if (!_isFile)
             {
-                bot.SendTextMessageAsync(Settings.Default.canalIName, msgText.Text, htmlText.Checked ? ParseMode.Html : markdownText.Checked ? ParseMode.Markdown : ParseMode.Default);
+                bot.SendTextMessageAsync(Settings.Default.canalIName, msgText.Text, htmlText.Checked ? ParseMode.Html : markdownText.Checked ? ParseMode.Markdown : ParseMode.Default, disableNotification:_isSilent);
             }
             else
             {
@@ -195,16 +197,21 @@ namespace tPost
         {
             int selectStart = msgText.SelectionStart;
             int selectEnd = msgText.SelectionLength + selectStart;
+
             msgText.Text = msgText.Text.Insert(selectStart, $"{mark}");
             msgText.Text = msgText.Text.Insert(selectEnd + mark.Length, $"{mark}");
         }
 
+        //[название URL](http://www.example.com/)
+
         private void UrlMarkAroundSelecction()
         {
+
+            // TODO
             int selectStart = msgText.SelectionStart;
             int selectEnd = msgText.SelectionLength + selectStart;
 
-
+            
         }
 
         private void boldButton_Click(object sender, EventArgs e)
@@ -242,10 +249,10 @@ namespace tPost
                 MarkAroundSelection("`");
             }
         }
-
         private void urlButton_Click(object sender, EventArgs e)
         {
             if (htmlText.Checked)
+
             {
                 TagAroundSelection("a","href=\"\"");
             }
@@ -253,6 +260,31 @@ namespace tPost
             {
                 MarkAroundSelection("`");
             }
+        }
+
+        private void formatTextPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void isSilentMessageButton_Click(object sender, EventArgs e)
+        {
+            if (_isSilent)
+            {
+                _isSilent = false;
+                isSilentMessageButton.Image = new Bitmap(@"...\...\img\alarm-clock.png");
+            }
+            else
+            {
+                _isSilent = true;
+                isSilentMessageButton.Image = new Bitmap(@"...\...\img\silent.png");
+            }
+            
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

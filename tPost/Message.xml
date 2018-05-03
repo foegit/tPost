@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<messages>
+  <message header="firstmessage">
+    <text>
+      My first message in XML!
+    </text>
+  </message>
+
+</messages>

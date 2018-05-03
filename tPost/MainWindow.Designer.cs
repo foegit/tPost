@@ -1,4 +1,6 @@
-﻿namespace tPost
+﻿using System.Drawing;
+
+namespace tPost
 {
     partial class MainWindow
     {
@@ -51,9 +53,12 @@
             this.boldButton = new System.Windows.Forms.Button();
             this.italicButton = new System.Windows.Forms.Button();
             this.formatTextPanel = new System.Windows.Forms.Panel();
+            this.urlButton = new System.Windows.Forms.Button();
             this.preButton = new System.Windows.Forms.Button();
             this.AddMediaPanel = new System.Windows.Forms.Panel();
-            this.urlButton = new System.Windows.Forms.Button();
+            this.isSilentMessageButton = new System.Windows.Forms.Button();
+            this.addPhotoButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.filePanel.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -223,6 +228,18 @@
             this.formatTextPanel.Controls.Add(this.boldButton);
             this.formatTextPanel.Controls.Add(this.italicButton);
             this.formatTextPanel.Name = "formatTextPanel";
+            this.formatTextPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.formatTextPanel_Paint);
+            // 
+            // urlButton
+            // 
+            this.urlButton.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.urlButton, "urlButton");
+            this.urlButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.urlButton.FlatAppearance.BorderSize = 0;
+            this.urlButton.ForeColor = System.Drawing.Color.Black;
+            this.urlButton.Name = "urlButton";
+            this.urlButton.UseVisualStyleBackColor = true;
+            this.urlButton.Click += new System.EventHandler(this.urlButton_Click);
             // 
             // preButton
             // 
@@ -237,25 +254,43 @@
             // 
             // AddMediaPanel
             // 
+            this.AddMediaPanel.Controls.Add(this.button1);
+            this.AddMediaPanel.Controls.Add(this.addPhotoButton);
             this.AddMediaPanel.Controls.Add(this.addFile);
             resources.ApplyResources(this.AddMediaPanel, "AddMediaPanel");
             this.AddMediaPanel.Name = "AddMediaPanel";
             // 
-            // urlButton
+            // isSilentMessageButton
             // 
-            this.urlButton.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.urlButton, "urlButton");
-            this.urlButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.urlButton.FlatAppearance.BorderSize = 0;
-            this.urlButton.ForeColor = System.Drawing.Color.Black;
-            this.urlButton.Name = "urlButton";
-            this.urlButton.UseVisualStyleBackColor = true;
-            this.urlButton.Click += new System.EventHandler(this.urlButton_Click);
+            resources.ApplyResources(this.isSilentMessageButton, "isSilentMessageButton");
+            this.isSilentMessageButton.BackColor = System.Drawing.SystemColors.Control;
+            this.isSilentMessageButton.Name = "isSilentMessageButton";
+            this.isSilentMessageButton.UseVisualStyleBackColor = false;
+            this.isSilentMessageButton.Click += new System.EventHandler(this.isSilentMessageButton_Click);
+            // 
+            // addPhotoButton
+            // 
+            resources.ApplyResources(this.addPhotoButton, "addPhotoButton");
+            this.addPhotoButton.BackColor = System.Drawing.Color.Transparent;
+            this.addPhotoButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.addPhotoButton.FlatAppearance.BorderSize = 0;
+            this.addPhotoButton.Name = "addPhotoButton";
+            this.addPhotoButton.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.isSilentMessageButton);
             this.Controls.Add(this.AddMediaPanel);
             this.Controls.Add(this.formatTextPanel);
             this.Controls.Add(this.filePanel);
@@ -265,6 +300,7 @@
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainWindow";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.panel1.ResumeLayout(false);
             this.filePanel.ResumeLayout(false);
             this.filePanel.PerformLayout();
@@ -304,6 +340,9 @@
         private System.Windows.Forms.Panel AddMediaPanel;
         private System.Windows.Forms.Button preButton;
         private System.Windows.Forms.Button urlButton;
+        private System.Windows.Forms.Button isSilentMessageButton;
+        private System.Windows.Forms.Button addPhotoButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 
