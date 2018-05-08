@@ -1,14 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.IO;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using System.Xml.Serialization;
 using tPost.IMessageContent;
-using Telegram.Bot;
-using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 
 
@@ -140,8 +135,8 @@ namespace tPost
 
                 _message = new DocumentMessage(fDialog.FileName);
 
-                fileNameLabel.Text = ((IMessageContent.Document)_message.Content).FileName;
-                fileSizeLabel.Text = ((IMessageContent.Document)_message.Content).GetFormatedFileSize();
+                fileNameLabel.Text = ((Document)_message.Content).FileName;
+                fileSizeLabel.Text = ((Document)_message.Content).GetFormatedFileSize();
                 msgText_TextChanged(this, EventArgs.Empty);
                 filePanel.Visible = true;
                 FormatingDisabled();
