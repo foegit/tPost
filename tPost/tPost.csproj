@@ -51,8 +51,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DocumentMessage.cs" />
     <Compile Include="HtmlChecker.cs" />
     <Compile Include="HtmlManager.cs" />
+    <Compile Include="IMessageContent\Document.cs" />
     <Compile Include="IMessageContent\IMessageContent.cs" />
     <Compile Include="IMessageContent\Text.cs" />
     <Compile Include="MainWindow.cs">

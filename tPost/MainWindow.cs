@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using Telegram.Bot;
@@ -89,42 +90,39 @@ namespace tPost
         }
             else
             {
-                bot.SendDocumentAsync(Settings.Default.CanalID, _fileToSend, msgText.Text);
+                await bot.SendDocumentAsync(Settings.Default.CanalID, _fileToSend, msgText.Text, _message.DisapleNotification);
             }
 
         }
 
-        private void addDocument_Click(object sender, EventArgs e)
+        private void addDocumentButton_Click(object sender, EventArgs e)
         {
+
             if (msgText.Text.Length > 201)
             {
                 MessageBox.Show(@"Опис файлу може містити не більше 201 символ.");
+                msgText.Focus();
                 return;
             }
+
             var fDialog = new OpenFileDialog();
 
             void FileOk(object s, CancelEventArgs args)
             {
-                if (fDialog.OpenFile().CanRead)
-                {
-                    FileInfo f = new FileInfo(fDialog.FileName);
-                    fileName.Text = f.Name;
-                    fileSize.Text = $@"{(double)f.Length / 1024:F} kb";
 
-                    _fileToSend = new FileToSend(fDialog.SafeFileName, (FileStream)fDialog.OpenFile());
-
-                    _isFile = true;
-                    msgText.MaxLength = 201;
+                    _message = new DocumentMessage(fDialog.FileName);
+                    
+                    fileNameLabel.Text = ((IMessageContent.Document) _message.Content).FileName;
 
                     msgText_TextChanged(this, EventArgs.Empty);
                     filePanel.Visible = true;
                     FormatingDisabled();
                     currentFormat.Image = Image.FromFile(@"E:\prog\vs2017\c#\tPost\tPost\img\cloud.png");
-                    currentFormat.Text = @"File";
+                    currentFormat.Text = @"Document";
                     msgText.Height -= 40;
 
 
-                }
+                
             }
 
             fDialog.FileOk += FileOk;
@@ -289,14 +287,14 @@ namespace tPost
 
         private void isSilentMessageButton_Click(object sender, EventArgs e)
         {
-            if (_message.Notification )
+            if (_message.DisapleNotification )
             {
-                _message.Notification = false; 
+                _message.DisapleNotification = false; 
                 isSilentMessageButton.Image = new Bitmap(@"...\...\img\alarm-clock.png");
             }
             else
             {
-                _message.Notification = true;
+                _message.DisapleNotification = true;
                 isSilentMessageButton.Image = new Bitmap(@"...\...\img\silent.png");
             }
             

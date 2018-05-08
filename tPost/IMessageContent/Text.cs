@@ -20,7 +20,7 @@ namespace tPost.IMessageContent
 
         public async Task<Telegram.Bot.Types.Message> Send(TelegramMessage msg)
         {
-                var res = await msg.Bot.SendTextMessageAsync(msg.CanalName, msg.Text, ParsingMode, DisablePagePrewiew, msg.Notification);
+                var res = await msg.Bot.SendTextMessageAsync(msg.CanalName, msg.Text, ParsingMode, DisablePagePrewiew, msg.DisapleNotification);
                 MessageBox.Show(@"Сообщения успешно отпралено!");
                 return res;
         }

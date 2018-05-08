@@ -12,7 +12,7 @@ namespace tPost
         public string CanalName { get; set; }
         public string Text { get; set; }
         public int MaxLenth => Content.TextMaxLength;
-        public bool Notification { get; set; }
+        public bool DisapleNotification { get; set; }
         public IMessageContent.IMessageContent Content;
 
         protected TelegramMessage()
@@ -20,7 +20,7 @@ namespace tPost
             Bot = new TelegramBotClient(Settings.Default.BotToken);
             CanalName = Settings.Default.CanalID;
             Text = "";
-            Notification = true;
+            DisapleNotification = false;
 
         }
 

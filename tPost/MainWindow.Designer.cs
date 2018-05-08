@@ -33,23 +33,17 @@ namespace tPost
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.msgText = new System.Windows.Forms.RichTextBox();
             this.publicMsg = new System.Windows.Forms.Button();
-            this.addFile = new System.Windows.Forms.Button();
+            this.addDocumentButton = new System.Windows.Forms.Button();
             this.symbolCount = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.currentFormat = new System.Windows.Forms.Label();
             this.filePanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.deleteFileButton = new System.Windows.Forms.Button();
-            this.fileSize = new System.Windows.Forms.Label();
-            this.fileName = new System.Windows.Forms.Label();
+            this.fileSizeLabel = new System.Windows.Forms.Label();
+            this.fileNameLabel = new System.Windows.Forms.Label();
             this.fileSizeField = new System.Windows.Forms.Label();
-            this.fileInfoField = new System.Windows.Forms.Label();
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.налаштуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ботToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.форматуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.htmlText = new System.Windows.Forms.ToolStripMenuItem();
-            this.markdownText = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileNameField = new System.Windows.Forms.Label();
             this.boldButton = new System.Windows.Forms.Button();
             this.italicButton = new System.Windows.Forms.Button();
             this.formatTextPanel = new System.Windows.Forms.Panel();
@@ -59,11 +53,17 @@ namespace tPost
             this.button1 = new System.Windows.Forms.Button();
             this.addPhotoButton = new System.Windows.Forms.Button();
             this.isSilentMessageButton = new System.Windows.Forms.Button();
+            this.налаштуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ботToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.форматуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.htmlText = new System.Windows.Forms.ToolStripMenuItem();
+            this.markdownText = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.panel1.SuspendLayout();
             this.filePanel.SuspendLayout();
-            this.menuStrip.SuspendLayout();
             this.formatTextPanel.SuspendLayout();
             this.AddMediaPanel.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // msgText
@@ -81,15 +81,15 @@ namespace tPost
             this.publicMsg.UseVisualStyleBackColor = false;
             this.publicMsg.Click += new System.EventHandler(this.publicMsg_Click);
             // 
-            // addFile
+            // addDocumentButton
             // 
-            resources.ApplyResources(this.addFile, "addFile");
-            this.addFile.BackColor = System.Drawing.Color.Transparent;
-            this.addFile.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.addFile.FlatAppearance.BorderSize = 0;
-            this.addFile.Name = "addFile";
-            this.addFile.UseVisualStyleBackColor = true;
-            this.addFile.Click += new System.EventHandler(this.addDocument_Click);
+            resources.ApplyResources(this.addDocumentButton, "addDocumentButton");
+            this.addDocumentButton.BackColor = System.Drawing.Color.Transparent;
+            this.addDocumentButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.addDocumentButton.FlatAppearance.BorderSize = 0;
+            this.addDocumentButton.Name = "addDocumentButton";
+            this.addDocumentButton.UseVisualStyleBackColor = true;
+            this.addDocumentButton.Click += new System.EventHandler(this.addDocumentButton_Click);
             // 
             // symbolCount
             // 
@@ -116,10 +116,10 @@ namespace tPost
             this.filePanel.BackColor = System.Drawing.SystemColors.Info;
             this.filePanel.Controls.Add(this.label1);
             this.filePanel.Controls.Add(this.deleteFileButton);
-            this.filePanel.Controls.Add(this.fileSize);
-            this.filePanel.Controls.Add(this.fileName);
+            this.filePanel.Controls.Add(this.fileSizeLabel);
+            this.filePanel.Controls.Add(this.fileNameLabel);
             this.filePanel.Controls.Add(this.fileSizeField);
-            this.filePanel.Controls.Add(this.fileInfoField);
+            this.filePanel.Controls.Add(this.fileNameField);
             this.filePanel.Name = "filePanel";
             // 
             // label1
@@ -135,69 +135,25 @@ namespace tPost
             this.deleteFileButton.UseVisualStyleBackColor = true;
             this.deleteFileButton.Click += new System.EventHandler(this.deleteFileButton_Click);
             // 
-            // fileSize
+            // fileSizeLabel
             // 
-            resources.ApplyResources(this.fileSize, "fileSize");
-            this.fileSize.Name = "fileSize";
+            resources.ApplyResources(this.fileSizeLabel, "fileSizeLabel");
+            this.fileSizeLabel.Name = "fileSizeLabel";
             // 
-            // fileName
+            // fileNameLabel
             // 
-            resources.ApplyResources(this.fileName, "fileName");
-            this.fileName.Name = "fileName";
+            resources.ApplyResources(this.fileNameLabel, "fileNameLabel");
+            this.fileNameLabel.Name = "fileNameLabel";
             // 
             // fileSizeField
             // 
             resources.ApplyResources(this.fileSizeField, "fileSizeField");
             this.fileSizeField.Name = "fileSizeField";
             // 
-            // fileInfoField
+            // fileNameField
             // 
-            resources.ApplyResources(this.fileInfoField, "fileInfoField");
-            this.fileInfoField.Name = "fileInfoField";
-            // 
-            // menuStrip
-            // 
-            this.menuStrip.BackColor = System.Drawing.SystemColors.Control;
-            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.налаштуванняToolStripMenuItem,
-            this.форматуванняToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip, "menuStrip");
-            this.menuStrip.Name = "menuStrip";
-            // 
-            // налаштуванняToolStripMenuItem
-            // 
-            this.налаштуванняToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ботToolStripMenuItem});
-            this.налаштуванняToolStripMenuItem.Name = "налаштуванняToolStripMenuItem";
-            resources.ApplyResources(this.налаштуванняToolStripMenuItem, "налаштуванняToolStripMenuItem");
-            // 
-            // ботToolStripMenuItem
-            // 
-            this.ботToolStripMenuItem.Name = "ботToolStripMenuItem";
-            resources.ApplyResources(this.ботToolStripMenuItem, "ботToolStripMenuItem");
-            // 
-            // форматуванняToolStripMenuItem
-            // 
-            this.форматуванняToolStripMenuItem.Checked = true;
-            this.форматуванняToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.форматуванняToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.htmlText,
-            this.markdownText});
-            this.форматуванняToolStripMenuItem.Name = "форматуванняToolStripMenuItem";
-            resources.ApplyResources(this.форматуванняToolStripMenuItem, "форматуванняToolStripMenuItem");
-            // 
-            // htmlText
-            // 
-            this.htmlText.Name = "htmlText";
-            resources.ApplyResources(this.htmlText, "htmlText");
-            this.htmlText.Click += new System.EventHandler(this.htmlText_Click);
-            // 
-            // markdownText
-            // 
-            this.markdownText.Name = "markdownText";
-            resources.ApplyResources(this.markdownText, "markdownText");
-            this.markdownText.Click += new System.EventHandler(this.markdownText_Click);
+            resources.ApplyResources(this.fileNameField, "fileNameField");
+            this.fileNameField.Name = "fileNameField";
             // 
             // boldButton
             // 
@@ -256,7 +212,7 @@ namespace tPost
             // 
             this.AddMediaPanel.Controls.Add(this.button1);
             this.AddMediaPanel.Controls.Add(this.addPhotoButton);
-            this.AddMediaPanel.Controls.Add(this.addFile);
+            this.AddMediaPanel.Controls.Add(this.addDocumentButton);
             resources.ApplyResources(this.AddMediaPanel, "AddMediaPanel");
             this.AddMediaPanel.Name = "AddMediaPanel";
             // 
@@ -286,6 +242,50 @@ namespace tPost
             this.isSilentMessageButton.UseVisualStyleBackColor = false;
             this.isSilentMessageButton.Click += new System.EventHandler(this.isSilentMessageButton_Click);
             // 
+            // налаштуванняToolStripMenuItem
+            // 
+            this.налаштуванняToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ботToolStripMenuItem});
+            this.налаштуванняToolStripMenuItem.Name = "налаштуванняToolStripMenuItem";
+            resources.ApplyResources(this.налаштуванняToolStripMenuItem, "налаштуванняToolStripMenuItem");
+            // 
+            // ботToolStripMenuItem
+            // 
+            this.ботToolStripMenuItem.Name = "ботToolStripMenuItem";
+            resources.ApplyResources(this.ботToolStripMenuItem, "ботToolStripMenuItem");
+            // 
+            // форматуванняToolStripMenuItem
+            // 
+            this.форматуванняToolStripMenuItem.Checked = true;
+            this.форматуванняToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+            this.форматуванняToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.htmlText,
+            this.markdownText});
+            this.форматуванняToolStripMenuItem.Name = "форматуванняToolStripMenuItem";
+            resources.ApplyResources(this.форматуванняToolStripMenuItem, "форматуванняToolStripMenuItem");
+            // 
+            // htmlText
+            // 
+            this.htmlText.Name = "htmlText";
+            resources.ApplyResources(this.htmlText, "htmlText");
+            this.htmlText.Click += new System.EventHandler(this.htmlText_Click);
+            // 
+            // markdownText
+            // 
+            this.markdownText.Name = "markdownText";
+            resources.ApplyResources(this.markdownText, "markdownText");
+            this.markdownText.Click += new System.EventHandler(this.markdownText_Click);
+            // 
+            // menuStrip
+            // 
+            this.menuStrip.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.налаштуванняToolStripMenuItem,
+            this.форматуванняToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip, "menuStrip");
+            this.menuStrip.Name = "menuStrip";
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -304,10 +304,10 @@ namespace tPost
             this.panel1.ResumeLayout(false);
             this.filePanel.ResumeLayout(false);
             this.filePanel.PerformLayout();
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
             this.formatTextPanel.ResumeLayout(false);
             this.AddMediaPanel.ResumeLayout(false);
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,25 +317,19 @@ namespace tPost
 
         private System.Windows.Forms.RichTextBox msgText;
         private System.Windows.Forms.Button publicMsg;
-        private System.Windows.Forms.Button addFile;
+        private System.Windows.Forms.Button addDocumentButton;
         private System.Windows.Forms.Label symbolCount;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label currentFormat;
         private System.Windows.Forms.Panel filePanel;
-        private System.Windows.Forms.Label fileSize;
-        private System.Windows.Forms.Label fileName;
+        private System.Windows.Forms.Label fileSizeLabel;
+        private System.Windows.Forms.Label fileNameLabel;
         private System.Windows.Forms.Label fileSizeField;
-        private System.Windows.Forms.Label fileInfoField;
+        private System.Windows.Forms.Label fileNameField;
         private System.Windows.Forms.Button deleteFileButton;
-        private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem налаштуванняToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem форматуванняToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem htmlText;
-        private System.Windows.Forms.ToolStripMenuItem markdownText;
         private System.Windows.Forms.Button boldButton;
         private System.Windows.Forms.Button italicButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripMenuItem ботToolStripMenuItem;
         private System.Windows.Forms.Panel formatTextPanel;
         private System.Windows.Forms.Panel AddMediaPanel;
         private System.Windows.Forms.Button preButton;
@@ -343,6 +337,12 @@ namespace tPost
         private System.Windows.Forms.Button isSilentMessageButton;
         private System.Windows.Forms.Button addPhotoButton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem налаштуванняToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ботToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem форматуванняToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem htmlText;
+        private System.Windows.Forms.ToolStripMenuItem markdownText;
+        private System.Windows.Forms.MenuStrip menuStrip;
     }
 }
 
