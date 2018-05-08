@@ -4327,7 +4327,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>n</value>
+    <value>tPost</value>
   </data>
   <data name="&gt;&gt;налаштуванняToolStripMenuItem.Name" xml:space="preserve">
     <value>налаштуванняToolStripMenuItem</value>

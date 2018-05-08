@@ -56,9 +56,9 @@ namespace tPost
             this.urlButton = new System.Windows.Forms.Button();
             this.preButton = new System.Windows.Forms.Button();
             this.AddMediaPanel = new System.Windows.Forms.Panel();
-            this.isSilentMessageButton = new System.Windows.Forms.Button();
-            this.addPhotoButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.addPhotoButton = new System.Windows.Forms.Button();
+            this.isSilentMessageButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.filePanel.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -260,13 +260,14 @@ namespace tPost
             resources.ApplyResources(this.AddMediaPanel, "AddMediaPanel");
             this.AddMediaPanel.Name = "AddMediaPanel";
             // 
-            // isSilentMessageButton
+            // button1
             // 
-            resources.ApplyResources(this.isSilentMessageButton, "isSilentMessageButton");
-            this.isSilentMessageButton.BackColor = System.Drawing.SystemColors.Control;
-            this.isSilentMessageButton.Name = "isSilentMessageButton";
-            this.isSilentMessageButton.UseVisualStyleBackColor = false;
-            this.isSilentMessageButton.Click += new System.EventHandler(this.isSilentMessageButton_Click);
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // addPhotoButton
             // 
@@ -277,14 +278,13 @@ namespace tPost
             this.addPhotoButton.Name = "addPhotoButton";
             this.addPhotoButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // isSilentMessageButton
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.isSilentMessageButton, "isSilentMessageButton");
+            this.isSilentMessageButton.BackColor = System.Drawing.SystemColors.Control;
+            this.isSilentMessageButton.Name = "isSilentMessageButton";
+            this.isSilentMessageButton.UseVisualStyleBackColor = false;
+            this.isSilentMessageButton.Click += new System.EventHandler(this.isSilentMessageButton_Click);
             // 
             // MainWindow
             // 

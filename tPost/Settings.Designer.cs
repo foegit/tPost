@@ -12,7 +12,7 @@ namespace tPost {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.5.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.6.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,19 +25,31 @@ namespace tPost {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("534948563:AAH29x-drkWzWtDSEqXbZrqo2skvCTz12M0")]
-        public string botToken {
+        [global::System.Configuration.DefaultSettingValueAttribute("@mysect")]
+        public string CanalID {
             get {
-                return ((string)(this["botToken"]));
+                return ((string)(this["CanalID"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool PagePreview {
+            get {
+                return ((bool)(this["PagePreview"]));
+            }
+            set {
+                this["PagePreview"] = value;
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("@mysect")]
-        public string canalIName {
+        [global::System.Configuration.DefaultSettingValueAttribute("534948563:AAH29x-drkWzWtDSEqXbZrqo2skvCTz12M0")]
+        public string BotToken {
             get {
-                return ((string)(this["canalIName"]));
+                return ((string)(this["BotToken"]));
             }
         }
     }

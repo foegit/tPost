@@ -17,14 +17,18 @@ namespace tPost
         Markdown,
         Simple
     }
-    public delegate EventHandler Formating();
+    
+
     public partial class MainWindow : Form
     {
-        static TelegramBotClient bot = new TelegramBotClient(Settings.Default.botToken);
+        static TelegramBotClient bot = new TelegramBotClient(Settings.Default.BotToken);
         private bool _isFile;
         private bool _isSilent;
         private FileToSend _fileToSend;
 
+        private TelegramMessage _message;
+
+        public event EventHandler ParseModeChange;
 
         public MainWindow()
         {
@@ -32,32 +36,36 @@ namespace tPost
             _isSilent = false;
             _isFile = false;
 
-            void Form(object sender, EventArgs args)
+            ParseModeChange += ParseModeChangeHandler;     
+            _message = new TextMessage();
+
+
+        }
+        private void ParseModeChangeHandler(object sender, EventArgs args)
+        {
+
+            if (htmlText.Checked)
             {
+                currentFormat.Text = @"HTML";
+                currentFormat.Image = Image.FromFile(@"...\...\img\html.png");
+                formatTextPanel.Visible = true;
+                (_message as TextMessage)?.ChangeParseMode(ParseMode.Html);
 
-                if (htmlText.Checked)
-                {
-                    currentFormat.Text = @"HTML";
-                    currentFormat.Image = Image.FromFile(@"E:\prog\vs2017\c#\tPost\tPost\img\html.png");
-                    formatTextPanel.Visible = true;
-                }
-                else if (markdownText.Checked)
-                {
-                    formatTextPanel.Visible = true;
-                    currentFormat.Image = Image.FromFile(@"E:\prog\vs2017\c#\tPost\tPost\img\markdown.png");
-                    currentFormat.Text = @"Markdown";
-                }
-                else
-                {
-                    formatTextPanel.Visible = false;
-                    currentFormat.Image = Image.FromFile(@"E:\prog\vs2017\c#\tPost\tPost\img\normal.png");
-                    currentFormat.Text = @"Simple";
-                }
             }
-
-            FormatChanged += Form;
-
-
+            else if (markdownText.Checked)
+            {
+                formatTextPanel.Visible = true;
+                currentFormat.Image = Image.FromFile(@"...\...\img\markdown.png");
+                currentFormat.Text = @"Markdown";
+                (_message as TextMessage)?.ChangeParseMode(ParseMode.Markdown);
+            }
+            else
+            {
+                formatTextPanel.Visible = false;
+                currentFormat.Image = Image.FromFile(@"...\...\img\normal.png");
+                currentFormat.Text = @"Simple";
+                (_message as TextMessage)?.ChangeParseMode(ParseMode.Default);
+            }
         }
 
         private void publicMsg_Click(object sender, EventArgs e)
@@ -65,11 +73,13 @@ namespace tPost
 
             if (!_isFile)
             {
-                bot.SendTextMessageAsync(Settings.Default.canalIName, msgText.Text, htmlText.Checked ? ParseMode.Html : markdownText.Checked ? ParseMode.Markdown : ParseMode.Default, disableNotification:_isSilent);
+                 _message.Send();
+                MessageBox.Show("FFFF");
+                // bot.SendTextMessageAsync(Settings.Default.CanalID, _message.Text, htmlText.Checked ? ParseMode.Html : markdownText.Checked ? ParseMode.Markdown : ParseMode.Default, disableNotification:_isSilent);
             }
             else
             {
-                bot.SendDocumentAsync(Settings.Default.canalIName, _fileToSend, msgText.Text);
+                bot.SendDocumentAsync(Settings.Default.CanalID, _fileToSend, msgText.Text);
             }
 
         }
@@ -116,7 +126,7 @@ namespace tPost
             symbolCount.Text = $@"{msgText.Text.Length}/{msgText.MaxLength}";
             if (msgText.Text.Length != 4096)
             {
-
+                _message.Text = msgText.Text;
                 symbolCount.BackColor = Color.PaleTurquoise;
 
             }
@@ -128,21 +138,21 @@ namespace tPost
 
         }
 
-        public event EventHandler FormatChanged;
+       
 
         private void htmlText_Click(object sender, EventArgs e)
         {
             markdownText.Checked = false;
             htmlText.Checked = !htmlText.Checked;
 
-            FormatChanged?.Invoke(this, EventArgs.Empty);
+            ParseModeChange?.Invoke(this, EventArgs.Empty);
         }
 
         private void markdownText_Click(object sender, EventArgs e)
         {
             htmlText.Checked = false;
             markdownText.Checked = !markdownText.Checked;
-            FormatChanged?.Invoke(this, EventArgs.Empty);
+            ParseModeChange?.Invoke(this, EventArgs.Empty);
 
         }
 
@@ -269,14 +279,14 @@ namespace tPost
 
         private void isSilentMessageButton_Click(object sender, EventArgs e)
         {
-            if (_isSilent)
+            if (_message.Notification )
             {
-                _isSilent = false;
+                _message.Notification = false; 
                 isSilentMessageButton.Image = new Bitmap(@"...\...\img\alarm-clock.png");
             }
             else
             {
-                _isSilent = true;
+                _message.Notification = true;
                 isSilentMessageButton.Image = new Bitmap(@"...\...\img\silent.png");
             }
             

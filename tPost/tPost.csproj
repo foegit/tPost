@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="HtmlChecker.cs" />
     <Compile Include="HtmlManager.cs" />
+    <Compile Include="IMessageContent\IMessageContent.cs" />
+    <Compile Include="IMessageContent\Text.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +69,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="TelegramMessage.cs" />
+    <Compile Include="TextMessage.cs" />
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>

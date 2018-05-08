@@ -2,11 +2,14 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="tPost" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="botToken" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">534948563:AAH29x-drkWzWtDSEqXbZrqo2skvCTz12M0</Value>
-    </Setting>
-    <Setting Name="canalIName" Type="System.String" Scope="Application">
+    <Setting Name="CanalID" Type="System.String" Scope="Application">
       <Value Profile="(Default)">@mysect</Value>
+    </Setting>
+    <Setting Name="PagePreview" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="BotToken" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">534948563:AAH29x-drkWzWtDSEqXbZrqo2skvCTz12M0</Value>
     </Setting>
   </Settings>
 </SettingsFile>
