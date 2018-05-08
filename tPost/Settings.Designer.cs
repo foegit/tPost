@@ -52,5 +52,17 @@ namespace tPost {
                 return ((string)(this["BotToken"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Notification {
+            get {
+                return ((bool)(this["Notification"]));
+            }
+            set {
+                this["Notification"] = value;
+            }
+        }
     }
 }

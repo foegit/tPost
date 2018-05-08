@@ -18,11 +18,11 @@ namespace tPost.IMessageContent
         public Document()
         {
             TextMaxLength = 201;
-            
+
 
         }
 
-        public Document(string filePath):this()
+        public Document(string filePath) : this()
         {
             SetFileToSend(filePath);
         }
@@ -35,7 +35,7 @@ namespace tPost.IMessageContent
             {
                 FileInfo fileInfo = new FileInfo(filePath);
                 FileName = fileInfo.Name;
-                
+
                 FileSizeInBytes = fileInfo.Length;
 
                 if (FileSizeInBytes <= 52_428_800) // но это не точно
@@ -52,16 +52,32 @@ namespace tPost.IMessageContent
             {
                 throw new FileNotFoundException($"Не знайдено файл!\n{filePath}");
             }
-            
+
         }
 
 
         public async Task<Message> Send(TelegramMessage msg)
         {
 
-            var res = await msg.Bot.SendDocumentAsync(msg.CanalName, _documentToSend, msg.Text, msg.DisapleNotification);
+            var res = await msg.Bot.SendDocumentAsync(msg.CanalName, _documentToSend, msg.Text, msg.DisableNotification);
             MessageBox.Show(@"Файл успішно відправлений!");
             return res;
+        }
+
+        public string GetFormatedFileSize()
+        {
+            if (FileSizeInBytes < 1024)
+            {
+                return $"{FileSizeInBytes} б";
+            }
+
+            if (FileSizeInBytes < 1_048_576)
+            {
+                return $"{(double)FileSizeInBytes / 1024:F} кб";
+            }
+
+            return $"{(double)FileSizeInBytes / 1_048_576:F} мб";
+
         }
     }
 }

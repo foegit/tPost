@@ -6,22 +6,22 @@ using Telegram.Bot.Types.Enums;
 using tPost.IMessageContent;
 namespace tPost
 {
-    public abstract class TelegramMessage
+    public class TelegramMessage
     {
         public TelegramBotClient Bot { get; set; }
         public string CanalName { get; set; }
         public string Text { get; set; }
         public int MaxLenth => Content.TextMaxLength;
-        public bool DisapleNotification { get; set; }
+        public bool DisableNotification { get; set; }
         public IMessageContent.IMessageContent Content;
 
-        protected TelegramMessage()
+       public TelegramMessage()
         {
             Bot = new TelegramBotClient(Settings.Default.BotToken);
             CanalName = Settings.Default.CanalID;
             Text = "";
-            DisapleNotification = false;
-
+            DisableNotification = !Settings.Default.Notification;
+            Content = new SimpleText();
         }
 
         public async Task<Telegram.Bot.Types.Message> Send()

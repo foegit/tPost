@@ -35,7 +35,7 @@ namespace tPost
             this.publicMsg = new System.Windows.Forms.Button();
             this.addDocumentButton = new System.Windows.Forms.Button();
             this.symbolCount = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.StatusBarPanel = new System.Windows.Forms.Panel();
             this.currentFormat = new System.Windows.Forms.Label();
             this.filePanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,11 +59,16 @@ namespace tPost
             this.htmlText = new System.Windows.Forms.ToolStripMenuItem();
             this.markdownText = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.panel1.SuspendLayout();
+            this.TextInputAreaPanel = new System.Windows.Forms.Panel();
+            this.MainButtonPanel = new System.Windows.Forms.Panel();
+            this.LinkPreviewButton = new System.Windows.Forms.Button();
+            this.StatusBarPanel.SuspendLayout();
             this.filePanel.SuspendLayout();
             this.formatTextPanel.SuspendLayout();
             this.AddMediaPanel.SuspendLayout();
             this.menuStrip.SuspendLayout();
+            this.TextInputAreaPanel.SuspendLayout();
+            this.MainButtonPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // msgText
@@ -97,13 +102,13 @@ namespace tPost
             this.symbolCount.BackColor = System.Drawing.Color.PaleTurquoise;
             this.symbolCount.Name = "symbolCount";
             // 
-            // panel1
+            // StatusBarPanel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.currentFormat);
-            this.panel1.Controls.Add(this.symbolCount);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
+            this.StatusBarPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.StatusBarPanel.Controls.Add(this.currentFormat);
+            this.StatusBarPanel.Controls.Add(this.symbolCount);
+            resources.ApplyResources(this.StatusBarPanel, "StatusBarPanel");
+            this.StatusBarPanel.Name = "StatusBarPanel";
             // 
             // currentFormat
             // 
@@ -112,14 +117,15 @@ namespace tPost
             // 
             // filePanel
             // 
-            resources.ApplyResources(this.filePanel, "filePanel");
-            this.filePanel.BackColor = System.Drawing.SystemColors.Info;
+            this.filePanel.BackColor = System.Drawing.Color.LightBlue;
             this.filePanel.Controls.Add(this.label1);
             this.filePanel.Controls.Add(this.deleteFileButton);
             this.filePanel.Controls.Add(this.fileSizeLabel);
             this.filePanel.Controls.Add(this.fileNameLabel);
             this.filePanel.Controls.Add(this.fileSizeField);
             this.filePanel.Controls.Add(this.fileNameField);
+            resources.ApplyResources(this.filePanel, "filePanel");
+            this.filePanel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.filePanel.Name = "filePanel";
             // 
             // label1
@@ -177,12 +183,12 @@ namespace tPost
             // 
             // formatTextPanel
             // 
-            resources.ApplyResources(this.formatTextPanel, "formatTextPanel");
             this.formatTextPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.formatTextPanel.Controls.Add(this.urlButton);
             this.formatTextPanel.Controls.Add(this.preButton);
             this.formatTextPanel.Controls.Add(this.boldButton);
             this.formatTextPanel.Controls.Add(this.italicButton);
+            resources.ApplyResources(this.formatTextPanel, "formatTextPanel");
             this.formatTextPanel.Name = "formatTextPanel";
             this.formatTextPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.formatTextPanel_Paint);
             // 
@@ -210,6 +216,7 @@ namespace tPost
             // 
             // AddMediaPanel
             // 
+            this.AddMediaPanel.BackColor = System.Drawing.Color.Transparent;
             this.AddMediaPanel.Controls.Add(this.button1);
             this.AddMediaPanel.Controls.Add(this.addPhotoButton);
             this.AddMediaPanel.Controls.Add(this.addDocumentButton);
@@ -278,7 +285,7 @@ namespace tPost
             // 
             // menuStrip
             // 
-            this.menuStrip.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.налаштуванняToolStripMenuItem,
@@ -286,28 +293,55 @@ namespace tPost
             resources.ApplyResources(this.menuStrip, "menuStrip");
             this.menuStrip.Name = "menuStrip";
             // 
+            // TextInputAreaPanel
+            // 
+            this.TextInputAreaPanel.BackColor = System.Drawing.Color.Transparent;
+            this.TextInputAreaPanel.Controls.Add(this.msgText);
+            this.TextInputAreaPanel.Controls.Add(this.formatTextPanel);
+            this.TextInputAreaPanel.Controls.Add(this.filePanel);
+            resources.ApplyResources(this.TextInputAreaPanel, "TextInputAreaPanel");
+            this.TextInputAreaPanel.Name = "TextInputAreaPanel";
+            // 
+            // MainButtonPanel
+            // 
+            this.MainButtonPanel.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.MainButtonPanel, "MainButtonPanel");
+            this.MainButtonPanel.Controls.Add(this.LinkPreviewButton);
+            this.MainButtonPanel.Controls.Add(this.AddMediaPanel);
+            this.MainButtonPanel.Controls.Add(this.isSilentMessageButton);
+            this.MainButtonPanel.Controls.Add(this.publicMsg);
+            this.MainButtonPanel.Name = "MainButtonPanel";
+            // 
+            // LinkPreviewButton
+            // 
+            resources.ApplyResources(this.LinkPreviewButton, "LinkPreviewButton");
+            this.LinkPreviewButton.BackColor = System.Drawing.SystemColors.Control;
+            this.LinkPreviewButton.Name = "LinkPreviewButton";
+            this.LinkPreviewButton.UseVisualStyleBackColor = false;
+            this.LinkPreviewButton.Click += new System.EventHandler(this.LinkPreviewButton_Click);
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.isSilentMessageButton);
-            this.Controls.Add(this.AddMediaPanel);
-            this.Controls.Add(this.formatTextPanel);
-            this.Controls.Add(this.filePanel);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.publicMsg);
-            this.Controls.Add(this.msgText);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.Controls.Add(this.MainButtonPanel);
+            this.Controls.Add(this.TextInputAreaPanel);
+            this.Controls.Add(this.StatusBarPanel);
             this.Controls.Add(this.menuStrip);
+            this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainWindow";
             this.Load += new System.EventHandler(this.MainWindow_Load);
-            this.panel1.ResumeLayout(false);
+            this.StatusBarPanel.ResumeLayout(false);
             this.filePanel.ResumeLayout(false);
             this.filePanel.PerformLayout();
             this.formatTextPanel.ResumeLayout(false);
             this.AddMediaPanel.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.TextInputAreaPanel.ResumeLayout(false);
+            this.MainButtonPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,7 +353,7 @@ namespace tPost
         private System.Windows.Forms.Button publicMsg;
         private System.Windows.Forms.Button addDocumentButton;
         private System.Windows.Forms.Label symbolCount;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel StatusBarPanel;
         private System.Windows.Forms.Label currentFormat;
         private System.Windows.Forms.Panel filePanel;
         private System.Windows.Forms.Label fileSizeLabel;
@@ -343,6 +377,9 @@ namespace tPost
         private System.Windows.Forms.ToolStripMenuItem htmlText;
         private System.Windows.Forms.ToolStripMenuItem markdownText;
         private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.Panel TextInputAreaPanel;
+        private System.Windows.Forms.Panel MainButtonPanel;
+        private System.Windows.Forms.Button LinkPreviewButton;
     }
 }
 

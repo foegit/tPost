@@ -5,6 +5,8 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml.Serialization;
+using tPost.IMessageContent;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
@@ -18,13 +20,12 @@ namespace tPost
         Markdown,
         Simple
     }
-    
+
 
     public partial class MainWindow : Form
     {
-        static TelegramBotClient bot = new TelegramBotClient(Settings.Default.BotToken);
-        private bool _isFile;
-        private FileToSend _fileToSend;
+
+
 
         private TelegramMessage _message;
 
@@ -33,66 +34,93 @@ namespace tPost
         public MainWindow()
         {
             InitializeComponent();
-            _isFile = false;
+            _message = new TelegramMessage();
+            ParseModeChange += ParseModeChangeHandler;
+            if (!((SimpleText) _message.Content).DisablePagePrewiew)
+            {
+                LinkPreviewButton.Image = Image.FromFile(@"...\...\img\linkpreview.png");
+            }
+            else
+            {
+                LinkPreviewButton.Image = Image.FromFile(@"...\...\img\noview.png");
+            }
+            
+            
+        }
 
-            ParseModeChange += ParseModeChangeHandler;     
-            _message = new TextMessage();
+        public void ToSimpleTextMode()
+        {
+            _message.Content = new SimpleText();
 
+            FormatingEnabled();
+            currentFormat.Image = Image.FromFile(@"...\...\img\normal.png");
+            currentFormat.Text = @"Текст";
+            msgText.MaxLength = _message.MaxLenth;
 
+            msgText_TextChanged(this, EventArgs.Empty);
+            filePanel.Hide();
         }
         private void ParseModeChangeHandler(object sender, EventArgs args)
         {
-
             if (htmlText.Checked)
             {
                 currentFormat.Text = @"HTML";
                 currentFormat.Image = Image.FromFile(@"...\...\img\html.png");
                 formatTextPanel.Visible = true;
-                (_message as TextMessage)?.ChangeParseMode(ParseMode.Html);
+                
+                (_message.Content as SimpleText)?.ChangeParseMode(ParseMode.Html);
+                if (msgText.Height == 264)
+                {
+                    msgText.Height -= 40;
+                }
+
+
 
             }
             else if (markdownText.Checked)
             {
-                formatTextPanel.Visible = true;
-                currentFormat.Image = Image.FromFile(@"...\...\img\markdown.png");
                 currentFormat.Text = @"Markdown";
-                (_message as TextMessage)?.ChangeParseMode(ParseMode.Markdown);
+                currentFormat.Image = Image.FromFile(@"...\...\img\markdown.png");
+                formatTextPanel.Visible = true;
+                (_message.Content as SimpleText)?.ChangeParseMode(ParseMode.Markdown);
             }
             else
             {
+                if (msgText.Height == 224)
+                {
+                    msgText.Height += 40;
+                }
                 formatTextPanel.Visible = false;
                 currentFormat.Image = Image.FromFile(@"...\...\img\normal.png");
                 currentFormat.Text = @"Simple";
-                (_message as TextMessage)?.ChangeParseMode(ParseMode.Default);
+                (_message.Content as SimpleText)?.ChangeParseMode(ParseMode.Default);
             }
         }
 
         private async void publicMsg_Click(object sender, EventArgs e)
         {
-
-            if (!_isFile)
+            try
             {
-                try
-                {
-                    publicMsg.Enabled = false;
-                    await _message.Send();
+                publicMsg.Enabled = false;
+                await _message.Send();
 
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show($@"Error occured: {exception.Message}");
-                }
-                finally
-                {
-                    msgText.Focus();
-                    publicMsg.Enabled = true;
-                }
-        }
-            else
-            {
-                await bot.SendDocumentAsync(Settings.Default.CanalID, _fileToSend, msgText.Text, _message.DisapleNotification);
+
             }
+            catch (Exception exception)
+            {
+                MessageBox.Show($@"Ох, лишенько! Здається ви щось не так робите, тому що {exception.Message}");
+            }
+            finally
+            {
+                msgText.Focus();
+                publicMsg.Enabled = true;
+                if (!(_message.Content is SimpleText))
+                {
+                    ToSimpleTextMode();
+                    
+                }
 
+            }
         }
 
         private void addDocumentButton_Click(object sender, EventArgs e)
@@ -110,19 +138,15 @@ namespace tPost
             void FileOk(object s, CancelEventArgs args)
             {
 
-                    _message = new DocumentMessage(fDialog.FileName);
-                    
-                    fileNameLabel.Text = ((IMessageContent.Document) _message.Content).FileName;
+                _message = new DocumentMessage(fDialog.FileName);
 
-                    msgText_TextChanged(this, EventArgs.Empty);
-                    filePanel.Visible = true;
-                    FormatingDisabled();
-                    currentFormat.Image = Image.FromFile(@"E:\prog\vs2017\c#\tPost\tPost\img\cloud.png");
-                    currentFormat.Text = @"Document";
-                    msgText.Height -= 40;
-
-
-                
+                fileNameLabel.Text = ((IMessageContent.Document)_message.Content).FileName;
+                fileSizeLabel.Text = ((IMessageContent.Document)_message.Content).GetFormatedFileSize();
+                msgText_TextChanged(this, EventArgs.Empty);
+                filePanel.Visible = true;
+                FormatingDisabled();
+                currentFormat.Image = Image.FromFile(@"...\...\img\cloud.png");
+                currentFormat.Text = @"File";
             }
 
             fDialog.FileOk += FileOk;
@@ -146,7 +170,7 @@ namespace tPost
 
         }
 
-       
+
 
         private void htmlText_Click(object sender, EventArgs e)
         {
@@ -182,15 +206,7 @@ namespace tPost
 
         private void deleteFileButton_Click(object sender, EventArgs e)
         {
-            _isFile = false;
-
-            FormatingEnabled();
-            currentFormat.Image = Image.FromFile(@"E:\prog\vs2017\c#\tPost\tPost\img\normal.png");
-            currentFormat.Text = @"Simple";
-            msgText.MaxLength = 4096;
-            msgText_TextChanged(sender, e);
-            filePanel.Visible = false;
-            msgText.Height += 40;
+            ToSimpleTextMode();
         }
 
         private void TagAroundSelection(string tagName, params string[] attributs)
@@ -198,8 +214,8 @@ namespace tPost
             int selectStart = msgText.SelectionStart;
             int selectEnd = msgText.SelectionLength + selectStart;
 
-            var startTag =  new StringBuilder(tagName);
-            
+            var startTag = new StringBuilder(tagName);
+
             if (attributs != null)
             {
                 foreach (var attr in attributs)
@@ -229,7 +245,7 @@ namespace tPost
             int selectStart = msgText.SelectionStart;
             int selectEnd = msgText.SelectionLength + selectStart;
 
-            
+
         }
 
         private void boldButton_Click(object sender, EventArgs e)
@@ -272,7 +288,7 @@ namespace tPost
             if (htmlText.Checked)
 
             {
-                TagAroundSelection("a","href=\"\"");
+                TagAroundSelection("a", "href=\"\"");
             }
             else if (markdownText.Checked)
             {
@@ -287,22 +303,41 @@ namespace tPost
 
         private void isSilentMessageButton_Click(object sender, EventArgs e)
         {
-            if (_message.DisapleNotification )
+            if (_message.DisableNotification)
             {
-                _message.DisapleNotification = false; 
+                _message.DisableNotification = false;
                 isSilentMessageButton.Image = new Bitmap(@"...\...\img\alarm-clock.png");
             }
             else
             {
-                _message.DisapleNotification = true;
+                _message.DisableNotification = true;
                 isSilentMessageButton.Image = new Bitmap(@"...\...\img\silent.png");
             }
-            
+
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void LinkPreviewButton_Click(object sender, EventArgs e)
+        {
+            if (_message.Content is SimpleText)
+            {
+                if ((_message.Content as SimpleText).DisablePagePrewiew)
+                {
+                    (_message.Content as SimpleText).DisablePagePrewiew = false;
+                    LinkPreviewButton.Image = new Bitmap(@"...\...\img\linkpreview.png");
+                }
+                else
+                {
+                    (_message.Content as SimpleText).DisablePagePrewiew = true;
+                    LinkPreviewButton.Image = new Bitmap(@"...\...\img\noview.png");
+                }
+            }
+
+            msgText.Focus();
         }
     }
 }
