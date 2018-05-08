@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telegram.Bot;
 using Telegram.Bot.Types.Enums;
@@ -23,20 +24,9 @@ namespace tPost
 
         }
 
-        public void Send()
+        public async Task<Telegram.Bot.Types.Message> Send()
         {
-            try
-            {
-               Content.Send(this);
-            }
-            catch (Exception e)
-            {
-               MessageBox.Show(e.ToString());
-                throw;
-            }
-
-            
-
+                return await Content.Send(this);
         }
 
 

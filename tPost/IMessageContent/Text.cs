@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telegram.Bot.Types.Enums;
 
@@ -17,23 +18,11 @@ namespace tPost.IMessageContent
             DisablePagePrewiew = !Settings.Default.PagePreview;
         }
 
-        public async void Send(TelegramMessage msg)
+        public async Task<Telegram.Bot.Types.Message> Send(TelegramMessage msg)
         {
-            
-            try
-            {
-                //@return = msg.Bot.SendTextMessageAsync(msg.CanalName, msg.Text, ParsingMode, DisablePagePrewiew, msg.Notification).ToString();
-                
-                await msg.Bot.SendTextMessageAsync(msg.CanalName, msg.Text, ParsingMode, DisablePagePrewiew, msg.Notification);
-                
-            }
-
-
-            catch (Exception e)
-            {
-                MessageBox.Show($"Случилась ошибка!\n {e.Message}");
-            }
-            
+                var res = await msg.Bot.SendTextMessageAsync(msg.CanalName, msg.Text, ParsingMode, DisablePagePrewiew, msg.Notification);
+                MessageBox.Show(@"Сообщения успешно отпралено!");
+                return res;
         }
     }
 }

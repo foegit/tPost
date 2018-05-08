@@ -23,7 +23,6 @@ namespace tPost
     {
         static TelegramBotClient bot = new TelegramBotClient(Settings.Default.BotToken);
         private bool _isFile;
-        private bool _isSilent;
         private FileToSend _fileToSend;
 
         private TelegramMessage _message;
@@ -33,7 +32,6 @@ namespace tPost
         public MainWindow()
         {
             InitializeComponent();
-            _isSilent = false;
             _isFile = false;
 
             ParseModeChange += ParseModeChangeHandler;     
@@ -68,15 +66,27 @@ namespace tPost
             }
         }
 
-        private void publicMsg_Click(object sender, EventArgs e)
+        private async void publicMsg_Click(object sender, EventArgs e)
         {
 
             if (!_isFile)
             {
-                 _message.Send();
-                MessageBox.Show("FFFF");
-                // bot.SendTextMessageAsync(Settings.Default.CanalID, _message.Text, htmlText.Checked ? ParseMode.Html : markdownText.Checked ? ParseMode.Markdown : ParseMode.Default, disableNotification:_isSilent);
-            }
+                try
+                {
+                    publicMsg.Enabled = false;
+                    await _message.Send();
+
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show($@"Error occured: {exception.Message}");
+                }
+                finally
+                {
+                    msgText.Focus();
+                    publicMsg.Enabled = true;
+                }
+        }
             else
             {
                 bot.SendDocumentAsync(Settings.Default.CanalID, _fileToSend, msgText.Text);
@@ -84,7 +94,7 @@ namespace tPost
 
         }
 
-        private void addFile_Click(object sender, EventArgs e)
+        private void addDocument_Click(object sender, EventArgs e)
         {
             if (msgText.Text.Length > 201)
             {

@@ -1,8 +1,10 @@
-﻿namespace tPost.IMessageContent
+﻿using System.Threading.Tasks;
+
+namespace tPost.IMessageContent
 {
     public interface IMessageContent
     {
         int TextMaxLength { get; }
-        void  Send(TelegramMessage msg);
+        Task<Telegram.Bot.Types.Message> Send(TelegramMessage msg);
     }
 }

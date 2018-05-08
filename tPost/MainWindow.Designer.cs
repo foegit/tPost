@@ -89,7 +89,7 @@ namespace tPost
             this.addFile.FlatAppearance.BorderSize = 0;
             this.addFile.Name = "addFile";
             this.addFile.UseVisualStyleBackColor = true;
-            this.addFile.Click += new System.EventHandler(this.addFile_Click);
+            this.addFile.Click += new System.EventHandler(this.addDocument_Click);
             // 
             // symbolCount
             // 
