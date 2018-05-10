@@ -118,71 +118,81 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="msgText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="richTextBoxInputText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="msgText.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.2pt</value>
+  <data name="richTextBoxInputText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
   </data>
-  <data name="msgText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 47</value>
+  <data name="richTextBoxInputText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
   </data>
-  <data name="msgText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="richTextBoxInputText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="msgText.MaxLength" type="System.Int32, mscorlib">
+  <data name="richTextBoxInputText.MaxLength" type="System.Int32, mscorlib">
     <value>4096</value>
   </data>
-  <data name="msgText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 214</value>
+  <data name="richTextBoxInputText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>364, 390</value>
   </data>
-  <data name="msgText.TabIndex" type="System.Int32, mscorlib">
+  <data name="richTextBoxInputText.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="msgText.Text" xml:space="preserve">
-    <value />
+  <data name="richTextBoxInputText.Text" xml:space="preserve">
+    <value>Почніть писати...</value>
   </data>
-  <data name="&gt;&gt;msgText.Name" xml:space="preserve">
-    <value>msgText</value>
+  <data name="&gt;&gt;richTextBoxInputText.Name" xml:space="preserve">
+    <value>richTextBoxInputText</value>
   </data>
-  <data name="&gt;&gt;msgText.Type" xml:space="preserve">
+  <data name="&gt;&gt;richTextBoxInputText.Type" xml:space="preserve">
     <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;msgText.Parent" xml:space="preserve">
-    <value>TextInputAreaPanel</value>
+  <data name="&gt;&gt;richTextBoxInputText.Parent" xml:space="preserve">
+    <value>panelContainIputText</value>
   </data>
-  <data name="&gt;&gt;msgText.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="publicMsg.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="&gt;&gt;richTextBoxInputText.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="publicMsg.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="publicMsg.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
   <data name="publicMsg.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
+    <value>Flat</value>
   </data>
   <data name="publicMsg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
-        TUUH4gQXESYT9ZLScgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFJSURBVEhL
-        vZWxLgVBFIZXlDoht1RJVLyARqekEA0V2dm5CA/gJa7GG5AICR3Jzkx4g9sqKRQUSnZmchxrBOPc2b27
-        xp98xe6c/59k5sxM8i/aEjDVzfXCzg1Mul9/J67MWiaNRgApMmGOU6Xn3XB7YeidC/ew/UxZtn4FY660
-        mTDs4Xf4D54zqXupghlnGU4YcOEFhshxCZdXTmDU2avFhd0jgqq4R9/+Zg4dFzNYTBZzREBdCuQo3BQA
-        I1j09M3UENvn0qZkU3BpzmhTI8qmYNcw7eJxo4XdJgrb8sKUWS0nwBacwAO3VMEhERJG6Ntygo1LGGdK
-        L4bAZTwgQ0J8TsCk7ZIF7fhaIvw49Qbb4G3yR5s+ekUNGNCmPH+dpQ21qD5oTNldz1SH+lcFFp975hDD
-        X3Zoin5dx31w8ITGfTLfFfXRj6skeQOfm9kZoel3UgAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
+        EAAAjBIAAP1NAACBPgAAWesAARIPAAA85gAAGc66ySIyAAABK2lDQ1BQaG90b3Nob3AgSUNDIHByb2Zp
+        bGUAACjPY2BgMnB0cXJlEmBgyM0rKQpyd1KIiIxSYD/PwMbAzAAGicnFBY4BAT4gdl5+XioDBvh2jYER
+        RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
+        2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
+        K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
+        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACxMAAAsT
+        AQCanBgAAAH5SURBVHhe5di/ahRhGIXxaIwJiJJgkSApAjYipBSEVOkDgkX6NHaWXoGNN5AmRbrUNjZe
+        gI1NbiFVOi/AanMOZCHIs2Sded9ROC/8mifzp8jMt9/uimYWDmMSjEkwJsGYBGMSjEkwJsGYBGMSjEkw
+        JsGYBGMSjEkwJsGYBGMSjEkwJsGYBOP/4lTeyLrs3rZqGP+lr3Ikz+TuPBE6fiyMU/spH2RHHgjNodC5
+        Y2GcwpV8lleyKvfNhdB1xsLY6VwOZEOWnedC16qAsdo3eS+bMmSOha5bAWOFS/koXr0XvdfLjM/9LnSP
+        ChiH+iVf5LU8korp+vibwziU39Xq8VNE96qCcajq8VPkV4nuVQXjUCeyJlXjV4nuUwnjGD/krYxZ+Obj
+        fQLdoxLGCt647MnQ8T7BmyW6diWMlfxf3JK/HT9FdL1qGKv549Hrw2NZds6ErlUNYxd/01tmf+BvgnR+
+        B4ydvK29b/x1mM7tgLGTF7ansmj86eEnhc7tgLHbJ1k020LndMHY7be8EBovlnROF4xT8Cr/5zwUb6To
+        +C4Yp7Ivd+el0HGdME7FP5T4vz4frw10XCeMU3onHu8Wr4WO6YRxSl4Q/fu/fxmmv3fDmARjEoxJMCbB
+        mARjEoxJMCbBmARjEoxJMCbBmARjEoxJMCbBmARjiJXZDbqU2z4nic8uAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="publicMsg.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="publicMsg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>322, 4</value>
+    <value>374, 0</value>
   </data>
   <data name="publicMsg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 33</value>
+    <value>58, 38</value>
   </data>
   <data name="publicMsg.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -194,10 +204,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;publicMsg.Parent" xml:space="preserve">
-    <value>MainButtonPanel</value>
+    <value>AddMediaPanel</value>
   </data>
   <data name="&gt;&gt;publicMsg.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="addDocumentButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -231,10 +241,10 @@
     <value>NoControl</value>
   </data>
   <data name="addDocumentButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 2</value>
+    <value>6, 2</value>
   </data>
   <data name="addDocumentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 33</value>
+    <value>32, 32</value>
   </data>
   <data name="addDocumentButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -251,8 +261,8 @@
   <data name="&gt;&gt;addDocumentButton.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="symbolCount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="symbolCount.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="symbolCount.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8pt</value>
@@ -261,10 +271,10 @@
     <value>NoControl</value>
   </data>
   <data name="symbolCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>282, 0</value>
+    <value>635, 0</value>
   </data>
   <data name="symbolCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 36</value>
+    <value>97, 30</value>
   </data>
   <data name="symbolCount.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -285,7 +295,7 @@
     <value>StatusBarPanel</value>
   </data>
   <data name="&gt;&gt;symbolCount.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;currentFormat.Name" xml:space="preserve">
     <value>currentFormat</value>
@@ -299,14 +309,26 @@
   <data name="&gt;&gt;currentFormat.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;buttonHideLeftPanel.Name" xml:space="preserve">
+    <value>buttonHideLeftPanel</value>
+  </data>
+  <data name="&gt;&gt;buttonHideLeftPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonHideLeftPanel.Parent" xml:space="preserve">
+    <value>StatusBarPanel</value>
+  </data>
+  <data name="&gt;&gt;buttonHideLeftPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="StatusBarPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
   <data name="StatusBarPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 517</value>
+    <value>0, 523</value>
   </data>
   <data name="StatusBarPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 36</value>
+    <value>732, 30</value>
   </data>
   <data name="StatusBarPanel.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -321,10 +343,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;StatusBarPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
-  <data name="currentFormat.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="currentFormat.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="currentFormat.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8pt</value>
@@ -347,10 +369,10 @@
     <value>NoControl</value>
   </data>
   <data name="currentFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 0</value>
+    <value>530, 0</value>
   </data>
   <data name="currentFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 36</value>
+    <value>105, 30</value>
   </data>
   <data name="currentFormat.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -372,6 +394,53 @@
   </data>
   <data name="&gt;&gt;currentFormat.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="buttonHideLeftPanel.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="buttonHideLeftPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="buttonHideLeftPanel.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonHideLeftPanel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
+  </data>
+  <data name="buttonHideLeftPanel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4gUKASwC5vgfiAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACsSURBVEhL
+        7ZWxCcMwEEU1SAZI7yVSJjsE3GaIDJA+i2SUtBkjXf4TMpxAhBM+q/KDJx1Cpw/GstOOh498N/w21nrl
+        7FxM8mQ8StbXks9gmOXDeJGhAS2W9au04R7pAVcAs318Hm1vHs7yVqSGalMn4wPu8lWkhtCAg+TVRGoI
+        DXiWeamh2tRJ1ctgLxo1hAbYi0YNoQEthgbYS+SxK2DzT8UaxgRs/sPZ+UNKPzuVh3ybs632AAAAAElF
+        TkSuQmCC
+</value>
+  </data>
+  <data name="buttonHideLeftPanel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonHideLeftPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="buttonHideLeftPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 30</value>
+  </data>
+  <data name="buttonHideLeftPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;buttonHideLeftPanel.Name" xml:space="preserve">
+    <value>buttonHideLeftPanel</value>
+  </data>
+  <data name="&gt;&gt;buttonHideLeftPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonHideLeftPanel.Parent" xml:space="preserve">
+    <value>StatusBarPanel</value>
+  </data>
+  <data name="&gt;&gt;buttonHideLeftPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -446,10 +515,10 @@
     <value>5</value>
   </data>
   <data name="filePanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+    <value>Bottom</value>
   </data>
   <data name="filePanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>0, 410</value>
   </data>
   <data name="filePanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -458,7 +527,7 @@
     <value>No</value>
   </data>
   <data name="filePanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 47</value>
+    <value>384, 47</value>
   </data>
   <data name="filePanel.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -473,7 +542,7 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;filePanel.Parent" xml:space="preserve">
-    <value>TextInputAreaPanel</value>
+    <value>panelContainIputText</value>
   </data>
   <data name="&gt;&gt;filePanel.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -535,7 +604,7 @@
     <value>NoControl</value>
   </data>
   <data name="deleteFileButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>338, 5</value>
+    <value>340, 5</value>
   </data>
   <data name="deleteFileButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 33</value>
@@ -676,7 +745,7 @@
     <value>Flat</value>
   </data>
   <data name="boldButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>aMavickFont, 16pt, style=Bold</value>
+    <value>Consolas, 13.8pt, style=Bold</value>
   </data>
   <data name="boldButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -691,7 +760,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="boldButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 32</value>
+    <value>38, 38</value>
   </data>
   <data name="boldButton.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -718,7 +787,7 @@
     <value>Flat</value>
   </data>
   <data name="italicButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>aMavickFont, 16pt, style=Italic</value>
+    <value>Consolas, 13.8pt, style=Italic</value>
   </data>
   <data name="italicButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -727,13 +796,13 @@
     <value>NoControl</value>
   </data>
   <data name="italicButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 4</value>
+    <value>6, 36</value>
   </data>
   <data name="italicButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="italicButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 32</value>
+    <value>38, 38</value>
   </data>
   <data name="italicButton.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -753,38 +822,38 @@
   <data name="&gt;&gt;italicButton.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;urlButton.Name" xml:space="preserve">
-    <value>urlButton</value>
+  <data name="&gt;&gt;buttonUrlFormating.Name" xml:space="preserve">
+    <value>buttonUrlFormating</value>
   </data>
-  <data name="&gt;&gt;urlButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonUrlFormating.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;urlButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonUrlFormating.Parent" xml:space="preserve">
     <value>formatTextPanel</value>
   </data>
-  <data name="&gt;&gt;urlButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonUrlFormating.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;preButton.Name" xml:space="preserve">
-    <value>preButton</value>
+  <data name="&gt;&gt;buttomCodeFormating.Name" xml:space="preserve">
+    <value>buttomCodeFormating</value>
   </data>
-  <data name="&gt;&gt;preButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttomCodeFormating.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;preButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttomCodeFormating.Parent" xml:space="preserve">
     <value>formatTextPanel</value>
   </data>
-  <data name="&gt;&gt;preButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttomCodeFormating.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="formatTextPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
+    <value>Left</value>
   </data>
   <data name="formatTextPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 261</value>
+    <value>0, 0</value>
   </data>
   <data name="formatTextPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 40</value>
+    <value>48, 457</value>
   </data>
   <data name="formatTextPanel.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -799,124 +868,173 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;formatTextPanel.Parent" xml:space="preserve">
-    <value>TextInputAreaPanel</value>
+    <value>panelEditor</value>
   </data>
   <data name="&gt;&gt;formatTextPanel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="urlButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+  <data name="buttonUrlFormating.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="urlButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="buttonUrlFormating.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="urlButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>aMavickFont, 11.999999pt</value>
+  <data name="buttonUrlFormating.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Consolas, 13.8pt</value>
   </data>
-  <data name="urlButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="buttonUrlFormating.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4gUKARgEtLFJSgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGpSURBVEhL
+        rZa7SiRBGEYHvARiqKgsiKGCCOrbCKuw+BZeAsFHEEwUH0BREyMz02UVjTZdzBQDRfCC6Dm9FFb3VE93
+        jx44jNU9/U3d/i5bX2AS9/AK7/EvbuM8fok+3MI3fMdX/IcvUXsTe7Ex/XiMBhm6hD0oA7iAt+j9NWxE
+        HH6Jw5jiB97gM854oQ51wwM/0e/uZK0KmobLILpGf7JWBcvYJDxwjQ///+zMOK7jUNb6xF6e4GnWyhNG
+        cJ61Ejgtv9DwFAacoSPzR4qENdjNWgXiObfnReJwP23HjKJb1bqY9UJMcUFT09Ip3DXyuWTnqnZLk/B9
+        zFWy5f9d4QfY9prYwG7DncYQfoh2Nscc+oJyYVygmKpwca69f4Rt4eJW8gturSJuwU7h4la2GF3DJBaD
+        RZEKsIj8kdS02POyOslhOVvWdYkX1J5X4gupbARF4nDnvHRaYnyl+sBi1ionDk/uljI8FDwc7nDCCwlG
+        MIS7z2uHBzzefPgRrQmny5AxdGSeUN5vq9C6eK6uoiMxKHwGn3AFuwqPmUb/9fiN7q4LtE6msAtarQ/z
+        R4bYb5VbSAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="buttonUrlFormating.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="urlButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="buttonUrlFormating.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="urlButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 4</value>
+  <data name="buttonUrlFormating.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 100</value>
   </data>
-  <data name="urlButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="buttonUrlFormating.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="urlButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 32</value>
+  <data name="buttonUrlFormating.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 38</value>
   </data>
-  <data name="urlButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="buttonUrlFormating.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="urlButton.Text" xml:space="preserve">
-    <value>url</value>
+  <data name="&gt;&gt;buttonUrlFormating.Name" xml:space="preserve">
+    <value>buttonUrlFormating</value>
   </data>
-  <data name="&gt;&gt;urlButton.Name" xml:space="preserve">
-    <value>urlButton</value>
-  </data>
-  <data name="&gt;&gt;urlButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonUrlFormating.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;urlButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonUrlFormating.Parent" xml:space="preserve">
     <value>formatTextPanel</value>
   </data>
-  <data name="&gt;&gt;urlButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonUrlFormating.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="preButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+  <data name="buttomCodeFormating.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="preButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="buttomCodeFormating.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="preButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>aMavickFont, 16pt</value>
+  <data name="buttomCodeFormating.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Consolas, 13.8pt</value>
   </data>
-  <data name="preButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="buttomCodeFormating.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4gUKARMoZZ38YgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE/SURBVEhL
+        7ZU9bsJAEIUthSIoEpwiouAmFDkFok9ByylS5AJAyAVSUNByCqKcIoKGvG8co/F68RqEOz7pSZ7d2TfS
+        /oyzO20xlr6lZ4ta4Es6SD2LruBBmkiPFpXpSr/SxqI8h1zWNILEuXSUZgwEjCTmphblOcSsSRYhYSGx
+        YCv1pZA3ifmhRXkOuYyx9mwRJpZSnTnspJ/884QvgkelSEdaSSnzgUTOu0VlfBG88DT4+JRS5vAqkfdi
+        URVfBE8r8vE/kDKHtbSXniyK44vg3bgApphTpI5KgaZbxLaQwzadw5uftgj4SB0yB8s8Bx3Dm5cOuSB1
+        TbmaXNEY3jx6TQuYiD00HhVjPLIQb1770ApICFsFbYGYNhFyUasoINE3OxobDY5GF3JxswuhJdOaadGt
+        wE+Fnws/mTu3Jsv+AO4bWyFgGyj0AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="buttomCodeFormating.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="preButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="buttomCodeFormating.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="preButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>65, 3</value>
+  <data name="buttomCodeFormating.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 68</value>
   </data>
-  <data name="preButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="buttomCodeFormating.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="preButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 32</value>
+  <data name="buttomCodeFormating.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 38</value>
   </data>
-  <data name="preButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="buttomCodeFormating.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="preButton.Text" xml:space="preserve">
-    <value>T</value>
+  <data name="&gt;&gt;buttomCodeFormating.Name" xml:space="preserve">
+    <value>buttomCodeFormating</value>
   </data>
-  <data name="&gt;&gt;preButton.Name" xml:space="preserve">
-    <value>preButton</value>
-  </data>
-  <data name="&gt;&gt;preButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttomCodeFormating.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;preButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttomCodeFormating.Parent" xml:space="preserve">
     <value>formatTextPanel</value>
   </data>
-  <data name="&gt;&gt;preButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttomCodeFormating.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
+  <data name="&gt;&gt;buttonTimePicker.Name" xml:space="preserve">
+    <value>buttonTimePicker</value>
   </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonTimePicker.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonTimePicker.Parent" xml:space="preserve">
     <value>AddMediaPanel</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonTimePicker.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;addPhotoButton.Name" xml:space="preserve">
-    <value>addPhotoButton</value>
+  <data name="&gt;&gt;buttonAddInlineKeyboard.Name" xml:space="preserve">
+    <value>buttonAddInlineKeyboard</value>
   </data>
-  <data name="&gt;&gt;addPhotoButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonAddInlineKeyboard.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;addPhotoButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonAddInlineKeyboard.Parent" xml:space="preserve">
     <value>AddMediaPanel</value>
   </data>
-  <data name="&gt;&gt;addPhotoButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonAddInlineKeyboard.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;LinkPreviewButton.Name" xml:space="preserve">
+    <value>LinkPreviewButton</value>
+  </data>
+  <data name="&gt;&gt;LinkPreviewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LinkPreviewButton.Parent" xml:space="preserve">
+    <value>AddMediaPanel</value>
+  </data>
+  <data name="&gt;&gt;LinkPreviewButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;isSilentMessageButton.Name" xml:space="preserve">
+    <value>isSilentMessageButton</value>
+  </data>
+  <data name="&gt;&gt;isSilentMessageButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;isSilentMessageButton.Parent" xml:space="preserve">
+    <value>AddMediaPanel</value>
+  </data>
+  <data name="&gt;&gt;isSilentMessageButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="AddMediaPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
   <data name="AddMediaPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>0, 457</value>
   </data>
   <data name="AddMediaPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 38</value>
+    <value>432, 38</value>
   </data>
   <data name="AddMediaPanel.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -928,110 +1046,105 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;AddMediaPanel.Parent" xml:space="preserve">
-    <value>MainButtonPanel</value>
+    <value>panelEditor</value>
   </data>
   <data name="&gt;&gt;AddMediaPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <data name="button1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="buttonAddInlineKeyboard.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
   </data>
-  <data name="button1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+  <data name="buttonAddInlineKeyboard.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="buttonAddInlineKeyboard.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="buttonAddInlineKeyboard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
-        TUUH4gUDEAECpj7DqgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGoSURBVEhL
-        1dZNKARhHMfxRcrLyUGUUpKDKC8nSThRbtzdJEWJuFDIwctBueGsNlFyISkHlJPi4K1IUkIpBxHy9v3N
-        NOyu3dmZnbn41Sczj9nnP/PMzH834HMqMIpDLGrAa5JRgylc4AvXOMUBEkoqGjGLW2jSM0yiCkmYgKsC
-        GWjBPB6gSfcxhFJExnGBNCzgGR/YQS8KECu6gjk4KlAHnW0PcjQQI1q2BszgBvqMowL10MG5xl54tGzN
-        CF023dwxLCGhAlloxTKeoP/tYRDFsOL4HlgFBrCBN7xjC93IR7S4LvCCVbQhG/HiuoDdUxMtrgtEu8l2
-        +V8FUqDjpjGMSvhWQJPd4RN6XK2GpyfNlwLHOELoW16NV3gukA6deYexF54V7Jqbf6PJSszNuFegjnqO
-        ImPP/H5ogpZoXAOhaYeq6qw06RX09toVUHtQAR2jv/fQ59egK/yJ+osOUputhXp8P6x+Y9dJlTKMoAt5
-        GojMOrbNzbCoBzkpEDdBaEkyjb3faFyXrS8RTynHI06gft6HTejsO+FLCqEl0QtzCb2Z+sXgIYHAN0+x
-        elaMHmNfAAAAAElFTkSuQmCC
+        TUUH4gUJFDA7V9IEqAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADgSURBVEhL
+        7ZUxDsIwDEVzBI7CTRgZWTlID8EFmLgFG1vXzl07IjGCX7CluAoRQ7z1S0/6dsxvSao2bfpXO+EknDtB
+        FplZB+EpvDtDJtnpoY0IyK4u9MQVN2GvUB/VD8KkHvD08Mwwa2tklJmuuNBQUfMDxMGNX5uFp4eYyUEq
+        MspMV9wFexKouUv8VZjVA54enhlmbY2MMtMVi8DdATVbgSfwpR7w9PDMMGtrZJSZrgjfovALhG9RBNWm
+        wTPNX26xfu7XVJuGnUFLdga/qDaNLhcIf9mFv65R6AdnU0MpfQB+/TsiLVdLSwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button1.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="buttonAddInlineKeyboard.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="buttonAddInlineKeyboard.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 2</value>
+  <data name="buttonAddInlineKeyboard.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 2</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 33</value>
+  <data name="buttonAddInlineKeyboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
   </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>AddMediaPanel</value>
-  </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="addPhotoButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="addPhotoButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="addPhotoButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="addPhotoButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
-        TUUH4gUDDzkH1rFvkwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFWSURBVEhL
-        3dXPKkRhHMbxV5SVvRvwd8cl2AixEGUjYjFK2bgB5AIspFyIUhYs7VhZ2SgsLIhQUvh+z3jLn3fmzJxm
-        Fjz1qXNO5zy/aeY974R/kXZMY6nB7LQ77OEMhw1m5z7CG/o8aHD6YXd4R68HpA1jmC9oFK0wdtr9bcA2
-        LnBckM9uwSQHnGCmfFgoPmuHSQ44RaUBAyihIztLx2ftMHUNsPQB3hu/glQKD3A938B7N7xAWrCDJwx5
-        gdQ9YBGT5cPQiWG4SmL5JdbxCIfUNWANd/ATznnhM7H8Cl1eIMvwvl3UNMDyWwxiBM+YRSy/Rje+ZgV2
-        5Q5wPcfyGF8+hxzA8h6ksoncAT/LY8bxgtXsLJ3c38CXZKF8mMwE/K6nsrPfcUDVF8017srwU1Ryj1cc
-        JZyj6lbhEnTDSm1ktUhuds3aru3Mtutm/uHY3fy/zL+cED4A8t66GdypCM0AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="addPhotoButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="addPhotoButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="addPhotoButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>38, 2</value>
-  </data>
-  <data name="addPhotoButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 33</value>
-  </data>
-  <data name="addPhotoButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="buttonAddInlineKeyboard.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;addPhotoButton.Name" xml:space="preserve">
-    <value>addPhotoButton</value>
+  <data name="&gt;&gt;buttonAddInlineKeyboard.Name" xml:space="preserve">
+    <value>buttonAddInlineKeyboard</value>
   </data>
-  <data name="&gt;&gt;addPhotoButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonAddInlineKeyboard.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;addPhotoButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonAddInlineKeyboard.Parent" xml:space="preserve">
     <value>AddMediaPanel</value>
   </data>
-  <data name="&gt;&gt;addPhotoButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonAddInlineKeyboard.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="LinkPreviewButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="LinkPreviewButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="LinkPreviewButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="LinkPreviewButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4gUIFRojkqtdhAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGhSURBVEhL
+        7ZSxK4VhFIcvJcWmMNgsbBaDRGaiLDL4Z9QtgyjZFP8CgyQMdmFBFhRGE4MMxPN87qnPe3H76pbU/dVz
+        +773vN+557zvOafU0L9RE3TDIAxDF9RF47ABD/Ce8Ag7MAEGUEh9cAjh7A62YBWWYBMuIOxXMAs11Qrz
+        8AJ+qNNRiAjboOXzMdMArMEzuN9s2+FbdcAxuPEWpiA0BCfwCgcuJOqH+PYSeuGLdH4KbliHfBQ617G2
+        M/jpKMxsGdx3Az2QKe98xYVER6BtJnurrTK430w6XdivLCz6ksgzN3ojT2UmHlf+TkILoM89X/zxxcVU
+        v/2BVaTNPakMVp8Gn6VhOi6YXiovV1v+iObANW2pPGZtHrvHn8kL8WI0eFH5tEfgDbSZyXnl2egtgJCF
+        YYFUOQ9ZWpGJJWfphfyTKFPx4vPOp8FmjG+rnIeMwmZxo81jE9lMIc87ztzmG4NtcL/NaZParDVlhVyD
+        H4oX6nhwTDgu7PB7CLtjxfFSSM0wCbvwBOEscACarQOxLnJEO6od2Y7uwhO0ob9QqfQBfvF5GjDM28QA
+        AAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="LinkPreviewButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LinkPreviewButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>293, 0</value>
+  </data>
+  <data name="LinkPreviewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 38</value>
+  </data>
+  <data name="LinkPreviewButton.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;LinkPreviewButton.Name" xml:space="preserve">
+    <value>LinkPreviewButton</value>
+  </data>
+  <data name="&gt;&gt;LinkPreviewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LinkPreviewButton.Parent" xml:space="preserve">
+    <value>AddMediaPanel</value>
+  </data>
+  <data name="&gt;&gt;LinkPreviewButton.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="isSilentMessageButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1040,7 +1153,7 @@
     <value>None</value>
   </data>
   <data name="isSilentMessageButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
+    <value>Flat</value>
   </data>
   <data name="isSilentMessageButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1060,10 +1173,10 @@
     <value>NoControl</value>
   </data>
   <data name="isSilentMessageButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>275, 4</value>
+    <value>335, 0</value>
   </data>
   <data name="isSilentMessageButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 33</value>
+    <value>38, 38</value>
   </data>
   <data name="isSilentMessageButton.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1075,10 +1188,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;isSilentMessageButton.Parent" xml:space="preserve">
-    <value>MainButtonPanel</value>
+    <value>AddMediaPanel</value>
   </data>
   <data name="&gt;&gt;isSilentMessageButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="налаштуванняToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 24</value>
@@ -1087,7 +1200,7 @@
     <value>Налаштування</value>
   </data>
   <data name="ботToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 26</value>
+    <value>216, 26</value>
   </data>
   <data name="ботToolStripMenuItem.Text" xml:space="preserve">
     <value>Бот</value>
@@ -1099,13 +1212,13 @@
     <value>Форматування</value>
   </data>
   <data name="htmlText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 26</value>
+    <value>154, 26</value>
   </data>
   <data name="htmlText.Text" xml:space="preserve">
     <value>HTML</value>
   </data>
   <data name="markdownText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 26</value>
+    <value>154, 26</value>
   </data>
   <data name="markdownText.Text" xml:space="preserve">
     <value>Markdown</value>
@@ -1117,7 +1230,7 @@
     <value>0, 0</value>
   </data>
   <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 28</value>
+    <value>732, 28</value>
   </data>
   <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1135,90 +1248,472 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
-  <data name="TextInputAreaPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="monthCalendarPubDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>91, 130</value>
   </data>
-  <data name="TextInputAreaPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 28</value>
-  </data>
-  <data name="TextInputAreaPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 301</value>
-  </data>
-  <data name="TextInputAreaPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;TextInputAreaPanel.Name" xml:space="preserve">
-    <value>TextInputAreaPanel</value>
-  </data>
-  <data name="&gt;&gt;TextInputAreaPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TextInputAreaPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;TextInputAreaPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="MainButtonPanel.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="LinkPreviewButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="LinkPreviewButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="LinkPreviewButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="LinkPreviewButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LinkPreviewButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 4</value>
-  </data>
-  <data name="LinkPreviewButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 33</value>
-  </data>
-  <data name="LinkPreviewButton.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;LinkPreviewButton.Name" xml:space="preserve">
-    <value>LinkPreviewButton</value>
-  </data>
-  <data name="&gt;&gt;LinkPreviewButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LinkPreviewButton.Parent" xml:space="preserve">
-    <value>MainButtonPanel</value>
-  </data>
-  <data name="&gt;&gt;LinkPreviewButton.ZOrder" xml:space="preserve">
+  <data name="monthCalendarPubDate.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="MainButtonPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="monthCalendarPubDate.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;monthCalendarPubDate.Name" xml:space="preserve">
+    <value>monthCalendarPubDate</value>
+  </data>
+  <data name="&gt;&gt;monthCalendarPubDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MonthCalendar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;monthCalendarPubDate.Parent" xml:space="preserve">
+    <value>panelContainIputText</value>
+  </data>
+  <data name="&gt;&gt;monthCalendarPubDate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelContainIputText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="MainButtonPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 329</value>
+  <data name="panelContainIputText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 0</value>
   </data>
-  <data name="MainButtonPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 188</value>
+  <data name="panelContainIputText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>384, 457</value>
   </data>
-  <data name="MainButtonPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+  <data name="panelContainIputText.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
-  <data name="&gt;&gt;MainButtonPanel.Name" xml:space="preserve">
-    <value>MainButtonPanel</value>
+  <data name="&gt;&gt;panelContainIputText.Name" xml:space="preserve">
+    <value>panelContainIputText</value>
   </data>
-  <data name="&gt;&gt;MainButtonPanel.Type" xml:space="preserve">
+  <data name="&gt;&gt;panelContainIputText.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;MainButtonPanel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelContainIputText.Parent" xml:space="preserve">
+    <value>panelEditor</value>
+  </data>
+  <data name="&gt;&gt;panelContainIputText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelEditor.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelEditor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panelEditor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>432, 495</value>
+  </data>
+  <data name="panelEditor.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;panelEditor.Name" xml:space="preserve">
+    <value>panelEditor</value>
+  </data>
+  <data name="&gt;&gt;panelEditor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelEditor.Parent" xml:space="preserve">
+    <value>panelRight</value>
+  </data>
+  <data name="&gt;&gt;panelEditor.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelUrlButtonStock.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="&gt;&gt;panelDisplayUrlButton.Name" xml:space="preserve">
+    <value>panelDisplayUrlButton</value>
+  </data>
+  <data name="&gt;&gt;panelDisplayUrlButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelDisplayUrlButton.Parent" xml:space="preserve">
+    <value>panelUrlButtonStock</value>
+  </data>
+  <data name="&gt;&gt;panelDisplayUrlButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panelAddInlineKbr.Name" xml:space="preserve">
+    <value>panelAddInlineKbr</value>
+  </data>
+  <data name="&gt;&gt;panelAddInlineKbr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelAddInlineKbr.Parent" xml:space="preserve">
+    <value>panelUrlButtonStock</value>
+  </data>
+  <data name="&gt;&gt;panelAddInlineKbr.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelUrlButtonStock.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelUrlButtonStock.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panelUrlButtonStock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 495</value>
+  </data>
+  <data name="panelUrlButtonStock.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;panelUrlButtonStock.Name" xml:space="preserve">
+    <value>panelUrlButtonStock</value>
+  </data>
+  <data name="&gt;&gt;panelUrlButtonStock.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelUrlButtonStock.Parent" xml:space="preserve">
+    <value>panelLeft</value>
+  </data>
+  <data name="&gt;&gt;panelUrlButtonStock.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelDisplayUrlButton.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="panelDisplayUrlButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 321</value>
+  </data>
+  <data name="panelDisplayUrlButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 168</value>
+  </data>
+  <data name="panelDisplayUrlButton.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;panelDisplayUrlButton.Name" xml:space="preserve">
+    <value>panelDisplayUrlButton</value>
+  </data>
+  <data name="&gt;&gt;panelDisplayUrlButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelDisplayUrlButton.Parent" xml:space="preserve">
+    <value>panelUrlButtonStock</value>
+  </data>
+  <data name="&gt;&gt;panelDisplayUrlButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>panelAddInlineKbr</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelAddInlineKbr.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelAddInlineKbr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panelAddInlineKbr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 143</value>
+  </data>
+  <data name="panelAddInlineKbr.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;panelAddInlineKbr.Name" xml:space="preserve">
+    <value>panelAddInlineKbr</value>
+  </data>
+  <data name="&gt;&gt;panelAddInlineKbr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelAddInlineKbr.Parent" xml:space="preserve">
+    <value>panelUrlButtonStock</value>
+  </data>
+  <data name="&gt;&gt;panelAddInlineKbr.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;textBoxAddressUrlButton.Name" xml:space="preserve">
+    <value>textBoxAddressUrlButton</value>
+  </data>
+  <data name="&gt;&gt;textBoxAddressUrlButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxAddressUrlButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;textBoxAddressUrlButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ButtonAddURLButton.Name" xml:space="preserve">
+    <value>ButtonAddURLButton</value>
+  </data>
+  <data name="&gt;&gt;ButtonAddURLButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonAddURLButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;ButtonAddURLButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBoxTitleUrlButton.Name" xml:space="preserve">
+    <value>textBoxTitleUrlButton</value>
+  </data>
+  <data name="&gt;&gt;textBoxTitleUrlButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxTitleUrlButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;textBoxTitleUrlButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 5</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 135</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Додати inline-клавіатуру</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>panelAddInlineKbr</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="textBoxAddressUrlButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="textBoxAddressUrlButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="textBoxAddressUrlButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 59</value>
+  </data>
+  <data name="textBoxAddressUrlButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 24</value>
+  </data>
+  <data name="textBoxAddressUrlButton.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="textBoxAddressUrlButton.Text" xml:space="preserve">
+    <value>Посилання</value>
+  </data>
+  <data name="&gt;&gt;textBoxAddressUrlButton.Name" xml:space="preserve">
+    <value>textBoxAddressUrlButton</value>
+  </data>
+  <data name="&gt;&gt;textBoxAddressUrlButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxAddressUrlButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;textBoxAddressUrlButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ButtonAddURLButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="ButtonAddURLButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ButtonAddURLButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="ButtonAddURLButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ButtonAddURLButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 89</value>
+  </data>
+  <data name="ButtonAddURLButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 25</value>
+  </data>
+  <data name="ButtonAddURLButton.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="ButtonAddURLButton.Text" xml:space="preserve">
+    <value>Додати</value>
+  </data>
+  <data name="&gt;&gt;ButtonAddURLButton.Name" xml:space="preserve">
+    <value>ButtonAddURLButton</value>
+  </data>
+  <data name="&gt;&gt;ButtonAddURLButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ButtonAddURLButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;ButtonAddURLButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="textBoxTitleUrlButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="textBoxTitleUrlButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="textBoxTitleUrlButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 29</value>
+  </data>
+  <data name="textBoxTitleUrlButton.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
+  <data name="textBoxTitleUrlButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 24</value>
+  </data>
+  <data name="textBoxTitleUrlButton.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="textBoxTitleUrlButton.Text" xml:space="preserve">
+    <value>Назва</value>
+  </data>
+  <data name="&gt;&gt;textBoxTitleUrlButton.Name" xml:space="preserve">
+    <value>textBoxTitleUrlButton</value>
+  </data>
+  <data name="&gt;&gt;textBoxTitleUrlButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxTitleUrlButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;textBoxTitleUrlButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelLeft.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="panelLeft.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 28</value>
+  </data>
+  <data name="panelLeft.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>400, 0</value>
+  </data>
+  <data name="panelLeft.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>300, 0</value>
+  </data>
+  <data name="panelLeft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 495</value>
+  </data>
+  <data name="panelLeft.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;panelLeft.Name" xml:space="preserve">
+    <value>panelLeft</value>
+  </data>
+  <data name="&gt;&gt;panelLeft.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelLeft.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;MainButtonPanel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panelLeft.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelRight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 28</value>
+  </data>
+  <data name="panelRight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>432, 495</value>
+  </data>
+  <data name="panelRight.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;panelRight.Name" xml:space="preserve">
+    <value>panelRight</value>
+  </data>
+  <data name="&gt;&gt;panelRight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelRight.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelRight.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitterLeftRightPanels.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="splitterLeftRightPanels.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 28</value>
+  </data>
+  <data name="splitterLeftRightPanels.Size" type="System.Drawing.Size, System.Drawing">
+    <value>3, 495</value>
+  </data>
+  <data name="splitterLeftRightPanels.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;splitterLeftRightPanels.Name" xml:space="preserve">
+    <value>splitterLeftRightPanels</value>
+  </data>
+  <data name="&gt;&gt;splitterLeftRightPanels.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Splitter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitterLeftRightPanels.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;splitterLeftRightPanels.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonTimePicker.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="buttonTimePicker.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="buttonTimePicker.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonTimePicker.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4gUKATge3FeUkgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFMSURBVEhL
+        ldW/TcYwEIfhSMAKdPQghmAAGiagZgOqDxomYgVoqGAk7rGSKPnixOdX+kmOfX8S+84ZGlyHHkPvoc/Q
+        7yhjc9bYdHMZOoV+Qh+hp9BNaMLYnDU2bPmkuAt9hV5DFyYW3I5awoYtH76HPIe+Q/flacvLqBp8+IpR
+        RXYGV+WpzlEC8BVj8yX2zyfuvflEKwHEEGt1Jg7JPrbIJIBYYhaUmUo4P9Aa2QRiiVlKWC0rtwzZBBBT
+        7NIwajpDTwIxxS5duWyiI3oSiCl2af0sPQlQYtcSvIX+dvQQylJi92xRD/MW9RxyD/Mh95RpD3OZ9jRa
+        llWjIXtVZFldFchedhmqlx0y13WL3et6ovXDOYIP390fzoTsPtE+Zg6eDVs+u29+jv1zSCpBuanpZTMa
+        m7PGhu1mzzMoM7WsYXSl1idjc9bmUtwyDP85zkZS8/pF6wAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="buttonTimePicker.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonTimePicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 0</value>
+  </data>
+  <data name="buttonTimePicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 38</value>
+  </data>
+  <data name="buttonTimePicker.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;buttonTimePicker.Name" xml:space="preserve">
+    <value>buttonTimePicker</value>
+  </data>
+  <data name="&gt;&gt;buttonTimePicker.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonTimePicker.Parent" xml:space="preserve">
+    <value>AddMediaPanel</value>
+  </data>
+  <data name="&gt;&gt;buttonTimePicker.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -1231,7 +1726,7 @@
     <value>Zoom</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>382, 553</value>
+    <value>732, 553</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4545,8 +5040,11 @@
         gAEAAIABAACAAQAAgAEAAIABAACAAQAAgAEAAMADAADgBwAA8A8AAP//AAA=
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>400, 600</value>
+    <value>420, 600</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

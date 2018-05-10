@@ -59,8 +59,8 @@ namespace tPost.IMessageContent
         public async Task<Message> Send(TelegramMessage msg)
         {
 
-            var res = await msg.Bot.SendDocumentAsync(msg.CanalName, _documentToSend, msg.Text, msg.DisableNotification);
-            MessageBox.Show(@"Файл успішно відправлений!");
+            var res = await msg.Bot.SendDocumentAsync(msg.CanalName, _documentToSend, msg.Text, msg.DisableNotification, replyMarkup: msg.InlineMarkup);
+            MessageBox.Show($@"Файл {FileName} успішно відправлений!");
             return res;
         }
 

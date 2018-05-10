@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.InlineKeyboardButtons;
+using Telegram.Bot.Types.ReplyMarkups;
 
 namespace tPost.IMessageContent
 {
@@ -17,6 +20,7 @@ namespace tPost.IMessageContent
             ParsingMode = ParseMode.Default;
             DisablePagePrewiew = !Settings.Default.PagePreview;
 
+
         }
         public void ChangeParseMode(ParseMode parseMode)
         {
@@ -24,8 +28,11 @@ namespace tPost.IMessageContent
         }
         public async Task<Telegram.Bot.Types.Message> Send(TelegramMessage msg)
         {
-                var res = await msg.Bot.SendTextMessageAsync(msg.CanalName, msg.Text, ParsingMode, DisablePagePrewiew, msg.DisableNotification);
-                MessageBox.Show(@"Повідомлення успішно відправалено!");
+      
+            
+            var res = await msg.Bot.SendTextMessageAsync(msg.CanalName, msg.Text, ParsingMode, DisablePagePrewiew, msg.DisableNotification, replyMarkup: msg.InlineMarkup);
+            
+            MessageBox.Show(@"Повідомлення успішно відправлено!");
                 return res;
         }
 

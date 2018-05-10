@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Text;
@@ -26,12 +27,20 @@ namespace tPost
 
         public event EventHandler ParseModeChange;
 
+        
+
         public MainWindow()
         {
+
+
+
             InitializeComponent();
+    
+          
+            
             _message = new TelegramMessage();
             ParseModeChange += ParseModeChangeHandler;
-            if (!((SimpleText) _message.Content).DisablePagePrewiew)
+            if (!((SimpleText)_message.Content).DisablePagePrewiew)
             {
                 LinkPreviewButton.Image = Image.FromFile(@"...\...\img\linkpreview.png");
             }
@@ -39,8 +48,10 @@ namespace tPost
             {
                 LinkPreviewButton.Image = Image.FromFile(@"...\...\img\noview.png");
             }
-            
-            
+
+            _message.UbPanels.ListChange += UBListChangeHandler;
+
+
         }
 
         public void ToSimpleTextMode()
@@ -50,10 +61,17 @@ namespace tPost
             FormatingEnabled();
             currentFormat.Image = Image.FromFile(@"...\...\img\normal.png");
             currentFormat.Text = @"Текст";
-            msgText.MaxLength = _message.MaxLenth;
+            richTextBoxInputText.MaxLength = _message.MaxLenth;
 
             msgText_TextChanged(this, EventArgs.Empty);
             filePanel.Hide();
+        }
+
+        private void UBListChangeHandler(object sender, EventArgs args)
+        {
+
+            DrawUBPanels();
+
         }
         private void ParseModeChangeHandler(object sender, EventArgs args)
         {
@@ -62,11 +80,11 @@ namespace tPost
                 currentFormat.Text = @"HTML";
                 currentFormat.Image = Image.FromFile(@"...\...\img\html.png");
                 formatTextPanel.Visible = true;
-                
+
                 (_message.Content as SimpleText)?.ChangeParseMode(ParseMode.Html);
-                if (msgText.Height == 264)
+                if (richTextBoxInputText.Height == 264)
                 {
-                    msgText.Height -= 40;
+                    richTextBoxInputText.Height -= 40;
                 }
 
 
@@ -81,9 +99,9 @@ namespace tPost
             }
             else
             {
-                if (msgText.Height == 224)
+                if (richTextBoxInputText.Height == 224)
                 {
-                    msgText.Height += 40;
+                    richTextBoxInputText.Height += 40;
                 }
                 formatTextPanel.Visible = false;
                 currentFormat.Image = Image.FromFile(@"...\...\img\normal.png");
@@ -107,24 +125,24 @@ namespace tPost
             }
             finally
             {
-                msgText.Focus();
+                richTextBoxInputText.Focus();
                 publicMsg.Enabled = true;
                 if (!(_message.Content is SimpleText))
                 {
                     ToSimpleTextMode();
-                    
+
                 }
 
             }
         }
 
-        private void addDocumentButton_Click(object sender, EventArgs e)
+        private void addFileButton_Click(object sender, EventArgs e)
         {
 
-            if (msgText.Text.Length > 201)
+            if (richTextBoxInputText.Text.Length > 201)
             {
                 MessageBox.Show(@"Опис файлу може містити не більше 201 символ.");
-                msgText.Focus();
+                richTextBoxInputText.Focus();
                 return;
             }
 
@@ -133,7 +151,7 @@ namespace tPost
             void FileOk(object s, CancelEventArgs args)
             {
 
-                _message = new DocumentMessage(fDialog.FileName);
+                _message.Content = new Document(fDialog.FileName);
 
                 fileNameLabel.Text = ((Document)_message.Content).FileName;
                 fileSizeLabel.Text = ((Document)_message.Content).GetFormatedFileSize();
@@ -142,6 +160,7 @@ namespace tPost
                 FormatingDisabled();
                 currentFormat.Image = Image.FromFile(@"...\...\img\cloud.png");
                 currentFormat.Text = @"File";
+                richTextBoxInputText.MaxLength = 201;
             }
 
             fDialog.FileOk += FileOk;
@@ -150,10 +169,13 @@ namespace tPost
 
         private void msgText_TextChanged(object sender, EventArgs e)
         {
-            symbolCount.Text = $@"{msgText.Text.Length}/{msgText.MaxLength}";
-            if (msgText.Text.Length != 4096)
+            
+           
+            symbolCount.Text = $@"{richTextBoxInputText.Text.Length}/{richTextBoxInputText.MaxLength}";
+            
+            if (richTextBoxInputText.Text.Length != 4096)
             {
-                _message.Text = msgText.Text;
+                _message.Text = richTextBoxInputText.Text;
                 symbolCount.BackColor = Color.PaleTurquoise;
 
             }
@@ -206,8 +228,8 @@ namespace tPost
 
         private void TagAroundSelection(string tagName, params string[] attributs)
         {
-            int selectStart = msgText.SelectionStart;
-            int selectEnd = msgText.SelectionLength + selectStart;
+            int selectStart = richTextBoxInputText.SelectionStart;
+            int selectEnd = richTextBoxInputText.SelectionLength + selectStart;
 
             var startTag = new StringBuilder(tagName);
 
@@ -219,16 +241,16 @@ namespace tPost
                 }
             }
 
-            msgText.Text = msgText.Text.Insert(selectStart, $"<{startTag}>");
-            msgText.Text = msgText.Text.Insert(selectEnd + startTag.Length + 2, $"</{tagName}>");
+            richTextBoxInputText.Text = richTextBoxInputText.Text.Insert(selectStart, $"<{startTag}>");
+            richTextBoxInputText.Text = richTextBoxInputText.Text.Insert(selectEnd + startTag.Length + 2, $"</{tagName}>");
         }
         private void MarkAroundSelection(string mark)
         {
-            int selectStart = msgText.SelectionStart;
-            int selectEnd = msgText.SelectionLength + selectStart;
+            int selectStart = richTextBoxInputText.SelectionStart;
+            int selectEnd = richTextBoxInputText.SelectionLength + selectStart;
 
-            msgText.Text = msgText.Text.Insert(selectStart, $"{mark}");
-            msgText.Text = msgText.Text.Insert(selectEnd + mark.Length, $"{mark}");
+            richTextBoxInputText.Text = richTextBoxInputText.Text.Insert(selectStart, $"{mark}");
+            richTextBoxInputText.Text = richTextBoxInputText.Text.Insert(selectEnd + mark.Length, $"{mark}");
         }
 
         //[название URL](http://www.example.com/)
@@ -237,8 +259,8 @@ namespace tPost
         {
 
             // TODO
-            int selectStart = msgText.SelectionStart;
-            int selectEnd = msgText.SelectionLength + selectStart;
+            int selectStart = richTextBoxInputText.SelectionStart;
+            int selectEnd = richTextBoxInputText.SelectionLength + selectStart;
 
 
         }
@@ -289,6 +311,7 @@ namespace tPost
             {
                 MarkAroundSelection("`");
             }
+            
         }
 
         private void formatTextPanel_Paint(object sender, PaintEventArgs e)
@@ -332,7 +355,155 @@ namespace tPost
                 }
             }
 
-            msgText.Focus();
+            
+        }
+
+        private void AddUrlButtonButton_Click(object sender, EventArgs e)
+        {
+            _message.AddUrlButton("google.com", "http://google.com");
+
+
+        }
+
+ 
+
+        private void textBoxTitleUrlButton_Enter(object sender, EventArgs e)
+        {
+
+            if (textBoxTitleUrlButton.Text == @"Назва")
+            {
+                textBoxTitleUrlButton.Text = "";
+                textBoxTitleUrlButton.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBoxTitleUrlButton_Leave(object sender, EventArgs e)
+        {
+            if (textBoxTitleUrlButton.Text.Length == 0)
+            {
+                textBoxTitleUrlButton.ForeColor = Color.Silver;
+                textBoxTitleUrlButton.Text = @"Назва";
+            }
+        }
+
+        private void textBoxAddressUrlButton_Enter(object sender, EventArgs e)
+        {
+            if (textBoxAddressUrlButton.Text == @"Посилання")
+            {
+                textBoxAddressUrlButton.Text = "";
+                textBoxAddressUrlButton.ForeColor = Color.DodgerBlue;
+            }
+        }
+
+        private void textBoxAddressUrlButton_Leave(object sender, EventArgs e)
+        {
+            if (textBoxAddressUrlButton.Text.Length == 0)
+            {
+                textBoxAddressUrlButton.ForeColor = Color.Silver;
+                textBoxAddressUrlButton.Text = @"Посилання";
+            }
+        }
+
+        private void ButtonAddURLButton_Click(object sender, EventArgs e)
+        {
+            // TODO: data validation
+            _message.AddUrlButton(textBoxTitleUrlButton.Text, textBoxAddressUrlButton.Text);
+         
+           
+        }
+
+        private void DrawUBPanels()
+        {
+            panelDisplayUrlButton.Controls.Clear();
+
+            for (int i = 0; i < _message.UbPanels.Count; i++)
+            {
+                panelDisplayUrlButton.Controls.Add(_message.UbPanels[i]);
+                
+            }
+
+
+        }
+
+        private void buttonAddInlineKeyboard_Click(object sender, EventArgs e)
+        {
+
+
+            if (!panelLeft.Visible)
+            {
+                if (this.Width < 750)
+                {
+                    this.Width = 750;
+                }
+
+                splitterLeftRightPanels.Visible = true;
+                panelLeft.Visible = true;
+            }
+            else
+            {
+                splitterLeftRightPanels.Visible = false;
+                panelLeft.Visible = false;
+            }
+        }
+
+        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void MainWindow_Resize(object sender, EventArgs e)
+        {
+            if (this.Width  < 600)
+            {
+                panelLeft.Visible = false;
+            }
+
+            if (Width >= 750)
+            {
+                panelLeft.Visible = true;
+            }
+        }
+
+
+ 
+        private void panelLeft_VisibleChanged(object sender, EventArgs e)
+        {
+            splitterLeftRightPanels.Visible = panelLeft.Visible;
+
+        }
+
+        private void panelUrlButtonStock_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void richTextBoxInputText_Enter(object sender, EventArgs e)
+        {
+            if (richTextBoxInputText.Text == @"Почніть писати...")
+            {
+                richTextBoxInputText.ForeColor = Color.Black;
+                richTextBoxInputText.Text = @"";
+            }
+        }
+
+        private void richTextBoxInputText_Leave(object sender, EventArgs e)
+        {
+            if (richTextBoxInputText.Text.Length == 0)
+            {
+                richTextBoxInputText.ForeColor = Color.Silver;
+                richTextBoxInputText.Text = @"Почніть писати...";
+            }
+        }
+
+        private void buttonHideLeftPanel_Click(object sender, EventArgs e)
+        {
+            panelLeft.Visible = !panelLeft.Visible;
+        }
+
+        private void buttonTimePicker_Click(object sender, EventArgs e)
+        {
+            monthCalendarPubDate.Visible = !monthCalendarPubDate.Visible;
+
         }
     }
 }
