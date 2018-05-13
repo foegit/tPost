@@ -10,7 +10,7 @@ using Telegram.Bot.Types.ReplyMarkups;
 
 namespace tPost
 {
-    public class TelegramMessage
+    public class TelegramMessage : ICloneable
     {
         public TelegramBotClient Bot { get; set; }
         public string CanalName { get; set; }
@@ -19,14 +19,18 @@ namespace tPost
         public bool DisableNotification { get; set; }
         public IMessageContent.IMessageContent Content;
         public InlineKeyboardMarkup InlineMarkup;
-
+        public DateTime PublicationDate;
+        public bool IsTimedMsg;
         public ListUBPanel UbPanels;
 
-        public List<UrlButtonData> urlButtons;
+
 
         public TelegramMessage()
         {
-            UbPanels= new ListUBPanel();
+            IsTimedMsg = false;
+            PublicationDate = new DateTime();
+
+            UbPanels = new ListUBPanel();
             Bot = new TelegramBotClient(Settings.Default.BotToken);
             CanalName = Settings.Default.CanalID;
             Text = "";
@@ -36,8 +40,12 @@ namespace tPost
 
         }
 
-        public async Task<Telegram.Bot.Types.Message> Send()
+
+        
+
+        public async Task<string> Send()
         {
+
             InlineMarkup = null;
             if (UbPanels.Count != 0)
             {
@@ -50,7 +58,11 @@ namespace tPost
                 }
                 InlineMarkup = new InlineKeyboardMarkup(array);
             }
-            return await Content.Send(this);
+
+            var result = await Content.Send(this);
+            return result;
+
+            
         }
 
         public void AddUrlButton(string title, string url)
@@ -60,5 +72,16 @@ namespace tPost
 
         }
 
+        public object Clone()
+        {
+            var cloneMessage = new TelegramMessage();
+            cloneMessage.Text = Text;
+            cloneMessage.Bot = Bot;
+            cloneMessage.CanalName = CanalName;
+            cloneMessage.DisableNotification = DisableNotification;
+            cloneMessage.Content = (IMessageContent.IMessageContent)Content.Clone();
+            
+            return cloneMessage;
+        }
     }
 }

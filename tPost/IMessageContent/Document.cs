@@ -14,29 +14,35 @@ namespace tPost.IMessageContent
         private FileToSend _documentToSend;
         public long FileSizeInBytes { get; private set; }
         public string FileName;
+        private string _filePath;
 
         public Document()
         {
             TextMaxLength = 201;
 
-
         }
 
         public Document(string filePath) : this()
         {
-            SetFileToSend(filePath);
+            _filePath = filePath;
+            FileInfo fileInfo = new FileInfo(_filePath);
+            FileName = fileInfo.Name;
+
+            FileSizeInBytes = fileInfo.Length;
+            
         }
 
-        public void SetFileToSend(string filePath)
+
+
+
+
+        public async Task<string> Send(TelegramMessage msg)
         {
-            FileStream fileStream = new FileStream(filePath, FileMode.Open);
+            
+            FileStream fileStream = new FileStream(_filePath, FileMode.Open);
 
             if (fileStream.CanRead)
             {
-                FileInfo fileInfo = new FileInfo(filePath);
-                FileName = fileInfo.Name;
-
-                FileSizeInBytes = fileInfo.Length;
 
                 if (FileSizeInBytes <= 52_428_800) // но это не точно
                 {
@@ -50,18 +56,13 @@ namespace tPost.IMessageContent
             }
             else
             {
-                throw new FileNotFoundException($"Не знайдено файл!\n{filePath}");
+
+                throw new FileNotFoundException($"Не знайдено файл!\n{_filePath}");
+
             }
-
-        }
-
-
-        public async Task<Message> Send(TelegramMessage msg)
-        {
-
-            var res = await msg.Bot.SendDocumentAsync(msg.CanalName, _documentToSend, msg.Text, msg.DisableNotification, replyMarkup: msg.InlineMarkup);
-            MessageBox.Show($@"Файл {FileName} успішно відправлений!");
-            return res;
+            await msg.Bot.SendDocumentAsync(msg.CanalName, _documentToSend, msg.Text, msg.DisableNotification, replyMarkup: msg.InlineMarkup);
+            fileStream.Dispose();
+            return $@"Файл {FileName} успішно відправлений!";
         }
 
         public string GetFormatedFileSize()
@@ -78,6 +79,11 @@ namespace tPost.IMessageContent
 
             return $"{(double)FileSizeInBytes / 1_048_576:F} мб";
 
+        }
+
+        public object Clone()
+        {
+            return  new Document(_filePath);
         }
     }
 }

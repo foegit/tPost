@@ -1,10 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace tPost.IMessageContent
 {
-    public interface IMessageContent
+    public interface IMessageContent:ICloneable
     {
         int TextMaxLength { get; }
-        Task<Telegram.Bot.Types.Message> Send(TelegramMessage msg);
+        Task<string> Send(TelegramMessage msg);
     }
 }

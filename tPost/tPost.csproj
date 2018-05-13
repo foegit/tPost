@@ -61,6 +61,7 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="PostponedTelegramMessage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.Designer.cs">
@@ -70,6 +71,7 @@
     </Compile>
     <Compile Include="TelegramMessage.cs" />
     <Compile Include="TextMessage.cs" />
+    <Compile Include="PostponedMaster.cs" />
     <Compile Include="UrlButtonData.cs" />
     <Compile Include="UBPanel.cs">
       <SubType>Component</SubType>

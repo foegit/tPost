@@ -30,14 +30,16 @@ namespace tPost
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.richTextBoxInputText = new System.Windows.Forms.RichTextBox();
-            this.publicMsg = new System.Windows.Forms.Button();
+            this.buttonSend = new System.Windows.Forms.Button();
             this.addDocumentButton = new System.Windows.Forms.Button();
             this.symbolCount = new System.Windows.Forms.Label();
             this.StatusBarPanel = new System.Windows.Forms.Panel();
+            this.labelSystemNotif = new System.Windows.Forms.Label();
             this.currentFormat = new System.Windows.Forms.Label();
-            this.buttonHideLeftPanel = new System.Windows.Forms.Button();
+            this.buttonAddInlineKeyboard = new System.Windows.Forms.Button();
             this.filePanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.deleteFileButton = new System.Windows.Forms.Button();
@@ -47,11 +49,12 @@ namespace tPost
             this.fileNameField = new System.Windows.Forms.Label();
             this.boldButton = new System.Windows.Forms.Button();
             this.italicButton = new System.Windows.Forms.Button();
-            this.formatTextPanel = new System.Windows.Forms.Panel();
+            this.panelFormating = new System.Windows.Forms.Panel();
             this.buttonUrlFormating = new System.Windows.Forms.Button();
             this.buttomCodeFormating = new System.Windows.Forms.Button();
             this.AddMediaPanel = new System.Windows.Forms.Panel();
-            this.buttonAddInlineKeyboard = new System.Windows.Forms.Button();
+            this.buttonSlideFormatingPanel = new System.Windows.Forms.Button();
+            this.buttonTimePicker = new System.Windows.Forms.Button();
             this.LinkPreviewButton = new System.Windows.Forms.Button();
             this.isSilentMessageButton = new System.Windows.Forms.Button();
             this.налаштуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +65,7 @@ namespace tPost
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.panelEditor = new System.Windows.Forms.Panel();
             this.panelContainIputText = new System.Windows.Forms.Panel();
+            this.labelDefaultText = new System.Windows.Forms.Label();
             this.panelUrlButtonStock = new System.Windows.Forms.Panel();
             this.panelDisplayUrlButton = new System.Windows.Forms.Panel();
             this.panelAddInlineKbr = new System.Windows.Forms.Panel();
@@ -72,11 +76,30 @@ namespace tPost
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
             this.splitterLeftRightPanels = new System.Windows.Forms.Splitter();
-            this.buttonTimePicker = new System.Windows.Forms.Button();
-            this.monthCalendarPubDate = new System.Windows.Forms.MonthCalendar();
+            this.backgroundWorkerSend = new System.ComponentModel.BackgroundWorker();
+            this.notifyIconTpost = new System.Windows.Forms.NotifyIcon(this.components);
+            this.panelDateTimePicker = new System.Windows.Forms.Panel();
+            this.panelDTPControl = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxPubHour = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxPubDay = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxPubMinute = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxPubMonth = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.buttonHideDatePickerPanel = new System.Windows.Forms.Button();
+            this.buttonAddNewPubDate = new System.Windows.Forms.Button();
+            this.buttonCancelPickPubDate = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxPubYear = new System.Windows.Forms.TextBox();
             this.StatusBarPanel.SuspendLayout();
             this.filePanel.SuspendLayout();
-            this.formatTextPanel.SuspendLayout();
+            this.panelFormating.SuspendLayout();
             this.AddMediaPanel.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.panelEditor.SuspendLayout();
@@ -86,33 +109,38 @@ namespace tPost
             this.groupBox1.SuspendLayout();
             this.panelLeft.SuspendLayout();
             this.panelRight.SuspendLayout();
+            this.panelDateTimePicker.SuspendLayout();
+            this.panelDTPControl.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // richTextBoxInputText
             // 
             resources.ApplyResources(this.richTextBoxInputText, "richTextBoxInputText");
+            this.richTextBoxInputText.BackColor = System.Drawing.SystemColors.HighlightText;
             this.richTextBoxInputText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxInputText.ForeColor = System.Drawing.Color.Silver;
+            this.richTextBoxInputText.ForeColor = System.Drawing.Color.Black;
             this.richTextBoxInputText.Name = "richTextBoxInputText";
             this.richTextBoxInputText.TextChanged += new System.EventHandler(this.msgText_TextChanged);
             this.richTextBoxInputText.Enter += new System.EventHandler(this.richTextBoxInputText_Enter);
-            this.richTextBoxInputText.Leave += new System.EventHandler(this.richTextBoxInputText_Leave);
             // 
-            // publicMsg
+            // buttonSend
             // 
-            this.publicMsg.BackColor = System.Drawing.Color.WhiteSmoke;
-            resources.ApplyResources(this.publicMsg, "publicMsg");
-            this.publicMsg.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.publicMsg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.publicMsg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.publicMsg.Name = "publicMsg";
-            this.publicMsg.UseVisualStyleBackColor = false;
-            this.publicMsg.Click += new System.EventHandler(this.publicMsg_Click);
+            this.buttonSend.BackColor = System.Drawing.Color.WhiteSmoke;
+            resources.ApplyResources(this.buttonSend, "buttonSend");
+            this.buttonSend.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonSend.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonSend.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonSend.Name = "buttonSend";
+            this.buttonSend.UseVisualStyleBackColor = false;
+            this.buttonSend.Click += new System.EventHandler(this.publicMsg_Click);
             // 
             // addDocumentButton
             // 
             resources.ApplyResources(this.addDocumentButton, "addDocumentButton");
-            this.addDocumentButton.BackColor = System.Drawing.SystemColors.Control;
+            this.addDocumentButton.BackColor = System.Drawing.Color.Transparent;
             this.addDocumentButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.addDocumentButton.FlatAppearance.BorderSize = 0;
             this.addDocumentButton.Name = "addDocumentButton";
@@ -128,32 +156,37 @@ namespace tPost
             // StatusBarPanel
             // 
             this.StatusBarPanel.BackColor = System.Drawing.Color.White;
+            this.StatusBarPanel.Controls.Add(this.labelSystemNotif);
             this.StatusBarPanel.Controls.Add(this.currentFormat);
-            this.StatusBarPanel.Controls.Add(this.buttonHideLeftPanel);
+            this.StatusBarPanel.Controls.Add(this.buttonAddInlineKeyboard);
             this.StatusBarPanel.Controls.Add(this.symbolCount);
             resources.ApplyResources(this.StatusBarPanel, "StatusBarPanel");
             this.StatusBarPanel.Name = "StatusBarPanel";
+            // 
+            // labelSystemNotif
+            // 
+            resources.ApplyResources(this.labelSystemNotif, "labelSystemNotif");
+            this.labelSystemNotif.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.labelSystemNotif.Name = "labelSystemNotif";
             // 
             // currentFormat
             // 
             resources.ApplyResources(this.currentFormat, "currentFormat");
             this.currentFormat.Name = "currentFormat";
             // 
-            // buttonHideLeftPanel
+            // buttonAddInlineKeyboard
             // 
-            this.buttonHideLeftPanel.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.buttonHideLeftPanel, "buttonHideLeftPanel");
-            this.buttonHideLeftPanel.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
-            this.buttonHideLeftPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.buttonHideLeftPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.buttonHideLeftPanel.ForeColor = System.Drawing.Color.Black;
-            this.buttonHideLeftPanel.Name = "buttonHideLeftPanel";
-            this.buttonHideLeftPanel.UseVisualStyleBackColor = false;
-            this.buttonHideLeftPanel.Click += new System.EventHandler(this.buttonHideLeftPanel_Click);
+            this.buttonAddInlineKeyboard.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.buttonAddInlineKeyboard, "buttonAddInlineKeyboard");
+            this.buttonAddInlineKeyboard.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonAddInlineKeyboard.FlatAppearance.BorderSize = 0;
+            this.buttonAddInlineKeyboard.Name = "buttonAddInlineKeyboard";
+            this.buttonAddInlineKeyboard.UseVisualStyleBackColor = false;
+            this.buttonAddInlineKeyboard.Click += new System.EventHandler(this.buttonAddInlineKeyboard_Click);
             // 
             // filePanel
             // 
-            this.filePanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.filePanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.filePanel.Controls.Add(this.label1);
             this.filePanel.Controls.Add(this.deleteFileButton);
             this.filePanel.Controls.Add(this.fileSizeLabel);
@@ -217,16 +250,16 @@ namespace tPost
             this.italicButton.UseVisualStyleBackColor = true;
             this.italicButton.Click += new System.EventHandler(this.italicButton_Click);
             // 
-            // formatTextPanel
+            // panelFormating
             // 
-            this.formatTextPanel.BackColor = System.Drawing.Color.White;
-            this.formatTextPanel.Controls.Add(this.buttonUrlFormating);
-            this.formatTextPanel.Controls.Add(this.buttomCodeFormating);
-            this.formatTextPanel.Controls.Add(this.boldButton);
-            this.formatTextPanel.Controls.Add(this.italicButton);
-            resources.ApplyResources(this.formatTextPanel, "formatTextPanel");
-            this.formatTextPanel.Name = "formatTextPanel";
-            this.formatTextPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.formatTextPanel_Paint);
+            this.panelFormating.BackColor = System.Drawing.Color.White;
+            this.panelFormating.Controls.Add(this.buttonUrlFormating);
+            this.panelFormating.Controls.Add(this.buttomCodeFormating);
+            this.panelFormating.Controls.Add(this.boldButton);
+            this.panelFormating.Controls.Add(this.italicButton);
+            resources.ApplyResources(this.panelFormating, "panelFormating");
+            this.panelFormating.Name = "panelFormating";
+            this.panelFormating.Paint += new System.Windows.Forms.PaintEventHandler(this.formatTextPanel_Paint);
             // 
             // buttonUrlFormating
             // 
@@ -254,23 +287,35 @@ namespace tPost
             // 
             this.AddMediaPanel.BackColor = System.Drawing.Color.Transparent;
             this.AddMediaPanel.Controls.Add(this.buttonTimePicker);
-            this.AddMediaPanel.Controls.Add(this.buttonAddInlineKeyboard);
+            this.AddMediaPanel.Controls.Add(this.buttonSlideFormatingPanel);
             this.AddMediaPanel.Controls.Add(this.addDocumentButton);
             this.AddMediaPanel.Controls.Add(this.LinkPreviewButton);
-            this.AddMediaPanel.Controls.Add(this.publicMsg);
+            this.AddMediaPanel.Controls.Add(this.buttonSend);
             this.AddMediaPanel.Controls.Add(this.isSilentMessageButton);
             resources.ApplyResources(this.AddMediaPanel, "AddMediaPanel");
             this.AddMediaPanel.Name = "AddMediaPanel";
             // 
-            // buttonAddInlineKeyboard
+            // buttonSlideFormatingPanel
             // 
-            resources.ApplyResources(this.buttonAddInlineKeyboard, "buttonAddInlineKeyboard");
-            this.buttonAddInlineKeyboard.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonAddInlineKeyboard.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.buttonAddInlineKeyboard.FlatAppearance.BorderSize = 0;
-            this.buttonAddInlineKeyboard.Name = "buttonAddInlineKeyboard";
-            this.buttonAddInlineKeyboard.UseVisualStyleBackColor = false;
-            this.buttonAddInlineKeyboard.Click += new System.EventHandler(this.buttonAddInlineKeyboard_Click);
+            resources.ApplyResources(this.buttonSlideFormatingPanel, "buttonSlideFormatingPanel");
+            this.buttonSlideFormatingPanel.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSlideFormatingPanel.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
+            this.buttonSlideFormatingPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonSlideFormatingPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.buttonSlideFormatingPanel.Name = "buttonSlideFormatingPanel";
+            this.buttonSlideFormatingPanel.UseVisualStyleBackColor = false;
+            this.buttonSlideFormatingPanel.Click += new System.EventHandler(this.buttonOpenFormatingPanel_Click);
+            // 
+            // buttonTimePicker
+            // 
+            this.buttonTimePicker.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.buttonTimePicker, "buttonTimePicker");
+            this.buttonTimePicker.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
+            this.buttonTimePicker.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonTimePicker.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.buttonTimePicker.Name = "buttonTimePicker";
+            this.buttonTimePicker.UseVisualStyleBackColor = false;
+            this.buttonTimePicker.Click += new System.EventHandler(this.buttonTimePicker_Click);
             // 
             // LinkPreviewButton
             // 
@@ -320,6 +365,7 @@ namespace tPost
             // 
             this.htmlText.Name = "htmlText";
             resources.ApplyResources(this.htmlText, "htmlText");
+            this.htmlText.CheckedChanged += new System.EventHandler(this.htmlText_CheckedChanged);
             this.htmlText.Click += new System.EventHandler(this.htmlText_Click);
             // 
             // markdownText
@@ -343,7 +389,7 @@ namespace tPost
             // 
             this.panelEditor.BackColor = System.Drawing.Color.Transparent;
             this.panelEditor.Controls.Add(this.panelContainIputText);
-            this.panelEditor.Controls.Add(this.formatTextPanel);
+            this.panelEditor.Controls.Add(this.panelFormating);
             this.panelEditor.Controls.Add(this.AddMediaPanel);
             resources.ApplyResources(this.panelEditor, "panelEditor");
             this.panelEditor.Name = "panelEditor";
@@ -351,15 +397,25 @@ namespace tPost
             // panelContainIputText
             // 
             this.panelContainIputText.BackColor = System.Drawing.Color.White;
-            this.panelContainIputText.Controls.Add(this.monthCalendarPubDate);
+            this.panelContainIputText.Controls.Add(this.panelDateTimePicker);
+            this.panelContainIputText.Controls.Add(this.labelDefaultText);
             this.panelContainIputText.Controls.Add(this.richTextBoxInputText);
             this.panelContainIputText.Controls.Add(this.filePanel);
             resources.ApplyResources(this.panelContainIputText, "panelContainIputText");
             this.panelContainIputText.Name = "panelContainIputText";
             // 
+            // labelDefaultText
+            // 
+            resources.ApplyResources(this.labelDefaultText, "labelDefaultText");
+            this.labelDefaultText.BackColor = System.Drawing.Color.Transparent;
+            this.labelDefaultText.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.labelDefaultText.ForeColor = System.Drawing.Color.Silver;
+            this.labelDefaultText.Name = "labelDefaultText";
+            this.labelDefaultText.Click += new System.EventHandler(this.labelDefaultText_Click);
+            // 
             // panelUrlButtonStock
             // 
-            this.panelUrlButtonStock.BackColor = System.Drawing.Color.GhostWhite;
+            this.panelUrlButtonStock.BackColor = System.Drawing.Color.WhiteSmoke;
             resources.ApplyResources(this.panelUrlButtonStock, "panelUrlButtonStock");
             this.panelUrlButtonStock.Controls.Add(this.panelDisplayUrlButton);
             this.panelUrlButtonStock.Controls.Add(this.panelAddInlineKbr);
@@ -398,10 +454,10 @@ namespace tPost
             // ButtonAddURLButton
             // 
             resources.ApplyResources(this.ButtonAddURLButton, "ButtonAddURLButton");
-            this.ButtonAddURLButton.BackColor = System.Drawing.Color.LightGreen;
+            this.ButtonAddURLButton.BackColor = System.Drawing.Color.Ivory;
             this.ButtonAddURLButton.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
             this.ButtonAddURLButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.ButtonAddURLButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.ButtonAddURLButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LawnGreen;
             this.ButtonAddURLButton.ForeColor = System.Drawing.Color.Black;
             this.ButtonAddURLButton.Name = "ButtonAddURLButton";
             this.ButtonAddURLButton.UseVisualStyleBackColor = false;
@@ -438,23 +494,156 @@ namespace tPost
             this.splitterLeftRightPanels.Name = "splitterLeftRightPanels";
             this.splitterLeftRightPanels.TabStop = false;
             // 
-            // buttonTimePicker
+            // backgroundWorkerSend
             // 
-            resources.ApplyResources(this.buttonTimePicker, "buttonTimePicker");
-            this.buttonTimePicker.BackColor = System.Drawing.Color.Transparent;
-            this.buttonTimePicker.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
-            this.buttonTimePicker.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonTimePicker.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
-            this.buttonTimePicker.Name = "buttonTimePicker";
-            this.buttonTimePicker.UseVisualStyleBackColor = false;
-            this.buttonTimePicker.Click += new System.EventHandler(this.buttonTimePicker_Click);
+            this.backgroundWorkerSend.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerSend_DoWork);
             // 
-            // monthCalendarPubDate
+            // notifyIconTpost
             // 
-            resources.ApplyResources(this.monthCalendarPubDate, "monthCalendarPubDate");
-            this.monthCalendarPubDate.Name = "monthCalendarPubDate";
-            this.monthCalendarPubDate.ShowToday = false;
-            this.monthCalendarPubDate.ShowTodayCircle = false;
+            this.notifyIconTpost.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            resources.ApplyResources(this.notifyIconTpost, "notifyIconTpost");
+            this.notifyIconTpost.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // panelDateTimePicker
+            // 
+            this.panelDateTimePicker.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelDateTimePicker.Controls.Add(this.panel2);
+            this.panelDateTimePicker.Controls.Add(this.panelDTPControl);
+            resources.ApplyResources(this.panelDateTimePicker, "panelDateTimePicker");
+            this.panelDateTimePicker.Name = "panelDateTimePicker";
+            // 
+            // panelDTPControl
+            // 
+            this.panelDTPControl.BackColor = System.Drawing.Color.Crimson;
+            this.panelDTPControl.Controls.Add(this.buttonHideDatePickerPanel);
+            this.panelDTPControl.Controls.Add(this.label3);
+            resources.ApplyResources(this.panelDTPControl, "panelDTPControl");
+            this.panelDTPControl.Name = "panelDTPControl";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.buttonCancelPickPubDate);
+            this.panel2.Controls.Add(this.buttonAddNewPubDate);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.textBoxPubYear);
+            this.panel2.Controls.Add(this.textBoxPubMonth);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.textBoxPubMinute);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.textBoxPubDay);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.textBoxPubHour);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.ForeColor = System.Drawing.Color.Cornsilk;
+            this.label3.Name = "label3";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // textBoxPubHour
+            // 
+            this.textBoxPubHour.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBoxPubHour, "textBoxPubHour");
+            this.textBoxPubHour.Name = "textBoxPubHour";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // textBoxPubDay
+            // 
+            this.textBoxPubDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBoxPubDay, "textBoxPubDay");
+            this.textBoxPubDay.Name = "textBoxPubDay";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
+            // textBoxPubMinute
+            // 
+            this.textBoxPubMinute.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBoxPubMinute, "textBoxPubMinute");
+            this.textBoxPubMinute.Name = "textBoxPubMinute";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label6.Name = "label6";
+            // 
+            // textBoxPubMonth
+            // 
+            this.textBoxPubMonth.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBoxPubMonth, "textBoxPubMonth");
+            this.textBoxPubMonth.Name = "textBoxPubMonth";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label7.Name = "label7";
+            // 
+            // buttonHideDatePickerPanel
+            // 
+            resources.ApplyResources(this.buttonHideDatePickerPanel, "buttonHideDatePickerPanel");
+            this.buttonHideDatePickerPanel.BackColor = System.Drawing.Color.Transparent;
+            this.buttonHideDatePickerPanel.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
+            this.buttonHideDatePickerPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonHideDatePickerPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.buttonHideDatePickerPanel.Name = "buttonHideDatePickerPanel";
+            this.buttonHideDatePickerPanel.UseVisualStyleBackColor = false;
+            this.buttonHideDatePickerPanel.Click += new System.EventHandler(this.buttonHideDatePickerPanel_Click);
+            // 
+            // buttonAddNewPubDate
+            // 
+            resources.ApplyResources(this.buttonAddNewPubDate, "buttonAddNewPubDate");
+            this.buttonAddNewPubDate.BackColor = System.Drawing.Color.YellowGreen;
+            this.buttonAddNewPubDate.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonAddNewPubDate.Name = "buttonAddNewPubDate";
+            this.buttonAddNewPubDate.UseVisualStyleBackColor = false;
+            this.buttonAddNewPubDate.Click += new System.EventHandler(this.buttonAddNewPubDate_Click);
+            // 
+            // buttonCancelPickPubDate
+            // 
+            resources.ApplyResources(this.buttonCancelPickPubDate, "buttonCancelPickPubDate");
+            this.buttonCancelPickPubDate.BackColor = System.Drawing.Color.Coral;
+            this.buttonCancelPickPubDate.Name = "buttonCancelPickPubDate";
+            this.buttonCancelPickPubDate.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox1);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label8.Name = "label8";
+            // 
+            // textBoxPubYear
+            // 
+            this.textBoxPubYear.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBoxPubYear, "textBoxPubYear");
+            this.textBoxPubYear.Name = "textBoxPubYear";
             // 
             // MainWindow
             // 
@@ -472,20 +661,29 @@ namespace tPost
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.Resize += new System.EventHandler(this.MainWindow_Resize);
             this.StatusBarPanel.ResumeLayout(false);
+            this.StatusBarPanel.PerformLayout();
             this.filePanel.ResumeLayout(false);
             this.filePanel.PerformLayout();
-            this.formatTextPanel.ResumeLayout(false);
+            this.panelFormating.ResumeLayout(false);
             this.AddMediaPanel.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.panelEditor.ResumeLayout(false);
             this.panelContainIputText.ResumeLayout(false);
+            this.panelContainIputText.PerformLayout();
             this.panelUrlButtonStock.ResumeLayout(false);
             this.panelAddInlineKbr.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panelLeft.ResumeLayout(false);
             this.panelRight.ResumeLayout(false);
+            this.panelDateTimePicker.ResumeLayout(false);
+            this.panelDTPControl.ResumeLayout(false);
+            this.panelDTPControl.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -494,7 +692,7 @@ namespace tPost
         #endregion
 
         private System.Windows.Forms.RichTextBox richTextBoxInputText;
-        private System.Windows.Forms.Button publicMsg;
+        private System.Windows.Forms.Button buttonSend;
         private System.Windows.Forms.Button addDocumentButton;
         private System.Windows.Forms.Label symbolCount;
         private System.Windows.Forms.Panel StatusBarPanel;
@@ -508,7 +706,7 @@ namespace tPost
         private System.Windows.Forms.Button boldButton;
         private System.Windows.Forms.Button italicButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel formatTextPanel;
+        private System.Windows.Forms.Panel panelFormating;
         private System.Windows.Forms.Panel AddMediaPanel;
         private System.Windows.Forms.Button buttomCodeFormating;
         private System.Windows.Forms.Button buttonUrlFormating;
@@ -530,12 +728,34 @@ namespace tPost
         private System.Windows.Forms.Button ButtonAddURLButton;
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panelRight;
-        private System.Windows.Forms.Button buttonHideLeftPanel;
         private System.Windows.Forms.Splitter splitterLeftRightPanels;
         private System.Windows.Forms.Panel panelContainIputText;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonTimePicker;
-        private System.Windows.Forms.MonthCalendar monthCalendarPubDate;
+        private System.Windows.Forms.Label labelDefaultText;
+        private System.Windows.Forms.Button buttonSlideFormatingPanel;
+        private System.Windows.Forms.Label labelSystemNotif;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerSend;
+        private System.Windows.Forms.NotifyIcon notifyIconTpost;
+        private System.Windows.Forms.Panel panelDateTimePicker;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelDTPControl;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxPubMinute;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxPubDay;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxPubHour;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxPubMonth;
+        private System.Windows.Forms.Button buttonHideDatePickerPanel;
+        private System.Windows.Forms.Button buttonCancelPickPubDate;
+        private System.Windows.Forms.Button buttonAddNewPubDate;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxPubYear;
     }
 }
 

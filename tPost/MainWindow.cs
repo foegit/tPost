@@ -10,36 +10,38 @@ using Telegram.Bot.Types.Enums;
 
 namespace tPost
 {
-    enum FormatType
-    {
-        Html,
-        Markdown,
-        Simple
-    }
+
 
 
     public partial class MainWindow : Form
     {
-
-
-
-        private TelegramMessage _message;
-
+        private readonly TelegramMessage _message;
         public event EventHandler ParseModeChange;
 
+    
+        
+
+
+        private DateTime publicationTime;
+        private PostponedMaster postponedMaster;
+        private bool isPostponed;
         
 
         public MainWindow()
         {
 
+            isPostponed = false;
 
-
+            postponedMaster = new PostponedMaster();
+            publicationTime = new DateTime();
+           
             InitializeComponent();
-    
-          
+
+
             
             _message = new TelegramMessage();
             ParseModeChange += ParseModeChangeHandler;
+
             if (!((SimpleText)_message.Content).DisablePagePrewiew)
             {
                 LinkPreviewButton.Image = Image.FromFile(@"...\...\img\linkpreview.png");
@@ -50,14 +52,32 @@ namespace tPost
             }
 
             _message.UbPanels.ListChange += UBListChangeHandler;
-
+            SyncTimePickerValues();
+            
+          
 
         }
 
+        private void TestPostponed()
+        {
+            labelSystemNotif.Text = $@"Я публикую ето в {publicationTime:T}";
+            var a = new PostponedTelegramMessage(_message, publicationTime);
+
+            postponedMaster.AddMessage(a);
+        }
+
+        private void SyncTimePickerValues()
+        {
+            textBoxPubHour.Text = DateTime.Now.Hour.ToString();
+            textBoxPubMinute.Text = DateTime.Now.Minute.ToString();
+            textBoxPubDay.Text = DateTime.Now.Day.ToString();
+            textBoxPubMonth.Text = DateTime.Now.Month.ToString();
+            textBoxPubYear.Text = DateTime.Now.Year.ToString();
+        }
         public void ToSimpleTextMode()
         {
             _message.Content = new SimpleText();
-
+        
             FormatingEnabled();
             currentFormat.Image = Image.FromFile(@"...\...\img\normal.png");
             currentFormat.Text = @"Текст";
@@ -79,7 +99,7 @@ namespace tPost
             {
                 currentFormat.Text = @"HTML";
                 currentFormat.Image = Image.FromFile(@"...\...\img\html.png");
-                formatTextPanel.Visible = true;
+                panelFormating.Visible = true;
 
                 (_message.Content as SimpleText)?.ChangeParseMode(ParseMode.Html);
                 if (richTextBoxInputText.Height == 264)
@@ -94,7 +114,7 @@ namespace tPost
             {
                 currentFormat.Text = @"Markdown";
                 currentFormat.Image = Image.FromFile(@"...\...\img\markdown.png");
-                formatTextPanel.Visible = true;
+                panelFormating.Visible = true;
                 (_message.Content as SimpleText)?.ChangeParseMode(ParseMode.Markdown);
             }
             else
@@ -103,7 +123,7 @@ namespace tPost
                 {
                     richTextBoxInputText.Height += 40;
                 }
-                formatTextPanel.Visible = false;
+                panelFormating.Visible = false;
                 currentFormat.Image = Image.FromFile(@"...\...\img\normal.png");
                 currentFormat.Text = @"Simple";
                 (_message.Content as SimpleText)?.ChangeParseMode(ParseMode.Default);
@@ -112,28 +132,39 @@ namespace tPost
 
         private async void publicMsg_Click(object sender, EventArgs e)
         {
-            try
+            if (isPostponed)
             {
-                publicMsg.Enabled = false;
-                await _message.Send();
-
-
+                
+                postponedMaster.AddMessage(new PostponedTelegramMessage(_message,publicationTime));
+                MessageBox.Show($@"Повідомлення буде опубліковано о {publicationTime:t}");
+                buttonSend.Image = new Bitmap(@"...\...\img\sent.png");
+                isPostponed = false;
             }
-            catch (Exception exception)
+            else
             {
-                MessageBox.Show($@"Ох, лишенько! Здається ви щось не так робите, тому що {exception.Message}");
-            }
-            finally
-            {
-                richTextBoxInputText.Focus();
-                publicMsg.Enabled = true;
-                if (!(_message.Content is SimpleText))
+                try
                 {
-                    ToSimpleTextMode();
+                    buttonSend.Enabled = false;
+                    MessageBox.Show(await _message.Send());
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show($@"Сталась помилка:{Environment.NewLine}{exception.Message}");
 
                 }
+                finally
+                {
+                    richTextBoxInputText.Focus();
+                    buttonSend.Enabled = true;
+                    if (!(_message.Content is SimpleText))
+                    {
+                        ToSimpleTextMode();
 
+                    }
+
+                }
             }
+           
         }
 
         private void addFileButton_Click(object sender, EventArgs e)
@@ -156,6 +187,8 @@ namespace tPost
                 fileNameLabel.Text = ((Document)_message.Content).FileName;
                 fileSizeLabel.Text = ((Document)_message.Content).GetFormatedFileSize();
                 msgText_TextChanged(this, EventArgs.Empty);
+                panelFormating.Visible = false;
+                buttonSlideFormatingPanel.Enabled = false;
                 filePanel.Visible = true;
                 FormatingDisabled();
                 currentFormat.Image = Image.FromFile(@"...\...\img\cloud.png");
@@ -169,7 +202,15 @@ namespace tPost
 
         private void msgText_TextChanged(object sender, EventArgs e)
         {
-            
+
+            if (richTextBoxInputText.Text.Length == 0)
+            {
+                labelDefaultText.Visible = true;
+            }
+            else
+            {
+                labelDefaultText.Visible = false;
+            }
            
             symbolCount.Text = $@"{richTextBoxInputText.Text.Length}/{richTextBoxInputText.MaxLength}";
             
@@ -212,7 +253,7 @@ namespace tPost
             markdownText.Checked = false;
             htmlText.Enabled = false;
             markdownText.Enabled = false;
-            formatTextPanel.Visible = false;
+            panelFormating.Visible = false;
         }
 
         private void FormatingEnabled()
@@ -477,33 +518,73 @@ namespace tPost
 
         }
 
-        private void richTextBoxInputText_Enter(object sender, EventArgs e)
+      
+        private void labelDefaultText_Click(object sender, EventArgs e)
         {
-            if (richTextBoxInputText.Text == @"Почніть писати...")
-            {
-                richTextBoxInputText.ForeColor = Color.Black;
-                richTextBoxInputText.Text = @"";
-            }
+           richTextBoxInputText.Focus();
         }
 
-        private void richTextBoxInputText_Leave(object sender, EventArgs e)
+        private void buttonOpenFormatingPanel_Click(object sender, EventArgs e)
         {
-            if (richTextBoxInputText.Text.Length == 0)
-            {
-                richTextBoxInputText.ForeColor = Color.Silver;
-                richTextBoxInputText.Text = @"Почніть писати...";
-            }
+            panelFormating.Visible = !panelFormating.Visible;
+            htmlText.Checked = true;
         }
 
-        private void buttonHideLeftPanel_Click(object sender, EventArgs e)
+        private void htmlText_CheckedChanged(object sender, EventArgs e)
         {
-            panelLeft.Visible = !panelLeft.Visible;
+            ParseModeChange?.Invoke(this, EventArgs.Empty);
         }
 
         private void buttonTimePicker_Click(object sender, EventArgs e)
         {
-            monthCalendarPubDate.Visible = !monthCalendarPubDate.Visible;
+            //publicationTime = DateTime.Now;;
+            //publicationTime = publicationTime.AddSeconds(10);
+            //TestPostponed();
+            
+            //notifyIconTpost.ShowBalloonTip(1000,"Новий запис!" , $"Доданий новий відкладений запис, запис опублікується {publicationTime:t}", ToolTipIcon.Info);
+            //_message = new TelegramMessage();
+            panelDateTimePicker.Visible = !panelDateTimePicker.Visible;
 
+
+        }
+
+        private void backgroundWorkerSend_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.WindowState = WindowState == FormWindowState.Normal? FormWindowState.Minimized : FormWindowState.Normal;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void buttonHideDatePickerPanel_Click(object sender, EventArgs e)
+        {
+            panelDateTimePicker.Hide();
+        }
+
+        private void buttonAddNewPubDate_Click(object sender, EventArgs e)
+        {
+          
+            string pubdate = $"{textBoxPubYear.Text}-{textBoxPubMonth.Text}-{textBoxPubDay.Text} {textBoxPubHour.Text}:{textBoxPubMinute.Text}";
+            DateTime.TryParse(pubdate, out publicationTime);
+            isPostponed = true;
+            buttonSend.Image = new Bitmap(@"...\...\img\postponedSend.png");
+            labelSystemNotif.Text = $@"Повідомлення буде опубліковане: {publicationTime:g}";
+
+        }
+
+        private void richTextBoxInputText_Enter(object sender, EventArgs e)
+        {
+
+            panelDateTimePicker.Hide();
         }
     }
 }

@@ -22,19 +22,30 @@ namespace tPost.IMessageContent
 
 
         }
+
+        public SimpleText(ParseMode parsingMode, bool disablePagePrewiew)
+        {
+            TextMaxLength = 4096;
+            ParsingMode = parsingMode;
+            DisablePagePrewiew = disablePagePrewiew;
+        }
+
+
         public void ChangeParseMode(ParseMode parseMode)
         {
             ParsingMode = parseMode;
         }
-        public async Task<Telegram.Bot.Types.Message> Send(TelegramMessage msg)
+        public async Task<string> Send(TelegramMessage msg)
         {
       
             
-            var res = await msg.Bot.SendTextMessageAsync(msg.CanalName, msg.Text, ParsingMode, DisablePagePrewiew, msg.DisableNotification, replyMarkup: msg.InlineMarkup);
-            
-            MessageBox.Show(@"Повідомлення успішно відправлено!");
-                return res;
+            await msg.Bot.SendTextMessageAsync(msg.CanalName, msg.Text, ParsingMode, DisablePagePrewiew, msg.DisableNotification, replyMarkup: msg.InlineMarkup);
+            return "Повідомлення успішно відправлено!";
         }
 
+        public object Clone()
+        {
+            return new SimpleText(this.ParsingMode, this.DisablePagePrewiew);
+        }
     }
 }
