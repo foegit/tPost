@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using tPost.IMessageContent;
+using Telegram.Bot;
 using Telegram.Bot.Types.Enums;
 
 
@@ -16,31 +16,27 @@ namespace tPost
     public partial class MainWindow : Form
     {
         private readonly TelegramMessage _message;
+        private DateTime _publicationTime;
+        private readonly PostponedMaster _postponedMaster;
+        private bool _isPostponed;
+
         public event EventHandler ParseModeChange;
+       
 
-    
-        
-
-
-        private DateTime publicationTime;
-        private PostponedMaster postponedMaster;
-        private bool isPostponed;
-        
 
         public MainWindow()
         {
 
-            isPostponed = false;
+            _isPostponed = false;
 
-            postponedMaster = new PostponedMaster();
-            publicationTime = new DateTime();
-           
+            _postponedMaster = new PostponedMaster();
+            _publicationTime = new DateTime();
+
             InitializeComponent();
 
-
-            
             _message = new TelegramMessage();
             ParseModeChange += ParseModeChangeHandler;
+     
 
             if (!((SimpleText)_message.Content).DisablePagePrewiew)
             {
@@ -52,19 +48,13 @@ namespace tPost
             }
 
             _message.UbPanels.ListChange += UBListChangeHandler;
+            SyncSettings();
             SyncTimePickerValues();
-            
-          
+
+
 
         }
 
-        private void TestPostponed()
-        {
-            labelSystemNotif.Text = $@"Я публикую ето в {publicationTime:T}";
-            var a = new PostponedTelegramMessage(_message, publicationTime);
-
-            postponedMaster.AddMessage(a);
-        }
 
         private void SyncTimePickerValues()
         {
@@ -77,20 +67,21 @@ namespace tPost
         public void ToSimpleTextMode()
         {
             _message.Content = new SimpleText();
-        
+
             FormatingEnabled();
             currentFormat.Image = Image.FromFile(@"...\...\img\normal.png");
             currentFormat.Text = @"Текст";
             richTextBoxInputText.MaxLength = _message.MaxLenth;
 
             msgText_TextChanged(this, EventArgs.Empty);
+            buttonSlideFormatingPanel.Enabled = true;
             filePanel.Hide();
         }
 
         private void UBListChangeHandler(object sender, EventArgs args)
         {
 
-            DrawUBPanels();
+            DrawUbPanels();
 
         }
         private void ParseModeChangeHandler(object sender, EventArgs args)
@@ -106,9 +97,7 @@ namespace tPost
                 {
                     richTextBoxInputText.Height -= 40;
                 }
-
-
-
+           
             }
             else if (markdownText.Checked)
             {
@@ -130,15 +119,16 @@ namespace tPost
             }
         }
 
-        private async void publicMsg_Click(object sender, EventArgs e)
+        private async void buttonSend_Click(object sender, EventArgs e)
         {
-            if (isPostponed)
+            if (_isPostponed)
             {
-                
-                postponedMaster.AddMessage(new PostponedTelegramMessage(_message,publicationTime));
-                MessageBox.Show($@"Повідомлення буде опубліковано о {publicationTime:t}");
+
+                _postponedMaster.AddMessage(new PostponedTelegramMessage(_message, _publicationTime));
+                MessageBox.Show($@"Повідомлення буде опубліковано о {_publicationTime:t}");
                 buttonSend.Image = new Bitmap(@"...\...\img\sent.png");
-                isPostponed = false;
+
+                _isPostponed = false;
             }
             else
             {
@@ -164,7 +154,7 @@ namespace tPost
 
                 }
             }
-           
+
         }
 
         private void addFileButton_Click(object sender, EventArgs e)
@@ -203,29 +193,17 @@ namespace tPost
         private void msgText_TextChanged(object sender, EventArgs e)
         {
 
-            if (richTextBoxInputText.Text.Length == 0)
+            if (richTextBoxInputText.TextLength == 0)
             {
-                labelDefaultText.Visible = true;
+                labelDefaultText.Show();
             }
             else
             {
-                labelDefaultText.Visible = false;
-            }
-           
-            symbolCount.Text = $@"{richTextBoxInputText.Text.Length}/{richTextBoxInputText.MaxLength}";
-            
-            if (richTextBoxInputText.Text.Length != 4096)
-            {
-                _message.Text = richTextBoxInputText.Text;
-                symbolCount.BackColor = Color.PaleTurquoise;
-
-            }
-            else
-            {
-                symbolCount.BackColor = Color.PaleVioletRed;
+                labelDefaultText.Hide();
             }
 
-
+            symbolCount.Text = $"{richTextBoxInputText.Text.Length}/{_message.MaxLenth}";
+            _message.Text = richTextBoxInputText.Text;
         }
 
 
@@ -299,10 +277,8 @@ namespace tPost
         private void UrlMarkAroundSelecction()
         {
 
-            // TODO
-            int selectStart = richTextBoxInputText.SelectionStart;
-            int selectEnd = richTextBoxInputText.SelectionLength + selectStart;
-
+            // TODO add this function
+   
 
         }
 
@@ -350,9 +326,9 @@ namespace tPost
             }
             else if (markdownText.Checked)
             {
-                MarkAroundSelection("`");
+                UrlMarkAroundSelecction();
             }
-            
+
         }
 
         private void formatTextPanel_Paint(object sender, PaintEventArgs e)
@@ -396,71 +372,27 @@ namespace tPost
                 }
             }
 
-            
-        }
-
-        private void AddUrlButtonButton_Click(object sender, EventArgs e)
-        {
-            _message.AddUrlButton("google.com", "http://google.com");
-
 
         }
 
- 
 
-        private void textBoxTitleUrlButton_Enter(object sender, EventArgs e)
-        {
-
-            if (textBoxTitleUrlButton.Text == @"Назва")
-            {
-                textBoxTitleUrlButton.Text = "";
-                textBoxTitleUrlButton.ForeColor = Color.Black;
-            }
-        }
-
-        private void textBoxTitleUrlButton_Leave(object sender, EventArgs e)
-        {
-            if (textBoxTitleUrlButton.Text.Length == 0)
-            {
-                textBoxTitleUrlButton.ForeColor = Color.Silver;
-                textBoxTitleUrlButton.Text = @"Назва";
-            }
-        }
-
-        private void textBoxAddressUrlButton_Enter(object sender, EventArgs e)
-        {
-            if (textBoxAddressUrlButton.Text == @"Посилання")
-            {
-                textBoxAddressUrlButton.Text = "";
-                textBoxAddressUrlButton.ForeColor = Color.DodgerBlue;
-            }
-        }
-
-        private void textBoxAddressUrlButton_Leave(object sender, EventArgs e)
-        {
-            if (textBoxAddressUrlButton.Text.Length == 0)
-            {
-                textBoxAddressUrlButton.ForeColor = Color.Silver;
-                textBoxAddressUrlButton.Text = @"Посилання";
-            }
-        }
 
         private void ButtonAddURLButton_Click(object sender, EventArgs e)
         {
             // TODO: data validation
-            _message.AddUrlButton(textBoxTitleUrlButton.Text, textBoxAddressUrlButton.Text);
-         
-           
+            _message.AddInlineUrlButton(textBoxTitleUrlButton.Text, textBoxUrlAddress.Text);
+
+
         }
 
-        private void DrawUBPanels()
+        private void DrawUbPanels()
         {
             panelDisplayUrlButton.Controls.Clear();
 
             for (int i = 0; i < _message.UbPanels.Count; i++)
             {
                 panelDisplayUrlButton.Controls.Add(_message.UbPanels[i]);
-                
+
             }
 
 
@@ -470,20 +402,25 @@ namespace tPost
         {
 
 
-            if (!panelLeft.Visible)
+            if (!panelAddInlineKbr.Visible)
             {
-                if (this.Width < 750)
+                if (Width < 750)
                 {
-                    this.Width = 750;
+                    Width = 750;
                 }
 
-                splitterLeftRightPanels.Visible = true;
-                panelLeft.Visible = true;
+                if (panelPostponedInfo.Visible)
+                {
+                    Width += 300;
+                }
+
+                //splitterLeftRightPanels.Visible = true;
+                panelAddInlineKbr.Show();
             }
             else
             {
-                splitterLeftRightPanels.Visible = false;
-                panelLeft.Visible = false;
+                // splitterLeftRightPanels.Visible = false;
+                panelAddInlineKbr.Hide();
             }
         }
 
@@ -494,34 +431,30 @@ namespace tPost
 
         private void MainWindow_Resize(object sender, EventArgs e)
         {
-            if (this.Width  < 600)
-            {
-                panelLeft.Visible = false;
-            }
+            //if (this.Width  < 600)
+            //{
+            //    panelLeft.Visible = false;
+            //}
 
-            if (Width >= 750)
-            {
-                panelLeft.Visible = true;
-            }
+            //if (Width >= 750)
+            //{
+            //    panelLeft.Visible = true;
+            //}
         }
 
 
- 
-        private void panelLeft_VisibleChanged(object sender, EventArgs e)
-        {
-            splitterLeftRightPanels.Visible = panelLeft.Visible;
 
-        }
+   
 
         private void panelUrlButtonStock_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-      
+
         private void labelDefaultText_Click(object sender, EventArgs e)
         {
-           richTextBoxInputText.Focus();
+            richTextBoxInputText.Focus();
         }
 
         private void buttonOpenFormatingPanel_Click(object sender, EventArgs e)
@@ -540,10 +473,17 @@ namespace tPost
             //publicationTime = DateTime.Now;;
             //publicationTime = publicationTime.AddSeconds(10);
             //TestPostponed();
-            
+
             //notifyIconTpost.ShowBalloonTip(1000,"Новий запис!" , $"Доданий новий відкладений запис, запис опублікується {publicationTime:t}", ToolTipIcon.Info);
             //_message = new TelegramMessage();
-            panelDateTimePicker.Visible = !panelDateTimePicker.Visible;
+            if (panelPostponedInfo.Visible)
+            {
+                panelPostponedInfo.Hide();
+            }
+            else
+            {
+                panelPostponedInfo.Show();
+            }
 
 
         }
@@ -555,36 +495,155 @@ namespace tPost
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            this.WindowState = WindowState == FormWindowState.Normal? FormWindowState.Minimized : FormWindowState.Normal;
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+            WindowState = WindowState == FormWindowState.Normal ? FormWindowState.Minimized : FormWindowState.Normal;
         }
 
 
 
         private void buttonHideDatePickerPanel_Click(object sender, EventArgs e)
         {
-            panelDateTimePicker.Hide();
+            panelPostponedInfo.Hide();
         }
 
         private void buttonAddNewPubDate_Click(object sender, EventArgs e)
         {
-          
+
             string pubdate = $"{textBoxPubYear.Text}-{textBoxPubMonth.Text}-{textBoxPubDay.Text} {textBoxPubHour.Text}:{textBoxPubMinute.Text}";
-            DateTime.TryParse(pubdate, out publicationTime);
-            isPostponed = true;
+            
+            DateTime.TryParse(pubdate, out _publicationTime);
+            _isPostponed = true;
             buttonSend.Image = new Bitmap(@"...\...\img\postponedSend.png");
-            labelSystemNotif.Text = $@"Повідомлення буде опубліковане: {publicationTime:g}";
+
 
         }
 
-        private void richTextBoxInputText_Enter(object sender, EventArgs e)
+
+
+        private void textBoxTitleUrlButton_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxTitleUrlButton.Text.Length == 0)
+            {
+                labelDefualtUrlTitle.Visible = true;
+            }
+            else
+            {
+                labelDefualtUrlTitle.Visible = false;
+            }
+
+
+        }
+
+        private void textBoxUrlAddress_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxUrlAddress.Text.Length == 0)
+            {
+                labelDefaultUrlAddress.Visible = true;
+            }
+            else
+            {
+                labelDefaultUrlAddress.Visible = false;
+            }
+
+        }
+
+        private void buttonHideInlineKbrPanel_Click(object sender, EventArgs e)
         {
 
-            panelDateTimePicker.Hide();
+            panelAddInlineKbr.Hide();
+        }
+
+
+        private void subPanel_VisibleChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelEditor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBoxPubHour_TextChanged(object sender, EventArgs e)
+        {
+            //string s = textBoxPubHour.Text;
+            //int hh;
+            //if (int.TryParse(s, out hh))
+            //{
+            //    if (hh < 23)
+            //    {
+            //        textBoxPubHour.Text = $@"{hh:00}";
+            //    }
+            //    else
+            //    {
+            //        textBoxPubHour.Text = $@"{hh:00}";
+            //    }
+            //}
+        }
+
+        private void buttonSaveSettings_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.BotToken = textBoxSettingsBotToken.Text;
+            Properties.Settings.Default.CanalID = textBoxSettingsCanal.Text;
+            Properties.Settings.Default.DisableNotification = checkBoxSettingsDisableNotification.Checked;
+            Properties.Settings.Default.DisablePagePrewiew = checkBoxSettingsDisablePagePreview.Checked;
+            Properties.Settings.Default.Save();
+            SyncSettings();
+            panelSettings.Hide();
+        }
+
+        private void SyncSettings()
+        {
+
+            if (Properties.Settings.Default.DisableNotification)
+            {
+                _message.DisableNotification = true;
+                checkBoxSettingsDisableNotification.Checked = true;
+                isSilentMessageButton.Image = new Bitmap(@"...\...\img\silent.png");
+
+
+            }
+            else
+            {
+                _message.DisableNotification = false;
+                checkBoxSettingsDisableNotification.Checked = false;
+                isSilentMessageButton.Image = new Bitmap(@"...\...\img\alarm-clock.png");
+
+            }
+            if (Properties.Settings.Default.DisablePagePrewiew)
+            {
+
+                ((SimpleText) _message.Content).DisablePagePrewiew = true;
+                checkBoxSettingsDisablePagePreview.Checked = true;
+                LinkPreviewButton.Image = new Bitmap(@"...\...\img\noview.png");
+
+
+            }
+            else
+            {
+                ((SimpleText) _message.Content).DisablePagePrewiew = false;
+                checkBoxSettingsDisablePagePreview.Checked = false;
+                LinkPreviewButton.Image = new Bitmap(@"...\...\img\linkpreview.png");
+            }
+
+            textBoxSettingsBotToken.Text = Properties.Settings.Default.BotToken;
+            textBoxSettingsCanal.Text = Properties.Settings.Default.CanalID;
+            _message.CanalName = Properties.Settings.Default.CanalID;
+            _message.Bot = new TelegramBotClient(Properties.Settings.Default.BotToken);
+
+
+
+        }
+
+        private void buttonHideSettingsPanel_Click(object sender, EventArgs e)
+        {
+            SyncSettings();
+            panelSettings.Hide();
+        }
+
+        private void buttonOpenSettings_Click(object sender, EventArgs e)
+        {
+            SyncSettings();
+            panelSettings.Visible = !panelSettings.Visible;
         }
     }
 }

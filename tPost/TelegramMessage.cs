@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
+
 using System.Threading.Tasks;
-using System.Windows.Forms;
+
 using Telegram.Bot;
-using Telegram.Bot.Types.Enums;
+
 using tPost.IMessageContent;
 using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
@@ -19,22 +19,18 @@ namespace tPost
         public bool DisableNotification { get; set; }
         public IMessageContent.IMessageContent Content;
         public InlineKeyboardMarkup InlineMarkup;
-        public DateTime PublicationDate;
-        public bool IsTimedMsg;
         public ListUBPanel UbPanels;
 
 
 
         public TelegramMessage()
         {
-            IsTimedMsg = false;
-            PublicationDate = new DateTime();
-
+  
             UbPanels = new ListUBPanel();
-            Bot = new TelegramBotClient(Settings.Default.BotToken);
-            CanalName = Settings.Default.CanalID;
+            Bot = new TelegramBotClient(Properties.Settings.Default.BotToken);
+            CanalName = Properties.Settings.Default.CanalID;
             Text = "";
-            DisableNotification = !Settings.Default.Notification;
+            DisableNotification = Properties.Settings.Default.DisableNotification;
             Content = new SimpleText();
             InlineMarkup = null;
 
@@ -45,11 +41,18 @@ namespace tPost
 
         public async Task<string> Send()
         {
+            InlineMarkup = ConstructUrlButtonMarkup();
+            return await Content.Send(this);
+        }
 
-            InlineMarkup = null;
+
+        public InlineKeyboardMarkup ConstructUrlButtonMarkup()
+        {
+
+
+            var inlineMarkup = new InlineKeyboardMarkup();
             if (UbPanels.Count != 0)
             {
-                InlineMarkup = new InlineKeyboardMarkup();
                 InlineKeyboardButton[][] array = new InlineKeyboardButton[UbPanels.Count][];
                 for (int i = 0; i < UbPanels.Count; i++)
                 {
@@ -58,18 +61,17 @@ namespace tPost
                 }
                 InlineMarkup = new InlineKeyboardMarkup(array);
             }
+            else
+            {
+                return null;
+            }
 
-            var result = await Content.Send(this);
-            return result;
-
-            
+            return inlineMarkup;
         }
 
-        public void AddUrlButton(string title, string url)
+        public void AddInlineUrlButton(string title, string url)
         {
-            
             UbPanels.Add(new UBPanel(title,url));
-
         }
 
         public object Clone()
@@ -80,6 +82,7 @@ namespace tPost
             cloneMessage.CanalName = CanalName;
             cloneMessage.DisableNotification = DisableNotification;
             cloneMessage.Content = (IMessageContent.IMessageContent)Content.Clone();
+            cloneMessage.InlineMarkup = ConstructUrlButtonMarkup();
             
             return cloneMessage;
         }

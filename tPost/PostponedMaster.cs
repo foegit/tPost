@@ -15,15 +15,18 @@ namespace tPost
 
         private object locker = new object();
 
-        private BackgroundWorker worker;
+        private BackgroundWorker worker;        
 
         public PostponedMaster()
-        {
+        {   
+           
             MessageList = new List<PostponedTelegramMessage>();
             worker = new BackgroundWorker();
 
             worker.DoWork += StartMonitor;
             worker.WorkerSupportsCancellation = true;
+
+
         }
 
 
@@ -31,8 +34,6 @@ namespace tPost
         private async void StartMonitor(object sender, EventArgs args)
         {
             
-
-
             while (true)
             {
                
@@ -42,7 +43,7 @@ namespace tPost
                 {
 
                     
-                    if (DateTime.Now > MessageList[i].Time  && MessageList[i].Validation && !MessageList[i].IsSend)
+                    if (( DateTime.Now.Minute >= MessageList[i].Time.Minute && DateTime.Now.Hour == MessageList[i].Time.Hour)  && MessageList[i].Validation && !MessageList[i].IsSend)
                     {
                         try
                         {
@@ -82,20 +83,6 @@ namespace tPost
 
             }
 
-            
-            
-
-
-
-            //if (SendingThread.IsAlive)
-            //{
-            //    SendingThread.Abort();
-            //    MessageList.Add(message);
-
-            //}
-
-            //MessageList.Add(message);
-            //SendingThread.Start();
 
         }
 

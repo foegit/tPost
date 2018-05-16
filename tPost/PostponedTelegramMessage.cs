@@ -28,7 +28,7 @@ namespace tPost
             catch (Exception e)
             {
                 Validation = false;
-                throw;
+                
             }
         }
 

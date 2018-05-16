@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+
 using Telegram.Bot.Types;
-using Message = Telegram.Bot.Types.Message;
+
 
 namespace tPost.IMessageContent
 {
@@ -12,7 +12,7 @@ namespace tPost.IMessageContent
         public int TextMaxLength { get; }
 
         private FileToSend _documentToSend;
-        public long FileSizeInBytes { get; private set; }
+        public long FileSizeInBytes { get; }
         public string FileName;
         private string _filePath;
 

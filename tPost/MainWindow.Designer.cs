@@ -37,7 +37,6 @@ namespace tPost
             this.addDocumentButton = new System.Windows.Forms.Button();
             this.symbolCount = new System.Windows.Forms.Label();
             this.StatusBarPanel = new System.Windows.Forms.Panel();
-            this.labelSystemNotif = new System.Windows.Forms.Label();
             this.currentFormat = new System.Windows.Forms.Label();
             this.buttonAddInlineKeyboard = new System.Windows.Forms.Button();
             this.filePanel = new System.Windows.Forms.Panel();
@@ -52,68 +51,94 @@ namespace tPost
             this.panelFormating = new System.Windows.Forms.Panel();
             this.buttonUrlFormating = new System.Windows.Forms.Button();
             this.buttomCodeFormating = new System.Windows.Forms.Button();
-            this.AddMediaPanel = new System.Windows.Forms.Panel();
-            this.buttonSlideFormatingPanel = new System.Windows.Forms.Button();
+            this.panelControl = new System.Windows.Forms.Panel();
             this.buttonTimePicker = new System.Windows.Forms.Button();
+            this.buttonSlideFormatingPanel = new System.Windows.Forms.Button();
             this.LinkPreviewButton = new System.Windows.Forms.Button();
             this.isSilentMessageButton = new System.Windows.Forms.Button();
-            this.налаштуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ботToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.форматуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.htmlText = new System.Windows.Forms.ToolStripMenuItem();
             this.markdownText = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.panelEditor = new System.Windows.Forms.Panel();
-            this.panelContainIputText = new System.Windows.Forms.Panel();
+            this.panelWindowInput = new System.Windows.Forms.Panel();
             this.labelDefaultText = new System.Windows.Forms.Label();
-            this.panelUrlButtonStock = new System.Windows.Forms.Panel();
-            this.panelDisplayUrlButton = new System.Windows.Forms.Panel();
-            this.panelAddInlineKbr = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxAddressUrlButton = new System.Windows.Forms.TextBox();
-            this.ButtonAddURLButton = new System.Windows.Forms.Button();
-            this.textBoxTitleUrlButton = new System.Windows.Forms.TextBox();
-            this.panelLeft = new System.Windows.Forms.Panel();
-            this.panelRight = new System.Windows.Forms.Panel();
-            this.splitterLeftRightPanels = new System.Windows.Forms.Splitter();
-            this.backgroundWorkerSend = new System.ComponentModel.BackgroundWorker();
-            this.notifyIconTpost = new System.Windows.Forms.NotifyIcon(this.components);
-            this.panelDateTimePicker = new System.Windows.Forms.Panel();
-            this.panelDTPControl = new System.Windows.Forms.Panel();
+            this.panelContainIputText = new System.Windows.Forms.Panel();
+            this.panelPostponedInfo = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxPubHour = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxPubDay = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxPubMinute = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxPubMonth = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.buttonHideDatePickerPanel = new System.Windows.Forms.Button();
-            this.buttonAddNewPubDate = new System.Windows.Forms.Button();
-            this.buttonCancelPickPubDate = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonCancelPickPubDate = new System.Windows.Forms.Button();
+            this.buttonAddNewPubDate = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.textBoxPubYear = new System.Windows.Forms.TextBox();
+            this.textBoxPubMonth = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxPubMinute = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxPubDay = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxPubHour = new System.Windows.Forms.TextBox();
+            this.panelDTPControl = new System.Windows.Forms.Panel();
+            this.buttonHidePostponedPanel = new System.Windows.Forms.Button();
+            this.labelHeaderPostonedPanel = new System.Windows.Forms.Label();
+            this.panelUrlButtonStock = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panelUBAdressInput = new System.Windows.Forms.Panel();
+            this.labelDefaultUrlAddress = new System.Windows.Forms.Label();
+            this.textBoxUrlAddress = new System.Windows.Forms.TextBox();
+            this.panelUBTitltInput = new System.Windows.Forms.Panel();
+            this.labelDefualtUrlTitle = new System.Windows.Forms.Label();
+            this.textBoxTitleUrlButton = new System.Windows.Forms.TextBox();
+            this.panelDisplayUrlButton = new System.Windows.Forms.Panel();
+            this.panelAddInlineKbr = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonHideInlineKbrPanel = new System.Windows.Forms.Button();
+            this.labelHeaderSidePanel = new System.Windows.Forms.Label();
+            this.backgroundWorkerSend = new System.ComponentModel.BackgroundWorker();
+            this.notifyIconTpost = new System.Windows.Forms.NotifyIcon(this.components);
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.panelTextEditor = new System.Windows.Forms.Panel();
+            this.panelSettings = new System.Windows.Forms.Panel();
+            this.panelSettingsBody = new System.Windows.Forms.Panel();
+            this.checkBoxSettingsDisablePagePreview = new System.Windows.Forms.CheckBox();
+            this.checkBoxSettingsDisableNotification = new System.Windows.Forms.CheckBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.textBoxSettingsCanal = new System.Windows.Forms.TextBox();
+            this.labelStingsCanal = new System.Windows.Forms.Label();
+            this.labelTokenCanal = new System.Windows.Forms.Label();
+            this.panelBotToken = new System.Windows.Forms.Panel();
+            this.textBoxSettingsBotToken = new System.Windows.Forms.TextBox();
+            this.buttonSaveSettings = new System.Windows.Forms.Button();
+            this.panelSettingHeader = new System.Windows.Forms.Panel();
+            this.buttonHideSettingsPanel = new System.Windows.Forms.Button();
+            this.labelHeaderSettingsPanel = new System.Windows.Forms.Label();
+            this.buttonOpenSettings = new System.Windows.Forms.Button();
+            this.налаштуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.StatusBarPanel.SuspendLayout();
             this.filePanel.SuspendLayout();
             this.panelFormating.SuspendLayout();
-            this.AddMediaPanel.SuspendLayout();
+            this.panelControl.SuspendLayout();
             this.menuStrip.SuspendLayout();
-            this.panelEditor.SuspendLayout();
+            this.panelWindowInput.SuspendLayout();
             this.panelContainIputText.SuspendLayout();
-            this.panelUrlButtonStock.SuspendLayout();
-            this.panelAddInlineKbr.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.panelLeft.SuspendLayout();
-            this.panelRight.SuspendLayout();
-            this.panelDateTimePicker.SuspendLayout();
-            this.panelDTPControl.SuspendLayout();
+            this.panelPostponedInfo.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelDTPControl.SuspendLayout();
+            this.panelUrlButtonStock.SuspendLayout();
+            this.panelUBAdressInput.SuspendLayout();
+            this.panelUBTitltInput.SuspendLayout();
+            this.panelAddInlineKbr.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panelMain.SuspendLayout();
+            this.panelTextEditor.SuspendLayout();
+            this.panelSettings.SuspendLayout();
+            this.panelSettingsBody.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panelBotToken.SuspendLayout();
+            this.panelSettingHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // richTextBoxInputText
@@ -124,7 +149,6 @@ namespace tPost
             this.richTextBoxInputText.ForeColor = System.Drawing.Color.Black;
             this.richTextBoxInputText.Name = "richTextBoxInputText";
             this.richTextBoxInputText.TextChanged += new System.EventHandler(this.msgText_TextChanged);
-            this.richTextBoxInputText.Enter += new System.EventHandler(this.richTextBoxInputText_Enter);
             // 
             // buttonSend
             // 
@@ -135,7 +159,7 @@ namespace tPost
             this.buttonSend.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.buttonSend.Name = "buttonSend";
             this.buttonSend.UseVisualStyleBackColor = false;
-            this.buttonSend.Click += new System.EventHandler(this.publicMsg_Click);
+            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
             // 
             // addDocumentButton
             // 
@@ -143,6 +167,7 @@ namespace tPost
             this.addDocumentButton.BackColor = System.Drawing.Color.Transparent;
             this.addDocumentButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.addDocumentButton.FlatAppearance.BorderSize = 0;
+            this.addDocumentButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
             this.addDocumentButton.Name = "addDocumentButton";
             this.addDocumentButton.UseVisualStyleBackColor = false;
             this.addDocumentButton.Click += new System.EventHandler(this.addFileButton_Click);
@@ -156,18 +181,11 @@ namespace tPost
             // StatusBarPanel
             // 
             this.StatusBarPanel.BackColor = System.Drawing.Color.White;
-            this.StatusBarPanel.Controls.Add(this.labelSystemNotif);
+            this.StatusBarPanel.Controls.Add(this.buttonOpenSettings);
             this.StatusBarPanel.Controls.Add(this.currentFormat);
-            this.StatusBarPanel.Controls.Add(this.buttonAddInlineKeyboard);
             this.StatusBarPanel.Controls.Add(this.symbolCount);
             resources.ApplyResources(this.StatusBarPanel, "StatusBarPanel");
             this.StatusBarPanel.Name = "StatusBarPanel";
-            // 
-            // labelSystemNotif
-            // 
-            resources.ApplyResources(this.labelSystemNotif, "labelSystemNotif");
-            this.labelSystemNotif.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.labelSystemNotif.Name = "labelSystemNotif";
             // 
             // currentFormat
             // 
@@ -176,10 +194,11 @@ namespace tPost
             // 
             // buttonAddInlineKeyboard
             // 
-            this.buttonAddInlineKeyboard.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonAddInlineKeyboard.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.buttonAddInlineKeyboard, "buttonAddInlineKeyboard");
             this.buttonAddInlineKeyboard.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonAddInlineKeyboard.FlatAppearance.BorderSize = 0;
+            this.buttonAddInlineKeyboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
             this.buttonAddInlineKeyboard.Name = "buttonAddInlineKeyboard";
             this.buttonAddInlineKeyboard.UseVisualStyleBackColor = false;
             this.buttonAddInlineKeyboard.Click += new System.EventHandler(this.buttonAddInlineKeyboard_Click);
@@ -232,8 +251,8 @@ namespace tPost
             // 
             // boldButton
             // 
-            this.boldButton.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.boldButton, "boldButton");
+            this.boldButton.BackColor = System.Drawing.Color.Transparent;
             this.boldButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.boldButton.FlatAppearance.BorderSize = 0;
             this.boldButton.Name = "boldButton";
@@ -242,8 +261,8 @@ namespace tPost
             // 
             // italicButton
             // 
-            this.italicButton.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.italicButton, "italicButton");
+            this.italicButton.BackColor = System.Drawing.Color.Transparent;
             this.italicButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.italicButton.FlatAppearance.BorderSize = 0;
             this.italicButton.Name = "italicButton";
@@ -252,7 +271,7 @@ namespace tPost
             // 
             // panelFormating
             // 
-            this.panelFormating.BackColor = System.Drawing.Color.White;
+            this.panelFormating.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelFormating.Controls.Add(this.buttonUrlFormating);
             this.panelFormating.Controls.Add(this.buttomCodeFormating);
             this.panelFormating.Controls.Add(this.boldButton);
@@ -263,8 +282,8 @@ namespace tPost
             // 
             // buttonUrlFormating
             // 
-            this.buttonUrlFormating.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.buttonUrlFormating, "buttonUrlFormating");
+            this.buttonUrlFormating.BackColor = System.Drawing.Color.Transparent;
             this.buttonUrlFormating.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonUrlFormating.FlatAppearance.BorderSize = 0;
             this.buttonUrlFormating.ForeColor = System.Drawing.Color.Black;
@@ -274,8 +293,8 @@ namespace tPost
             // 
             // buttomCodeFormating
             // 
-            this.buttomCodeFormating.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.buttomCodeFormating, "buttomCodeFormating");
+            this.buttomCodeFormating.BackColor = System.Drawing.Color.Transparent;
             this.buttomCodeFormating.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttomCodeFormating.FlatAppearance.BorderSize = 0;
             this.buttomCodeFormating.ForeColor = System.Drawing.Color.SkyBlue;
@@ -283,17 +302,29 @@ namespace tPost
             this.buttomCodeFormating.UseVisualStyleBackColor = true;
             this.buttomCodeFormating.Click += new System.EventHandler(this.preButton_Click);
             // 
-            // AddMediaPanel
+            // panelControl
             // 
-            this.AddMediaPanel.BackColor = System.Drawing.Color.Transparent;
-            this.AddMediaPanel.Controls.Add(this.buttonTimePicker);
-            this.AddMediaPanel.Controls.Add(this.buttonSlideFormatingPanel);
-            this.AddMediaPanel.Controls.Add(this.addDocumentButton);
-            this.AddMediaPanel.Controls.Add(this.LinkPreviewButton);
-            this.AddMediaPanel.Controls.Add(this.buttonSend);
-            this.AddMediaPanel.Controls.Add(this.isSilentMessageButton);
-            resources.ApplyResources(this.AddMediaPanel, "AddMediaPanel");
-            this.AddMediaPanel.Name = "AddMediaPanel";
+            this.panelControl.BackColor = System.Drawing.Color.Crimson;
+            this.panelControl.Controls.Add(this.buttonTimePicker);
+            this.panelControl.Controls.Add(this.buttonAddInlineKeyboard);
+            this.panelControl.Controls.Add(this.buttonSlideFormatingPanel);
+            this.panelControl.Controls.Add(this.addDocumentButton);
+            this.panelControl.Controls.Add(this.LinkPreviewButton);
+            this.panelControl.Controls.Add(this.buttonSend);
+            this.panelControl.Controls.Add(this.isSilentMessageButton);
+            resources.ApplyResources(this.panelControl, "panelControl");
+            this.panelControl.Name = "panelControl";
+            // 
+            // buttonTimePicker
+            // 
+            resources.ApplyResources(this.buttonTimePicker, "buttonTimePicker");
+            this.buttonTimePicker.BackColor = System.Drawing.Color.Transparent;
+            this.buttonTimePicker.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
+            this.buttonTimePicker.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonTimePicker.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.buttonTimePicker.Name = "buttonTimePicker";
+            this.buttonTimePicker.UseVisualStyleBackColor = false;
+            this.buttonTimePicker.Click += new System.EventHandler(this.buttonTimePicker_Click);
             // 
             // buttonSlideFormatingPanel
             // 
@@ -305,17 +336,6 @@ namespace tPost
             this.buttonSlideFormatingPanel.Name = "buttonSlideFormatingPanel";
             this.buttonSlideFormatingPanel.UseVisualStyleBackColor = false;
             this.buttonSlideFormatingPanel.Click += new System.EventHandler(this.buttonOpenFormatingPanel_Click);
-            // 
-            // buttonTimePicker
-            // 
-            this.buttonTimePicker.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.buttonTimePicker, "buttonTimePicker");
-            this.buttonTimePicker.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
-            this.buttonTimePicker.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonTimePicker.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
-            this.buttonTimePicker.Name = "buttonTimePicker";
-            this.buttonTimePicker.UseVisualStyleBackColor = false;
-            this.buttonTimePicker.Click += new System.EventHandler(this.buttonTimePicker_Click);
             // 
             // LinkPreviewButton
             // 
@@ -338,18 +358,6 @@ namespace tPost
             this.isSilentMessageButton.Name = "isSilentMessageButton";
             this.isSilentMessageButton.UseVisualStyleBackColor = false;
             this.isSilentMessageButton.Click += new System.EventHandler(this.isSilentMessageButton_Click);
-            // 
-            // налаштуванняToolStripMenuItem
-            // 
-            this.налаштуванняToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ботToolStripMenuItem});
-            this.налаштуванняToolStripMenuItem.Name = "налаштуванняToolStripMenuItem";
-            resources.ApplyResources(this.налаштуванняToolStripMenuItem, "налаштуванняToolStripMenuItem");
-            // 
-            // ботToolStripMenuItem
-            // 
-            this.ботToolStripMenuItem.Name = "ботToolStripMenuItem";
-            resources.ApplyResources(this.ботToolStripMenuItem, "ботToolStripMenuItem");
             // 
             // форматуванняToolStripMenuItem
             // 
@@ -379,30 +387,20 @@ namespace tPost
             this.menuStrip.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.налаштуванняToolStripMenuItem,
-            this.форматуванняToolStripMenuItem});
+            this.форматуванняToolStripMenuItem,
+            this.налаштуванняToolStripMenuItem});
             resources.ApplyResources(this.menuStrip, "menuStrip");
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip_ItemClicked);
             // 
-            // panelEditor
+            // panelWindowInput
             // 
-            this.panelEditor.BackColor = System.Drawing.Color.Transparent;
-            this.panelEditor.Controls.Add(this.panelContainIputText);
-            this.panelEditor.Controls.Add(this.panelFormating);
-            this.panelEditor.Controls.Add(this.AddMediaPanel);
-            resources.ApplyResources(this.panelEditor, "panelEditor");
-            this.panelEditor.Name = "panelEditor";
-            // 
-            // panelContainIputText
-            // 
-            this.panelContainIputText.BackColor = System.Drawing.Color.White;
-            this.panelContainIputText.Controls.Add(this.panelDateTimePicker);
-            this.panelContainIputText.Controls.Add(this.labelDefaultText);
-            this.panelContainIputText.Controls.Add(this.richTextBoxInputText);
-            this.panelContainIputText.Controls.Add(this.filePanel);
-            resources.ApplyResources(this.panelContainIputText, "panelContainIputText");
-            this.panelContainIputText.Name = "panelContainIputText";
+            this.panelWindowInput.BackColor = System.Drawing.Color.White;
+            this.panelWindowInput.Controls.Add(this.labelDefaultText);
+            this.panelWindowInput.Controls.Add(this.richTextBoxInputText);
+            resources.ApplyResources(this.panelWindowInput, "panelWindowInput");
+            this.panelWindowInput.Name = "panelWindowInput";
+            this.panelWindowInput.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEditor_Paint);
             // 
             // labelDefaultText
             // 
@@ -413,112 +411,22 @@ namespace tPost
             this.labelDefaultText.Name = "labelDefaultText";
             this.labelDefaultText.Click += new System.EventHandler(this.labelDefaultText_Click);
             // 
-            // panelUrlButtonStock
+            // panelContainIputText
             // 
-            this.panelUrlButtonStock.BackColor = System.Drawing.Color.WhiteSmoke;
-            resources.ApplyResources(this.panelUrlButtonStock, "panelUrlButtonStock");
-            this.panelUrlButtonStock.Controls.Add(this.panelDisplayUrlButton);
-            this.panelUrlButtonStock.Controls.Add(this.panelAddInlineKbr);
-            this.panelUrlButtonStock.Name = "panelUrlButtonStock";
-            this.panelUrlButtonStock.Paint += new System.Windows.Forms.PaintEventHandler(this.panelUrlButtonStock_Paint);
+            this.panelContainIputText.BackColor = System.Drawing.Color.Maroon;
+            this.panelContainIputText.Controls.Add(this.panelWindowInput);
+            this.panelContainIputText.Controls.Add(this.filePanel);
+            resources.ApplyResources(this.panelContainIputText, "panelContainIputText");
+            this.panelContainIputText.Name = "panelContainIputText";
             // 
-            // panelDisplayUrlButton
+            // panelPostponedInfo
             // 
-            resources.ApplyResources(this.panelDisplayUrlButton, "panelDisplayUrlButton");
-            this.panelDisplayUrlButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelDisplayUrlButton.Name = "panelDisplayUrlButton";
-            // 
-            // panelAddInlineKbr
-            // 
-            this.panelAddInlineKbr.Controls.Add(this.groupBox1);
-            resources.ApplyResources(this.panelAddInlineKbr, "panelAddInlineKbr");
-            this.panelAddInlineKbr.Name = "panelAddInlineKbr";
-            // 
-            // groupBox1
-            // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Controls.Add(this.textBoxAddressUrlButton);
-            this.groupBox1.Controls.Add(this.ButtonAddURLButton);
-            this.groupBox1.Controls.Add(this.textBoxTitleUrlButton);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
-            // 
-            // textBoxAddressUrlButton
-            // 
-            resources.ApplyResources(this.textBoxAddressUrlButton, "textBoxAddressUrlButton");
-            this.textBoxAddressUrlButton.ForeColor = System.Drawing.Color.Silver;
-            this.textBoxAddressUrlButton.Name = "textBoxAddressUrlButton";
-            this.textBoxAddressUrlButton.Enter += new System.EventHandler(this.textBoxAddressUrlButton_Enter);
-            this.textBoxAddressUrlButton.Leave += new System.EventHandler(this.textBoxAddressUrlButton_Leave);
-            // 
-            // ButtonAddURLButton
-            // 
-            resources.ApplyResources(this.ButtonAddURLButton, "ButtonAddURLButton");
-            this.ButtonAddURLButton.BackColor = System.Drawing.Color.Ivory;
-            this.ButtonAddURLButton.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
-            this.ButtonAddURLButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.ButtonAddURLButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LawnGreen;
-            this.ButtonAddURLButton.ForeColor = System.Drawing.Color.Black;
-            this.ButtonAddURLButton.Name = "ButtonAddURLButton";
-            this.ButtonAddURLButton.UseVisualStyleBackColor = false;
-            this.ButtonAddURLButton.Click += new System.EventHandler(this.ButtonAddURLButton_Click);
-            // 
-            // textBoxTitleUrlButton
-            // 
-            this.textBoxTitleUrlButton.AllowDrop = true;
-            resources.ApplyResources(this.textBoxTitleUrlButton, "textBoxTitleUrlButton");
-            this.textBoxTitleUrlButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxTitleUrlButton.ForeColor = System.Drawing.Color.Silver;
-            this.textBoxTitleUrlButton.Name = "textBoxTitleUrlButton";
-            this.textBoxTitleUrlButton.Enter += new System.EventHandler(this.textBoxTitleUrlButton_Enter);
-            this.textBoxTitleUrlButton.Leave += new System.EventHandler(this.textBoxTitleUrlButton_Leave);
-            // 
-            // panelLeft
-            // 
-            this.panelLeft.BackColor = System.Drawing.Color.DarkViolet;
-            this.panelLeft.Controls.Add(this.panelUrlButtonStock);
-            resources.ApplyResources(this.panelLeft, "panelLeft");
-            this.panelLeft.Name = "panelLeft";
-            this.panelLeft.VisibleChanged += new System.EventHandler(this.panelLeft_VisibleChanged);
-            // 
-            // panelRight
-            // 
-            this.panelRight.BackColor = System.Drawing.Color.Crimson;
-            this.panelRight.Controls.Add(this.panelEditor);
-            resources.ApplyResources(this.panelRight, "panelRight");
-            this.panelRight.Name = "panelRight";
-            // 
-            // splitterLeftRightPanels
-            // 
-            resources.ApplyResources(this.splitterLeftRightPanels, "splitterLeftRightPanels");
-            this.splitterLeftRightPanels.Name = "splitterLeftRightPanels";
-            this.splitterLeftRightPanels.TabStop = false;
-            // 
-            // backgroundWorkerSend
-            // 
-            this.backgroundWorkerSend.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerSend_DoWork);
-            // 
-            // notifyIconTpost
-            // 
-            this.notifyIconTpost.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            resources.ApplyResources(this.notifyIconTpost, "notifyIconTpost");
-            this.notifyIconTpost.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
-            // 
-            // panelDateTimePicker
-            // 
-            this.panelDateTimePicker.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelDateTimePicker.Controls.Add(this.panel2);
-            this.panelDateTimePicker.Controls.Add(this.panelDTPControl);
-            resources.ApplyResources(this.panelDateTimePicker, "panelDateTimePicker");
-            this.panelDateTimePicker.Name = "panelDateTimePicker";
-            // 
-            // panelDTPControl
-            // 
-            this.panelDTPControl.BackColor = System.Drawing.Color.Crimson;
-            this.panelDTPControl.Controls.Add(this.buttonHideDatePickerPanel);
-            this.panelDTPControl.Controls.Add(this.label3);
-            resources.ApplyResources(this.panelDTPControl, "panelDTPControl");
-            this.panelDTPControl.Name = "panelDTPControl";
+            this.panelPostponedInfo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelPostponedInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelPostponedInfo.Controls.Add(this.panel2);
+            this.panelPostponedInfo.Controls.Add(this.panelDTPControl);
+            resources.ApplyResources(this.panelPostponedInfo, "panelPostponedInfo");
+            this.panelPostponedInfo.Name = "panelPostponedInfo";
             // 
             // panel2
             // 
@@ -538,88 +446,6 @@ namespace tPost
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label3.Name = "label3";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // textBoxPubHour
-            // 
-            this.textBoxPubHour.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBoxPubHour, "textBoxPubHour");
-            this.textBoxPubHour.Name = "textBoxPubHour";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
-            // 
-            // textBoxPubDay
-            // 
-            this.textBoxPubDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBoxPubDay, "textBoxPubDay");
-            this.textBoxPubDay.Name = "textBoxPubDay";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
-            // 
-            // textBoxPubMinute
-            // 
-            this.textBoxPubMinute.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBoxPubMinute, "textBoxPubMinute");
-            this.textBoxPubMinute.Name = "textBoxPubMinute";
-            // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label6.Name = "label6";
-            // 
-            // textBoxPubMonth
-            // 
-            this.textBoxPubMonth.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBoxPubMonth, "textBoxPubMonth");
-            this.textBoxPubMonth.Name = "textBoxPubMonth";
-            // 
-            // label7
-            // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label7.Name = "label7";
-            // 
-            // buttonHideDatePickerPanel
-            // 
-            resources.ApplyResources(this.buttonHideDatePickerPanel, "buttonHideDatePickerPanel");
-            this.buttonHideDatePickerPanel.BackColor = System.Drawing.Color.Transparent;
-            this.buttonHideDatePickerPanel.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
-            this.buttonHideDatePickerPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonHideDatePickerPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
-            this.buttonHideDatePickerPanel.Name = "buttonHideDatePickerPanel";
-            this.buttonHideDatePickerPanel.UseVisualStyleBackColor = false;
-            this.buttonHideDatePickerPanel.Click += new System.EventHandler(this.buttonHideDatePickerPanel_Click);
-            // 
-            // buttonAddNewPubDate
-            // 
-            resources.ApplyResources(this.buttonAddNewPubDate, "buttonAddNewPubDate");
-            this.buttonAddNewPubDate.BackColor = System.Drawing.Color.YellowGreen;
-            this.buttonAddNewPubDate.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonAddNewPubDate.Name = "buttonAddNewPubDate";
-            this.buttonAddNewPubDate.UseVisualStyleBackColor = false;
-            this.buttonAddNewPubDate.Click += new System.EventHandler(this.buttonAddNewPubDate_Click);
-            // 
-            // buttonCancelPickPubDate
-            // 
-            resources.ApplyResources(this.buttonCancelPickPubDate, "buttonCancelPickPubDate");
-            this.buttonCancelPickPubDate.BackColor = System.Drawing.Color.Coral;
-            this.buttonCancelPickPubDate.Name = "buttonCancelPickPubDate";
-            this.buttonCancelPickPubDate.UseVisualStyleBackColor = false;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.pictureBox1);
@@ -632,6 +458,22 @@ namespace tPost
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
+            // buttonCancelPickPubDate
+            // 
+            resources.ApplyResources(this.buttonCancelPickPubDate, "buttonCancelPickPubDate");
+            this.buttonCancelPickPubDate.BackColor = System.Drawing.Color.Coral;
+            this.buttonCancelPickPubDate.Name = "buttonCancelPickPubDate";
+            this.buttonCancelPickPubDate.UseVisualStyleBackColor = false;
+            // 
+            // buttonAddNewPubDate
+            // 
+            resources.ApplyResources(this.buttonAddNewPubDate, "buttonAddNewPubDate");
+            this.buttonAddNewPubDate.BackColor = System.Drawing.Color.YellowGreen;
+            this.buttonAddNewPubDate.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonAddNewPubDate.Name = "buttonAddNewPubDate";
+            this.buttonAddNewPubDate.UseVisualStyleBackColor = false;
+            this.buttonAddNewPubDate.Click += new System.EventHandler(this.buttonAddNewPubDate_Click);
+            // 
             // label8
             // 
             resources.ApplyResources(this.label8, "label8");
@@ -639,20 +481,355 @@ namespace tPost
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.label8.Name = "label8";
             // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label7.Name = "label7";
+            // 
             // textBoxPubYear
             // 
             this.textBoxPubYear.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.textBoxPubYear, "textBoxPubYear");
             this.textBoxPubYear.Name = "textBoxPubYear";
             // 
+            // textBoxPubMonth
+            // 
+            this.textBoxPubMonth.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBoxPubMonth, "textBoxPubMonth");
+            this.textBoxPubMonth.Name = "textBoxPubMonth";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label6.Name = "label6";
+            // 
+            // textBoxPubMinute
+            // 
+            this.textBoxPubMinute.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBoxPubMinute, "textBoxPubMinute");
+            this.textBoxPubMinute.Name = "textBoxPubMinute";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
+            // textBoxPubDay
+            // 
+            this.textBoxPubDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBoxPubDay, "textBoxPubDay");
+            this.textBoxPubDay.Name = "textBoxPubDay";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // textBoxPubHour
+            // 
+            this.textBoxPubHour.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBoxPubHour, "textBoxPubHour");
+            this.textBoxPubHour.Name = "textBoxPubHour";
+            this.textBoxPubHour.TextChanged += new System.EventHandler(this.textBoxPubHour_TextChanged);
+            // 
+            // panelDTPControl
+            // 
+            this.panelDTPControl.BackColor = System.Drawing.Color.Crimson;
+            this.panelDTPControl.Controls.Add(this.buttonHidePostponedPanel);
+            this.panelDTPControl.Controls.Add(this.labelHeaderPostonedPanel);
+            resources.ApplyResources(this.panelDTPControl, "panelDTPControl");
+            this.panelDTPControl.Name = "panelDTPControl";
+            // 
+            // buttonHidePostponedPanel
+            // 
+            resources.ApplyResources(this.buttonHidePostponedPanel, "buttonHidePostponedPanel");
+            this.buttonHidePostponedPanel.BackColor = System.Drawing.Color.Transparent;
+            this.buttonHidePostponedPanel.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
+            this.buttonHidePostponedPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonHidePostponedPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.buttonHidePostponedPanel.Name = "buttonHidePostponedPanel";
+            this.buttonHidePostponedPanel.UseVisualStyleBackColor = false;
+            this.buttonHidePostponedPanel.Click += new System.EventHandler(this.buttonHideDatePickerPanel_Click);
+            // 
+            // labelHeaderPostonedPanel
+            // 
+            resources.ApplyResources(this.labelHeaderPostonedPanel, "labelHeaderPostonedPanel");
+            this.labelHeaderPostonedPanel.ForeColor = System.Drawing.Color.Cornsilk;
+            this.labelHeaderPostonedPanel.Name = "labelHeaderPostonedPanel";
+            // 
+            // panelUrlButtonStock
+            // 
+            this.panelUrlButtonStock.BackColor = System.Drawing.Color.WhiteSmoke;
+            resources.ApplyResources(this.panelUrlButtonStock, "panelUrlButtonStock");
+            this.panelUrlButtonStock.Controls.Add(this.button2);
+            this.panelUrlButtonStock.Controls.Add(this.panelUBAdressInput);
+            this.panelUrlButtonStock.Controls.Add(this.panelUBTitltInput);
+            this.panelUrlButtonStock.Controls.Add(this.panelDisplayUrlButton);
+            this.panelUrlButtonStock.Name = "panelUrlButtonStock";
+            this.panelUrlButtonStock.Paint += new System.Windows.Forms.PaintEventHandler(this.panelUrlButtonStock_Paint);
+            // 
+            // button2
+            // 
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.BackColor = System.Drawing.Color.YellowGreen;
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button2.Name = "button2";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.ButtonAddURLButton_Click);
+            // 
+            // panelUBAdressInput
+            // 
+            this.panelUBAdressInput.BackColor = System.Drawing.Color.White;
+            this.panelUBAdressInput.Controls.Add(this.labelDefaultUrlAddress);
+            this.panelUBAdressInput.Controls.Add(this.textBoxUrlAddress);
+            resources.ApplyResources(this.panelUBAdressInput, "panelUBAdressInput");
+            this.panelUBAdressInput.Name = "panelUBAdressInput";
+            // 
+            // labelDefaultUrlAddress
+            // 
+            resources.ApplyResources(this.labelDefaultUrlAddress, "labelDefaultUrlAddress");
+            this.labelDefaultUrlAddress.BackColor = System.Drawing.Color.White;
+            this.labelDefaultUrlAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.labelDefaultUrlAddress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelDefaultUrlAddress.ForeColor = System.Drawing.Color.Silver;
+            this.labelDefaultUrlAddress.Name = "labelDefaultUrlAddress";
+            // 
+            // textBoxUrlAddress
+            // 
+            resources.ApplyResources(this.textBoxUrlAddress, "textBoxUrlAddress");
+            this.textBoxUrlAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUrlAddress.ForeColor = System.Drawing.Color.SkyBlue;
+            this.textBoxUrlAddress.Name = "textBoxUrlAddress";
+            this.textBoxUrlAddress.TextChanged += new System.EventHandler(this.textBoxUrlAddress_TextChanged);
+            // 
+            // panelUBTitltInput
+            // 
+            this.panelUBTitltInput.BackColor = System.Drawing.Color.White;
+            this.panelUBTitltInput.Controls.Add(this.labelDefualtUrlTitle);
+            this.panelUBTitltInput.Controls.Add(this.textBoxTitleUrlButton);
+            resources.ApplyResources(this.panelUBTitltInput, "panelUBTitltInput");
+            this.panelUBTitltInput.Name = "panelUBTitltInput";
+            // 
+            // labelDefualtUrlTitle
+            // 
+            resources.ApplyResources(this.labelDefualtUrlTitle, "labelDefualtUrlTitle");
+            this.labelDefualtUrlTitle.BackColor = System.Drawing.Color.White;
+            this.labelDefualtUrlTitle.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.labelDefualtUrlTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelDefualtUrlTitle.ForeColor = System.Drawing.Color.Silver;
+            this.labelDefualtUrlTitle.Name = "labelDefualtUrlTitle";
+            // 
+            // textBoxTitleUrlButton
+            // 
+            this.textBoxTitleUrlButton.AllowDrop = true;
+            resources.ApplyResources(this.textBoxTitleUrlButton, "textBoxTitleUrlButton");
+            this.textBoxTitleUrlButton.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxTitleUrlButton.ForeColor = System.Drawing.Color.Black;
+            this.textBoxTitleUrlButton.Name = "textBoxTitleUrlButton";
+            this.textBoxTitleUrlButton.TextChanged += new System.EventHandler(this.textBoxTitleUrlButton_TextChanged);
+            // 
+            // panelDisplayUrlButton
+            // 
+            resources.ApplyResources(this.panelDisplayUrlButton, "panelDisplayUrlButton");
+            this.panelDisplayUrlButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDisplayUrlButton.Name = "panelDisplayUrlButton";
+            // 
+            // panelAddInlineKbr
+            // 
+            this.panelAddInlineKbr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelAddInlineKbr.Controls.Add(this.panelUrlButtonStock);
+            this.panelAddInlineKbr.Controls.Add(this.panel3);
+            resources.ApplyResources(this.panelAddInlineKbr, "panelAddInlineKbr");
+            this.panelAddInlineKbr.Name = "panelAddInlineKbr";
+            this.panelAddInlineKbr.VisibleChanged += new System.EventHandler(this.subPanel_VisibleChanged);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Crimson;
+            this.panel3.Controls.Add(this.buttonHideInlineKbrPanel);
+            this.panel3.Controls.Add(this.labelHeaderSidePanel);
+            resources.ApplyResources(this.panel3, "panel3");
+            this.panel3.Name = "panel3";
+            // 
+            // buttonHideInlineKbrPanel
+            // 
+            resources.ApplyResources(this.buttonHideInlineKbrPanel, "buttonHideInlineKbrPanel");
+            this.buttonHideInlineKbrPanel.BackColor = System.Drawing.Color.Transparent;
+            this.buttonHideInlineKbrPanel.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
+            this.buttonHideInlineKbrPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonHideInlineKbrPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.buttonHideInlineKbrPanel.Name = "buttonHideInlineKbrPanel";
+            this.buttonHideInlineKbrPanel.UseVisualStyleBackColor = false;
+            this.buttonHideInlineKbrPanel.Click += new System.EventHandler(this.buttonHideInlineKbrPanel_Click);
+            // 
+            // labelHeaderSidePanel
+            // 
+            resources.ApplyResources(this.labelHeaderSidePanel, "labelHeaderSidePanel");
+            this.labelHeaderSidePanel.ForeColor = System.Drawing.Color.Cornsilk;
+            this.labelHeaderSidePanel.Name = "labelHeaderSidePanel";
+            // 
+            // backgroundWorkerSend
+            // 
+            this.backgroundWorkerSend.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerSend_DoWork);
+            // 
+            // notifyIconTpost
+            // 
+            this.notifyIconTpost.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            resources.ApplyResources(this.notifyIconTpost, "notifyIconTpost");
+            this.notifyIconTpost.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // panelMain
+            // 
+            this.panelMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelMain.Controls.Add(this.panelTextEditor);
+            this.panelMain.Controls.Add(this.panelControl);
+            resources.ApplyResources(this.panelMain, "panelMain");
+            this.panelMain.Name = "panelMain";
+            // 
+            // panelTextEditor
+            // 
+            this.panelTextEditor.Controls.Add(this.panelContainIputText);
+            this.panelTextEditor.Controls.Add(this.panelFormating);
+            resources.ApplyResources(this.panelTextEditor, "panelTextEditor");
+            this.panelTextEditor.Name = "panelTextEditor";
+            // 
+            // panelSettings
+            // 
+            this.panelSettings.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelSettings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSettings.Controls.Add(this.panelSettingsBody);
+            this.panelSettings.Controls.Add(this.panelSettingHeader);
+            resources.ApplyResources(this.panelSettings, "panelSettings");
+            this.panelSettings.Name = "panelSettings";
+            // 
+            // panelSettingsBody
+            // 
+            this.panelSettingsBody.Controls.Add(this.checkBoxSettingsDisablePagePreview);
+            this.panelSettingsBody.Controls.Add(this.checkBoxSettingsDisableNotification);
+            this.panelSettingsBody.Controls.Add(this.panel4);
+            this.panelSettingsBody.Controls.Add(this.labelStingsCanal);
+            this.panelSettingsBody.Controls.Add(this.labelTokenCanal);
+            this.panelSettingsBody.Controls.Add(this.panelBotToken);
+            this.panelSettingsBody.Controls.Add(this.buttonSaveSettings);
+            resources.ApplyResources(this.panelSettingsBody, "panelSettingsBody");
+            this.panelSettingsBody.Name = "panelSettingsBody";
+            // 
+            // checkBoxSettingsDisablePagePreview
+            // 
+            resources.ApplyResources(this.checkBoxSettingsDisablePagePreview, "checkBoxSettingsDisablePagePreview");
+            this.checkBoxSettingsDisablePagePreview.Name = "checkBoxSettingsDisablePagePreview";
+            this.checkBoxSettingsDisablePagePreview.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSettingsDisableNotification
+            // 
+            resources.ApplyResources(this.checkBoxSettingsDisableNotification, "checkBoxSettingsDisableNotification");
+            this.checkBoxSettingsDisableNotification.Name = "checkBoxSettingsDisableNotification";
+            this.checkBoxSettingsDisableNotification.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            resources.ApplyResources(this.panel4, "panel4");
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.textBoxSettingsCanal);
+            this.panel4.Name = "panel4";
+            // 
+            // textBoxSettingsCanal
+            // 
+            this.textBoxSettingsCanal.AllowDrop = true;
+            resources.ApplyResources(this.textBoxSettingsCanal, "textBoxSettingsCanal");
+            this.textBoxSettingsCanal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSettingsCanal.ForeColor = System.Drawing.Color.Black;
+            this.textBoxSettingsCanal.Name = "textBoxSettingsCanal";
+            // 
+            // labelStingsCanal
+            // 
+            resources.ApplyResources(this.labelStingsCanal, "labelStingsCanal");
+            this.labelStingsCanal.Name = "labelStingsCanal";
+            // 
+            // labelTokenCanal
+            // 
+            resources.ApplyResources(this.labelTokenCanal, "labelTokenCanal");
+            this.labelTokenCanal.Name = "labelTokenCanal";
+            // 
+            // panelBotToken
+            // 
+            resources.ApplyResources(this.panelBotToken, "panelBotToken");
+            this.panelBotToken.BackColor = System.Drawing.Color.White;
+            this.panelBotToken.Controls.Add(this.textBoxSettingsBotToken);
+            this.panelBotToken.Name = "panelBotToken";
+            // 
+            // textBoxSettingsBotToken
+            // 
+            this.textBoxSettingsBotToken.AllowDrop = true;
+            resources.ApplyResources(this.textBoxSettingsBotToken, "textBoxSettingsBotToken");
+            this.textBoxSettingsBotToken.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSettingsBotToken.ForeColor = System.Drawing.Color.SteelBlue;
+            this.textBoxSettingsBotToken.Name = "textBoxSettingsBotToken";
+            // 
+            // buttonSaveSettings
+            // 
+            resources.ApplyResources(this.buttonSaveSettings, "buttonSaveSettings");
+            this.buttonSaveSettings.BackColor = System.Drawing.Color.YellowGreen;
+            this.buttonSaveSettings.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonSaveSettings.Name = "buttonSaveSettings";
+            this.buttonSaveSettings.UseVisualStyleBackColor = false;
+            this.buttonSaveSettings.Click += new System.EventHandler(this.buttonSaveSettings_Click);
+            // 
+            // panelSettingHeader
+            // 
+            this.panelSettingHeader.BackColor = System.Drawing.Color.Crimson;
+            this.panelSettingHeader.Controls.Add(this.buttonHideSettingsPanel);
+            this.panelSettingHeader.Controls.Add(this.labelHeaderSettingsPanel);
+            resources.ApplyResources(this.panelSettingHeader, "panelSettingHeader");
+            this.panelSettingHeader.Name = "panelSettingHeader";
+            // 
+            // buttonHideSettingsPanel
+            // 
+            resources.ApplyResources(this.buttonHideSettingsPanel, "buttonHideSettingsPanel");
+            this.buttonHideSettingsPanel.BackColor = System.Drawing.Color.Transparent;
+            this.buttonHideSettingsPanel.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
+            this.buttonHideSettingsPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonHideSettingsPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.buttonHideSettingsPanel.Name = "buttonHideSettingsPanel";
+            this.buttonHideSettingsPanel.UseVisualStyleBackColor = false;
+            this.buttonHideSettingsPanel.Click += new System.EventHandler(this.buttonHideSettingsPanel_Click);
+            // 
+            // labelHeaderSettingsPanel
+            // 
+            resources.ApplyResources(this.labelHeaderSettingsPanel, "labelHeaderSettingsPanel");
+            this.labelHeaderSettingsPanel.ForeColor = System.Drawing.Color.Cornsilk;
+            this.labelHeaderSettingsPanel.Name = "labelHeaderSettingsPanel";
+            // 
+            // buttonOpenSettings
+            // 
+            this.buttonOpenSettings.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.buttonOpenSettings, "buttonOpenSettings");
+            this.buttonOpenSettings.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonOpenSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonOpenSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.buttonOpenSettings.Name = "buttonOpenSettings";
+            this.buttonOpenSettings.UseVisualStyleBackColor = false;
+            this.buttonOpenSettings.Click += new System.EventHandler(this.buttonOpenSettings_Click);
+            // 
+            // налаштуванняToolStripMenuItem
+            // 
+            this.налаштуванняToolStripMenuItem.Name = "налаштуванняToolStripMenuItem";
+            resources.ApplyResources(this.налаштуванняToolStripMenuItem, "налаштуванняToolStripMenuItem");
+            this.налаштуванняToolStripMenuItem.Click += new System.EventHandler(this.buttonOpenSettings_Click);
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.Controls.Add(this.splitterLeftRightPanels);
-            this.Controls.Add(this.panelRight);
-            this.Controls.Add(this.panelLeft);
+            this.Controls.Add(this.panelSettings);
+            this.Controls.Add(this.panelMain);
+            this.Controls.Add(this.panelAddInlineKbr);
+            this.Controls.Add(this.panelPostponedInfo);
             this.Controls.Add(this.StatusBarPanel);
             this.Controls.Add(this.menuStrip);
             this.DoubleBuffered = true;
@@ -661,29 +838,41 @@ namespace tPost
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.Resize += new System.EventHandler(this.MainWindow_Resize);
             this.StatusBarPanel.ResumeLayout(false);
-            this.StatusBarPanel.PerformLayout();
             this.filePanel.ResumeLayout(false);
             this.filePanel.PerformLayout();
             this.panelFormating.ResumeLayout(false);
-            this.AddMediaPanel.ResumeLayout(false);
+            this.panelControl.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            this.panelEditor.ResumeLayout(false);
+            this.panelWindowInput.ResumeLayout(false);
+            this.panelWindowInput.PerformLayout();
             this.panelContainIputText.ResumeLayout(false);
-            this.panelContainIputText.PerformLayout();
-            this.panelUrlButtonStock.ResumeLayout(false);
-            this.panelAddInlineKbr.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.panelLeft.ResumeLayout(false);
-            this.panelRight.ResumeLayout(false);
-            this.panelDateTimePicker.ResumeLayout(false);
-            this.panelDTPControl.ResumeLayout(false);
-            this.panelDTPControl.PerformLayout();
+            this.panelPostponedInfo.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelDTPControl.ResumeLayout(false);
+            this.panelDTPControl.PerformLayout();
+            this.panelUrlButtonStock.ResumeLayout(false);
+            this.panelUBAdressInput.ResumeLayout(false);
+            this.panelUBAdressInput.PerformLayout();
+            this.panelUBTitltInput.ResumeLayout(false);
+            this.panelUBTitltInput.PerformLayout();
+            this.panelAddInlineKbr.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panelMain.ResumeLayout(false);
+            this.panelTextEditor.ResumeLayout(false);
+            this.panelSettings.ResumeLayout(false);
+            this.panelSettingsBody.ResumeLayout(false);
+            this.panelSettingsBody.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panelBotToken.ResumeLayout(false);
+            this.panelBotToken.PerformLayout();
+            this.panelSettingHeader.ResumeLayout(false);
+            this.panelSettingHeader.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -707,40 +896,32 @@ namespace tPost
         private System.Windows.Forms.Button italicButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelFormating;
-        private System.Windows.Forms.Panel AddMediaPanel;
+        private System.Windows.Forms.Panel panelControl;
         private System.Windows.Forms.Button buttomCodeFormating;
         private System.Windows.Forms.Button buttonUrlFormating;
         private System.Windows.Forms.Button isSilentMessageButton;
-        private System.Windows.Forms.ToolStripMenuItem налаштуванняToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ботToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem форматуванняToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem htmlText;
         private System.Windows.Forms.ToolStripMenuItem markdownText;
         private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.Panel panelEditor;
+        private System.Windows.Forms.Panel panelWindowInput;
         private System.Windows.Forms.Panel panelUrlButtonStock;
         private System.Windows.Forms.Button LinkPreviewButton;
         private System.Windows.Forms.Button buttonAddInlineKeyboard;
         private System.Windows.Forms.Panel panelDisplayUrlButton;
         private System.Windows.Forms.Panel panelAddInlineKbr;
-        private System.Windows.Forms.TextBox textBoxAddressUrlButton;
+        private System.Windows.Forms.TextBox textBoxUrlAddress;
         private System.Windows.Forms.TextBox textBoxTitleUrlButton;
-        private System.Windows.Forms.Button ButtonAddURLButton;
-        private System.Windows.Forms.Panel panelLeft;
-        private System.Windows.Forms.Panel panelRight;
-        private System.Windows.Forms.Splitter splitterLeftRightPanels;
         private System.Windows.Forms.Panel panelContainIputText;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonTimePicker;
         private System.Windows.Forms.Label labelDefaultText;
         private System.Windows.Forms.Button buttonSlideFormatingPanel;
-        private System.Windows.Forms.Label labelSystemNotif;
         private System.ComponentModel.BackgroundWorker backgroundWorkerSend;
         private System.Windows.Forms.NotifyIcon notifyIconTpost;
-        private System.Windows.Forms.Panel panelDateTimePicker;
+        private System.Windows.Forms.Panel panelPostponedInfo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelDTPControl;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelHeaderPostonedPanel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxPubMinute;
         private System.Windows.Forms.Label label5;
@@ -749,13 +930,39 @@ namespace tPost
         private System.Windows.Forms.TextBox textBoxPubHour;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxPubMonth;
-        private System.Windows.Forms.Button buttonHideDatePickerPanel;
+        private System.Windows.Forms.Button buttonHidePostponedPanel;
         private System.Windows.Forms.Button buttonCancelPickPubDate;
         private System.Windows.Forms.Button buttonAddNewPubDate;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxPubYear;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button buttonHideInlineKbrPanel;
+        private System.Windows.Forms.Label labelHeaderSidePanel;
+        private System.Windows.Forms.Label labelDefualtUrlTitle;
+        private System.Windows.Forms.Panel panelUBTitltInput;
+        private System.Windows.Forms.Panel panelUBAdressInput;
+        private System.Windows.Forms.Label labelDefaultUrlAddress;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Panel panelTextEditor;
+        private System.Windows.Forms.Panel panelSettings;
+        private System.Windows.Forms.Panel panelSettingsBody;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox textBoxSettingsCanal;
+        private System.Windows.Forms.Label labelStingsCanal;
+        private System.Windows.Forms.Label labelTokenCanal;
+        private System.Windows.Forms.Panel panelBotToken;
+        private System.Windows.Forms.TextBox textBoxSettingsBotToken;
+        private System.Windows.Forms.Button buttonSaveSettings;
+        private System.Windows.Forms.Panel panelSettingHeader;
+        private System.Windows.Forms.Button buttonHideSettingsPanel;
+        private System.Windows.Forms.Label labelHeaderSettingsPanel;
+        private System.Windows.Forms.CheckBox checkBoxSettingsDisablePagePreview;
+        private System.Windows.Forms.CheckBox checkBoxSettingsDisableNotification;
+        private System.Windows.Forms.Button buttonOpenSettings;
+        private System.Windows.Forms.ToolStripMenuItem налаштуванняToolStripMenuItem;
     }
 }
 

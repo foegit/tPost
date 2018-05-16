@@ -18,9 +18,7 @@ namespace tPost.IMessageContent
         {
             TextMaxLength = 4096;
             ParsingMode = ParseMode.Default;
-            DisablePagePrewiew = !Settings.Default.PagePreview;
-
-
+            DisablePagePrewiew = Properties.Settings.Default.DisablePagePrewiew;
         }
 
         public SimpleText(ParseMode parsingMode, bool disablePagePrewiew)
@@ -35,6 +33,7 @@ namespace tPost.IMessageContent
         {
             ParsingMode = parseMode;
         }
+
         public async Task<string> Send(TelegramMessage msg)
         {
       
